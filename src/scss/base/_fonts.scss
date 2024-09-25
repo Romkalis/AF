@@ -1,0 +1,14 @@
+@font-face {
+	font-family: "Open Sans";
+	font-display: swap;
+	src: local("Open Sans"), url("../fonts/OpenSans.woff2") format("woff2"), url("../fonts/OpenSans.woff") format("woff"), url("../fonts/OpenSans.ttf") format("truetype");
+	font-weight: 400, 500, 600, 700, 800;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Open Sans Italic";
+	font-display: swap;
+	src: url("../fonts/OpenSans-Italic.woff2") format("woff2"), url("../fonts/OpenSans-Italic.woff") format("woff"), url("../fonts/OpenSans-Italic.ttf") format("truetype");
+	font-weight: 400, 500, 600, 700, 800;
+	font-style: italic;
+}

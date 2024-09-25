@@ -1,0 +1,20 @@
+// --------------------/* Base */--------------------
+
+@import './base/reset';
+@import './base/variables';
+@import './base/fonts';
+@import './base/base';
+@import './base/utils'; // Тест на ошибку
+@import './base/sticky-footer';
+@import './base/container';
+@import './base/section';
+
+// --------------------/* Blocks */--------------------
+
+@import './blocks/*.scss';
+
+// --------------------/* Libraries */--------------------
+
+
+/* No styles code below. Only in modules */
+/* Не пишите CSS код ниже. Только в подключаемых файлах */
