@@ -1,0 +1,160 @@
+.header__average {
+    border-bottom: 1px solid var(--c-light--medium);
+    padding: 20px 25px;
+}
+.header__average-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(16px, 2.4vw, 32px);
+    flex-wrap: wrap;
+}
+
+//-----------------------logo-----------------------
+.header__logo {
+    max-width: 227px;
+    padding-left: 20px;
+}
+
+
+//-----------------------title-----------------------
+.average__title {
+    color: var(--text-header);
+    text-align: center;
+}
+//-----------------------contacts-----------------------
+.average__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, 1.2vw, 16px);
+}
+.average__contacts-heading {
+    padding-left: 30px;
+
+}
+.average__contacts-calls {
+    padding-left: 30px;
+    display: flex;
+    gap: 15px;
+    position: relative;
+}
+
+.header__phone-icon {
+    position: absolute;
+    fill: var(--text-footer);
+    left: 0px;
+}
+
+.average__contacts--phone {
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: all .3s ease;
+    
+    &:hover {
+    color: var(--text-meduim);
+    }
+}
+.average__contacts--whatsapp {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    padding: 7px;
+    background-image: url(../../img/icons/icon_whatsapp.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.average__contacts--telegram {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    padding: 7px;
+    background-image: url(../../img/icons/icon_telegram.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.average__contacts-email {
+    padding-left: 30px;
+    position: relative;
+}
+.header__mail-icon {
+    position: absolute;
+    fill: var(--text-footer);
+    left: 0px;
+    top: 2px;
+}
+.average__contacts--mail {
+    color: inherit;
+    text-decoration: underline;
+}
+
+//-----------------------finder-----------------------
+.header__finder {
+    background-color: var(--bg-field);
+    width: clamp(240px, 27vw, 380px);
+    padding: clamp(8px, 1.2vw, 16px);
+    border-radius: 4px;
+    position: relative;
+}
+.header__finder-button {
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    border-radius: 4px;
+    width: clamp(20px, 2.5vw, 32px);
+    height: clamp(20px, 2.5vw, 32px);
+    background-color: var(--c-main);
+    display: grid;
+    place-items: center;
+    
+    &:hover,
+    &:active {
+        background-color: var(--c-hover);
+    }
+}
+
+.header__finder-icon {
+    fill: var(--bg-light);
+}
+
+//-----------------------cart-----------------------
+
+.header__cart {
+     display: flex;
+     gap: 16px;
+     align-items: center;
+}
+.header__cart-icon {
+    position: relative;
+}
+
+.header__cart-icon svg{
+    fill: var(--c-accent-bright);
+    min-width: 31px;
+    min-height: 27px;
+}
+
+.header__cart-icon svg:hover{
+    fill: var(--c-accent);
+}
+.header__cart-counter {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    top: -16px;
+    right: -12px;
+    background-color: var(--bg-field);
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+.header__cart-description {
+
+}
+.header__cart-text {
+}
+.header__cart-text--unactive {
+    color: var(--text-meduim);
+}
