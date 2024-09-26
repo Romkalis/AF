@@ -1,0 +1,72 @@
+.footer {
+	background-color: var(--c-dark);
+    padding: 36px 36px 80px 36px;
+    color: var(--text-footer);
+}
+
+.footer__content {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+    column-gap: clamp(24px, 16vw, 86px);
+    row-gap: 14px;
+}
+
+.footer__info {
+    display: flex;
+    column-gap: clamp(24px, 4.6vw, 68px);
+}
+.footer__logo {
+}
+
+.footer__link,
+.footer__link:visited {
+    color: var(--text-footer);
+    transition: all .3s ease;
+    &:hover {
+        color:  var(--text-light);
+    }
+}
+.footer__contacts {
+    display: flex;
+    flex-direction: column;
+}
+.footer__phone {
+    font-size: clamp(14px, 1.2vw, 16px);
+    font-weight: 600;
+    color: var(--text-light);
+    padding: 6px;
+    transition: all .3s ease;
+
+    &:hover {
+        color: var(--text-footer);
+    }
+}
+.footer__email {
+    padding: 6px;
+}
+.footer__catalog {
+}
+.footer__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.footer__item {
+} 
+.footer__item-link {
+}
+.footer__info {
+}
+.footer__copyright {
+    align-self: end;
+}
+.footer__oferta {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(12px, 1.8vw, 26px);
+}
+
+.footer .oferta__link {
+    text-decoration: underline;
+}
