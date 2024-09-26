@@ -1,14 +1,13 @@
 @font-face {
-	font-family: "Open Sans";
+    font-family: 'Montserrat';
 	font-display: swap;
-	src: local("Open Sans"), url("../fonts/OpenSans.woff2") format("woff2"), url("../fonts/OpenSans.woff") format("woff"), url("../fonts/OpenSans.ttf") format("truetype");
-	font-weight: 400, 500, 600, 700, 800;
-	font-style: normal;
+	src: local("Montserrat"), url("../fonts/Montserrat.woff2") format("woff2"), url("../fonts/Montserrat.woff") format("woff"), url("../fonts/Montserrat.ttf") format("truetype");
+    font-weight: 400;
 }
+
 @font-face {
-	font-family: "Open Sans Italic";
+    font-family: 'Montserrat';
 	font-display: swap;
-	src: url("../fonts/OpenSans-Italic.woff2") format("woff2"), url("../fonts/OpenSans-Italic.woff") format("woff"), url("../fonts/OpenSans-Italic.ttf") format("truetype");
-	font-weight: 400, 500, 600, 700, 800;
-	font-style: italic;
+	src: local("Montserrat"), url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff"), url("../fonts/Montserrat-Bold.ttf") format("truetype");
+    font-weight: 600;
 }

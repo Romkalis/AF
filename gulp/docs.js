@@ -149,7 +149,7 @@ gulp.task('sass:docs', function () {
 gulp.task('images:docs', function () {
 	return (
 		gulp
-			.src(['./src/img/**/*', '!./src/img/svgicons/**/*'])
+			.src(['./src/img/**/*', '!./src/img/icons/**/*'])
 			.pipe(changed('./docs/img/'))
 			.pipe(
 				imagemin([
@@ -212,7 +212,7 @@ const svgSymbol = {
 
 gulp.task('svgStack:docs', function () {
 	return gulp
-		.src('./src/img/svgicons/**/*.svg')
+		.src('./src/img/icons/**/*.svg')
 		.pipe(plumber(plumberNotify('SVG:dev')))
 		.pipe(svgsprite(svgStack))
 		.pipe(gulp.dest('./docs/img/svgsprite/'));
@@ -220,7 +220,7 @@ gulp.task('svgStack:docs', function () {
 
 gulp.task('svgSymbol:docs', function () {
 	return gulp
-		.src('./src/img/svgicons/**/*.svg')
+		.src('./src/img/icons/**/*.svg')
 		.pipe(plumber(plumberNotify('SVG:dev')))
 		.pipe(svgsprite(svgSymbol))
 		.pipe(gulp.dest('./docs/img/svgsprite/'));

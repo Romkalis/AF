@@ -1,0 +1,116 @@
+.header__top {
+    background-color: var(--c-main);
+}
+
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-light);
+    gap: 20px;
+}
+
+// .header__nav {
+// }
+
+.header__navlist {
+    display: flex;
+    align-items: center;
+}
+.header__navitem {
+    padding: 20px clamp(8px, 1vw, 15px);
+    transition: all .3s ease;
+    text-align: center;
+    height: 100%;
+}
+.header__navitem:hover {
+    background-color: var(--c-main-hover);
+    transition: all .3s ease;
+}
+.header__navlink {
+    color: inherit;
+}
+
+// подменю
+.header__navlink--additional {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.header__navlink--additional::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-right: 3px solid var(--bg-light);
+    border-top: 3px solid var(--bg-light);
+    transform: rotate(135deg);
+    transition: all .3s ease;
+}
+
+.header__navlink--additional:hover {
+    &::after {
+        transform: rotate(315deg);
+    }
+}
+
+.header__sublist {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    padding: 15px 0;
+    background-color: var(--bg-light);
+    box-shadow: 0px 5px 5px 0px var(--bg-field);
+    transition: all .3s ease;
+}
+
+.header__navlink--additional:hover .header__sublist {
+    visibility: visible;
+    opacity: 1;
+    transition: all .3s ease;
+}
+
+.header__subitem {
+    padding: 15px 40px;
+    transition: all .3s ease;
+
+}
+.header__subitem:hover {
+    background-color: var(--bg-medium);
+    transition: all .3s ease;
+    font-weight: 600;
+}
+
+.header__sublink {
+    color: var(--text-dark);
+}
+
+// профиль
+
+.header__profile {
+    display: flex;
+    
+    gap: 14px;
+    align-items: center;
+    color: var(--text-light);
+    cursor: pointer;
+    padding: 20px clamp(8px, 1vw, 15px);
+}
+.header__profile:hover {
+    background-color: var(--c-main-hover);
+}
+
+.profile__name {
+    color: inherit;
+}
+
+.profile__icon {
+    display: inline-block;
+    width: 15px; 
+    height: 18px;
+}
+.profile__icon svg {
+    fill: var(--bg-light);
+}
