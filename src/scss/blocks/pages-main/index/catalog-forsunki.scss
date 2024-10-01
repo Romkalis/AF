@@ -1,0 +1,47 @@
+.index-main__catalog-forsunki {
+    margin-bottom: clamp(32px,4.5vw, 60px);
+    
+}
+.catalog-forsunki__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.catalog-forsunki__item {
+    background-color: var(--bg-light);
+    padding: clamp(10px, 2vw, 20px) clamp(5px, 2vw, 16px);
+
+    border: 1px solid var(--bg-medium);
+}
+.catalog-forsunki__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: clamp(10px, 2vw, 20px);
+
+    align-items: center;
+    justify-content: space-between;
+}
+.catalog-forsunki__picture {
+    display: grid;
+    place-items: center;
+    height: 100%;
+}
+// .catalog-forsunki__img {
+// }
+.catalog-forsunki__item-title {
+
+    text-align: center;
+}
+.catalog-forsunki__item--arrow {
+    display: inline-block;
+    width: 8px;
+    height: 6px;
+    background-image: url(../../../../img/icons/icon_arrow.svg);
+    margin-left: 10px;
+}
+
+@media (max-width: 1024px) {
+    .catalog-forsunki__list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
