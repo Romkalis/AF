@@ -17,8 +17,19 @@
 
 //------------header
 @import './blocks/header/*.scss';
+
+//------------main pages
+@import './blocks/pages-main/*.scss';
+    //------index
+    @import './blocks/pages-main/index/*.scss';
+    @import './blocks/pages-main/side-menu/*.scss';
+
+
+
 //------------footer
 @import './blocks/footer/*.scss';
+
+
 // --------------------/* Libraries */--------------------
 
 

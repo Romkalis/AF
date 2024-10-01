@@ -1,0 +1,91 @@
+// -------------------DESKTOP-------------------
+.index-main__side-menu {
+    max-width: 267px;
+    background-color: var(--bg-light);
+    box-shadow: 0px 5px 5px 0px var(--bg-field);
+    transition: all 0.3s ease;
+}
+.side-menu__heading {
+    background-color: var(--c-main);
+    color: var(--text-light);
+    
+    padding: clamp(12px, 1.7vw, 24px);
+}
+.side-menu__heading--desktop {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.index-main__side-list {
+    padding: 10px 0;
+    background-color: var(--bg-light);
+
+}
+.index-main__side-item {
+    padding: 14px clamp(26px, 2.1vw, 40px);
+    transition: all .3s ease;
+    
+}
+.index-main__side-item:hover {
+    background-color: var(--bg-medium);
+    color: var(--c-accent);
+    transition: all .3s ease;
+}
+
+// .index-main__side-link {
+// }
+
+.index-main__side-img--mob {
+    display: none;
+}
+.side-menu__heading--mob {
+    display: none;
+}
+.index-main__side-counter--mob {
+    display: none;
+}
+
+// -------------------MOBILE-------------------
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0;
+    }
+
+    .index-main__side-menu {
+        width: 100%;
+        max-width: unset;
+        background-color: var(--c-main);
+        box-shadow: unset;
+        transition: all 0.3s ease;
+        padding: 30px clamp(10px, 4vw, 28px);
+        font-size: clamp(13px, 2.5vw, 16px);
+    }
+
+    .side-menu__heading--desktop {
+        display: none;
+    }
+    .side-menu__heading--mob {
+        display: inline-block;
+        text-transform: initial;
+        text-align: start;
+    }
+    .index-main__side-list {
+        padding:  0;
+    }
+    .index-main__side-item {
+        display: flex;
+        box-sizing: border-box;
+        gap: 22px;
+        border: 1px solid var(--border-light);
+        border-collapse: collapse;
+        margin-bottom: -1px;
+    }
+
+    .index-main__side-img--mob {
+        display: inline-block;
+    }
+    .index-main__side-counter--mob {
+        display: inline;
+    }
+}
