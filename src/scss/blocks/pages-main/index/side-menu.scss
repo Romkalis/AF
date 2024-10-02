@@ -4,6 +4,7 @@
     background-color: var(--bg-light);
     box-shadow: 0px 5px 5px 0px var(--bg-field);
     transition: all 0.3s ease;
+    height: max-content;
 }
 .side-menu__heading {
     background-color: var(--c-main);
