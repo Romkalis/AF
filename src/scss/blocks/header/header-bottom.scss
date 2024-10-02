@@ -10,12 +10,6 @@
 }
 .header__bottom-item {
     padding: 20px 8px;
-    // &:first-child {
-    //     padding-left: 0;
-    // }
-    // &:last-child {
-    //     padding-right: 0;
-    // }
 
     &:hover {
         background-color: var(--bg-medium);
@@ -58,7 +52,10 @@
     padding: 15px 0;
     background-color: var(--bg-light);
     box-shadow: 0px 5px 5px 0px var(--bg-field);
+    color: var(--text-dark);
     transition: all .3s ease;
+    width: max-content;
+    z-index: 2;
 }
 
 .header__bottom-item--additional:hover .header__sublist {

@@ -8,7 +8,7 @@
     display: grid;
     grid-template-columns: repeat(2, auto);
     align-items: center;
-    column-gap: clamp(24px, 16vw, 86px);
+    column-gap: clamp(24px, 7vw, 86px);
     row-gap: 14px;
 }
 
@@ -17,6 +17,7 @@
     column-gap: clamp(24px, 4.6vw, 68px);
 }
 .footer__logo {
+    min-width: 150px;
 }
 
 .footer__link,
@@ -57,6 +58,7 @@
 .footer__item-link {
 }
 .footer__info {
+
 }
 .footer__copyright {
     align-self: end;
@@ -67,6 +69,90 @@
     gap: clamp(12px, 1.8vw, 26px);
 }
 
+.oferta__text {
+    font-size: 10px;
+}
+
 .footer .oferta__link {
     text-decoration: underline;
+}
+
+.footer__catalog--mobile {
+    display: none;
+}
+
+.footer__contacts-icon {
+    display: none;
+}
+
+@media(max-width: 768px) {
+    .footer__logo,
+    .footer__catalog--desktop,
+    .footer__copyright,
+    .footer__oferta {
+        display: none;
+    }
+    .footer {
+        padding: 0;
+    }
+    .footer__info {
+        grid-column: 1 / -1;
+        flex-direction: column-reverse;
+    }
+    .footer__catalog--mobile {
+        display: inline-block;
+    }
+
+    .footer__list {
+        gap: 0;
+    }
+
+    .footer__item,
+    .footer__catalog {
+        border-bottom: 2px solid var(--text-meduim);
+        padding: 14px clamp(30px, 9vw, 48px);
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: clamp(12px, 3.8vw, 16px);
+    }
+
+    .footer__contacts {
+        margin: 36px auto;
+    }
+
+    .footer__contacts-icon {
+        display: inline-block;
+    }
+
+    .footer__phone {
+        font-size: clamp(20px, 6vw, 28px);
+        font-weight: 600;
+        color: var(--text-footer);
+        display: flex;
+        gap: 20px;
+        &:hover {
+            color: var(--text-light);
+        }
+        & svg {
+            fill: var(--text-footer);
+        }
+    }
+
+    .footer__email {
+
+        font-size: clamp(14px, 4vw, 20px);
+        font-weight: 500;
+        color: var(--text-light);
+        display: flex;
+        gap: 20px;
+        &:hover {
+            color: var(--text-footer);
+        }
+        & svg {
+            fill: var(--text-light);
+        }
+    }
+
+
+
 }
