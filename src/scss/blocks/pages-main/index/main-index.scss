@@ -8,3 +8,10 @@
     gap: clamp(15px, 2.2vw, 30px);
     grid-template-columns: auto auto;
 }
+
+@media (max-width: 768px) {
+    .index-main__grid {
+        gap: unset;
+        grid-template-columns: 1fr;
+    }
+}

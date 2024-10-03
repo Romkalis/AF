@@ -25,7 +25,7 @@
 .header__navitem:hover,
 .header__navitem:active {
     background-color: var(--c-hover);
-    transition: all .3s ease;
+    transition: all .1s ease;
 }
 
 .header__navlink {
@@ -47,7 +47,7 @@
     border-right: 3px solid var(--bg-light);
     border-top: 3px solid var(--bg-light);
     transform: rotate(135deg);
-    transition: all .3s ease;
+    transition: all .1s ease;
 }
 
 .header__navlink--additional:hover,
@@ -138,13 +138,14 @@
 @media (max-width: 768px) {
     .header__top {
         position: relative;
+        border-radius: 0 0 20px 20px;
     }
 
     //------------------ выпадающее меню
     .header__top-checklabel {
         display: block;
         position: absolute;
-        top: 50px;
+        top: 40px;
         left: 20px;
         width: 20px;
         height: 15px;
@@ -160,12 +161,14 @@
     .header__top-checkbox:checked ~ .header__content {
         height: auto;
         visibility: visible;
+        opacity: 1;
     }
 
     .header__content {
         top: 0;
         height: 0;
         visibility: hidden;
+        opacity:0;
         flex-direction: column;
         color: var(--text-light);
         z-index:2;
@@ -182,10 +185,18 @@
     .header__navitem {
         width: 100%;
         padding: clamp(12px, 2vw, 16px);
+        border-bottom: 1px solid var(--bg-light);
     }
 
     .header__navlink--additional {
         justify-content: center;
+
+        .header__sublist {
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 80vw;
+        }
     }
+
 
 }

@@ -1,0 +1,40 @@
+// настройки слайдеров в мобильной версии
+@media ( max-width: 768px) {
+    .my-carousel-progress {
+        background: black;
+      }
+      
+      .my-slider-progress-bar {
+        background: var(--c-main);
+        height: 3px;
+        transition: width 400ms ease;
+        width: 0;
+        // margin: 2rem;
+      }
+
+      // arrows 
+    .splide__arrows {
+        position: absolute;
+        top: 40%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform:translateY(-50%);
+        z-index: 2;
+    }
+    .splide__arrow {
+        width: 29px;
+        height: 29px;
+        background-position: center;
+        border-radius: 2px;
+        border: 1px solid var(--text-footer);
+        margin: 10px;
+    }
+    .splide__arrow--prev {
+        background-image: url('../../img/icons/slider__arrow--left.svg');
+
+    }
+    .splide__arrow--next {
+        background-image: url('../../img/icons/slider__arrow--right.svg');
+    }
+}

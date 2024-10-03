@@ -2,7 +2,7 @@
     grid-column: 2 / -1;
 }
 
-.catalog-culture {}
+// .catalog-culture {}
 
 .catalog-culture__list {
     display: grid;
@@ -52,5 +52,12 @@
 
     .catalog-culture__img {
         width: clamp(130px, 12vw, 158px);
+    }
+}
+
+@media (max-width: 768px) {
+    .index-main__catalog-culture {
+        grid-column: 1/-1;
+        width: 100vw;
     }
 }
