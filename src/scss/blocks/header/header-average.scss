@@ -207,6 +207,8 @@
     // Логитип
     .header__logo {
         grid-column: 1 / -1;
+        max-width: 150px;
+        margin-bottom: 12px;
     }
     .average__contacts-calls {
         padding: 0;
