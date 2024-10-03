@@ -50,6 +50,10 @@
 // -------------------MOBILE-------------------
 
 @media (max-width: 768px) {
+
+    .index-main__side-menu {
+     order: 2;
+    }
     .container {
         padding: 0;
     }

@@ -1,17 +1,19 @@
 .index-main__catalog-forsunki {
-    margin-bottom: clamp(32px,4.5vw, 60px);
-    
+    margin-bottom: clamp(32px, 4.5vw, 60px);
 }
+
 .catalog-forsunki__list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
+
 .catalog-forsunki__item {
     background-color: var(--bg-light);
     padding: clamp(10px, 2vw, 20px) clamp(5px, 2vw, 16px);
 
     border: 1px solid var(--bg-medium);
 }
+
 .catalog-forsunki__link {
     display: flex;
     flex-direction: column;
@@ -21,17 +23,18 @@
     align-items: center;
     justify-content: space-between;
 }
+
 .catalog-forsunki__picture {
     display: grid;
     place-items: center;
     height: 100%;
 }
-// .catalog-forsunki__img {
-// }
+
 .catalog-forsunki__item-title {
 
     text-align: center;
 }
+
 .catalog-forsunki__item--arrow {
     display: inline-block;
     width: 8px;
@@ -44,4 +47,30 @@
     .catalog-forsunki__list {
         grid-template-columns: repeat(3, 1fr);
     }
+}
+
+@media (max-width: 768px) {
+    .index-main__catalog-forsunki {
+        order: 1;
+    }
+    
+
+    // настройка под слайдер
+    .catalog-forsunki {
+        margin: clamp(10px, 3.2vw, 20px) auto;
+        width: 90vw;
+
+        .splide__arrow {
+            margin: 0
+        }
+        .my-slider-progress-bar {
+            margin: clamp(16px, 2vw, 24px) 0;
+        }
+    }
+
+    .catalog-forsunki__img {
+        width: 33vw;
+        max-width: 300px;
+    }
+
 }

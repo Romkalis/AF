@@ -59,5 +59,19 @@
     .index-main__catalog-culture {
         grid-column: 1/-1;
         width: 100vw;
+        order: 3;
+
+        .my-slider-progress-bar {
+            max-width: 90vw;
+            margin: clamp(16px, 2vw, 24px) 0;
+            margin-left: 5vw;
+        }
+
     }
+    .catalog-culture__img {
+        width: clamp(150px, 18vw, 248px);
+    }
+
+
+
 }

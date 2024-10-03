@@ -1,15 +1,12 @@
 // настройки слайдеров в мобильной версии
 @media ( max-width: 768px) {
-    .my-carousel-progress {
-        background: black;
-      }
+
       
       .my-slider-progress-bar {
         background: var(--c-main);
         height: 3px;
         transition: width 400ms ease;
         width: 0;
-        // margin: 2rem;
       }
 
       // arrows 
