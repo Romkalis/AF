@@ -7,6 +7,12 @@
     align-items: center;
     justify-content: space-between;
     gap: clamp(16px, 2.4vw, 32px);
+}
+.average__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(16px, 2.4vw, 32px);
     flex-wrap: wrap;
 }
 
@@ -14,6 +20,7 @@
 .header__logo {
     max-width: 227px;
     padding-left: 20px;
+    justify-self: center;
 }
 
 
@@ -49,7 +56,8 @@
     color: var(--text-dark);
     transition: all .3s ease;
     
-    &:hover {
+    &:hover,
+    &:active {
     color: var(--text-meduim);
     }
 }
@@ -111,6 +119,10 @@
         background-color: var(--c-hover);
     }
 }
+.header__finder-label {
+    display: grid;
+    place-items: center;
+}
 
 .header__finder-icon {
     fill: var(--bg-light);
@@ -156,4 +168,96 @@
 }
 .header__cart-text--unactive {
     color: var(--text-meduim);
+}
+
+.header__average-content .mobile-view {
+    display: none;    
+}
+
+
+
+
+
+
+//----------------Мобильная версия
+
+@media (max-width: 768px) {
+
+    .header__average {
+        padding: 0;
+        padding-top: 24px;
+    }
+    .header__average-content .desktop-view {
+        display: none;
+    }
+    .header__average-content .mobile-view {
+        display: initial;
+    }
+    .header__average-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        place-items: center;
+    }
+    .average__info {
+        background-color: var(--c-main);
+        width: 100%;
+        padding: 10px 40px;
+    }
+
+    // Логитип
+    .header__logo {
+        grid-column: 1 / -1;
+    }
+    .average__contacts-calls {
+        padding: 0;
+    }
+
+    //Иконки
+
+    .header__phone-icon,
+    .header__finder-icon,
+    .profile__icon {
+        width: 20px;
+        height: 20px;
+        fill: var(--bg-light);
+        position:static;
+    }
+
+
+    // поиск
+    .header
+    .header__finder {
+        padding: 0;
+        width: min-content;
+    }
+    .header__finder-field {
+        width: 0;
+    }
+    .header__finder-button {
+        right: unset;
+    }
+
+    .average__info {
+        .header__profile,
+        .average__contacts,
+        .header__cart {
+        padding: 10px;
+        }
+    }
+
+    // корзина
+    .header__cart-icon svg {
+        fill: var(--bg-light);
+        width: 25px;
+        min-width: unset;
+        min-height: unset;
+    }
+
+    .header__cart-counter {
+        font-size: 11px;
+        color: var(--text-light);
+        background-color: var(--bg-counter--mob);
+        top: -8px;
+    }
+    
 }

@@ -27,7 +27,8 @@
     transition: all .3s ease;
     
 }
-.index-main__side-item:hover {
+.index-main__side-item:hover,
+.index-main__side-item:active {
     background-color: var(--bg-medium);
     color: var(--c-accent);
     transition: all .3s ease;
