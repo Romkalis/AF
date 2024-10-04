@@ -1,5 +1,6 @@
 .index-main__catalog-forsunki {
     margin-bottom: clamp(32px, 4.5vw, 60px);
+
 }
 
 .catalog-forsunki__list {
@@ -43,6 +44,11 @@
     margin-left: 10px;
 }
 
+.catalog-forsunki__item-button,
+.catalog-forsunki__item-counter {
+    display: none;
+}
+
 @media (max-width: 1024px) {
     .catalog-forsunki__list {
         grid-template-columns: repeat(3, 1fr);
@@ -50,9 +56,41 @@
 }
 
 @media (max-width: 768px) {
+
     .index-main__catalog-forsunki {
         order: 1;
+
+        .desktop-view {
+            display: none;
+        }
     }
+    .catalog-forsunki__item-button,
+    .catalog-forsunki__item-counter {
+        display: inline-block;
+    }
+
+    .catalog-forsunki__link {
+        padding: 25px;
+    }
+
+    .catalog-forsunki__item {
+        border-radius: 10px;
+    }
+    .catalog-forsunki__item-title {
+        font-size: clamp(13px, 4vw, 18px);
+        font-weight: 500;
+        max-width: 50vw;
+    }
+
+    .catalog-forsunki__item-button {
+        background-color: var(--c-main);
+        color: var(--text-light);
+        padding: clamp(7px, 2.2vw, 14px) clamp(20px, 6.2vw, 30px);
+    }
+    .catalog-forsunki__item-button:hover  {
+        background-color: var(--c-hover);
+    }
+    
     
 
     // настройка под слайдер
@@ -69,8 +107,8 @@
     }
 
     .catalog-forsunki__img {
-        width: 33vw;
-        max-width: 300px;
+        width: 20vw;
+        max-width: 220px;
     }
 
 }

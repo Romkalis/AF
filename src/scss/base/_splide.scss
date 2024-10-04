@@ -23,15 +23,24 @@
         width: 29px;
         height: 29px;
         background-position: center;
-        border-radius: 2px;
-        border: 1px solid var(--text-footer);
         margin: 10px;
-    }
-    .splide__arrow--prev {
-        background-image: url('../../img/icons/slider__arrow--left.svg');
 
     }
-    .splide__arrow--next {
-        background-image: url('../../img/icons/slider__arrow--right.svg');
+    .splide__arrow--prev:hover {}
+    .splide__arrow--next:hover {}
+
+    .splide__arrow--bg {
+        fill: var(--bg-light);
     }
+    .splide__arrow--img {
+        fill: var(--text-medium);
+    }
+    .splide__arrow:hover .splide__arrow--img { 
+        fill: var(--c-main);
+    }
+    .splidde__arrow:disabled .splide__arrow--img,
+    .splidde__arrow:disabled .splide__arrow--bg {
+        fill: none;
+    }
+
 }

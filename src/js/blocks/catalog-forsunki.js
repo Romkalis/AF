@@ -14,7 +14,7 @@ const startForsunkiSlider = () => {
       if (!forsunkiSplide) { // Инициализируем слайдер, если он еще не был создан
 
           const splideOptions = {
-              type: "loop",
+              // type: "loop", // отключил зацикливание
               arrows: true,
               pagination: false,
               drag: true,

@@ -11,7 +11,7 @@ const startCultureSlider = () => {
     cultureSplideBlock.classList.add('splide')
       if (!cultureSplide) { // Инициализируем слайдер, если он еще не был создан
           const splideOptions = {
-              type: "loop",
+              // type: "loop", // зацикливание слайдера сейчас отключено
               arrows: true,
               pagination: true,
               drag: true,
@@ -39,6 +39,23 @@ const startCultureSlider = () => {
 
             bar.style.width = String( 100 * rate ) + '%';
           } );
+
+
+          // ищем по событиям первый и последний слайд
+          cultureSplide.on('move', () => {
+            const currentIndex = cultureSplide.index; 
+            const totalSlides = cultureSplide.Components.Controller.getEnd() + 1; 
+    
+            // Проверка первый слайд
+            if (currentIndex === 0) {
+              console.log('Первый слайд - добавить логику по навеске на кнопку  влево disabled');
+            }
+    
+            // Проверка последний слайд
+            if (currentIndex === totalSlides - 1) {
+              console.log('Последний слайд - добавить логику по навеске на кнопку  вправо disabled');
+            }
+          });
 
           cultureSplide.mount();
       }
