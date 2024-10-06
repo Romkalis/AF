@@ -1,4 +1,113 @@
 .product__description {
+
+}
+
+//About Section
+
+.product__about {
+}
+// .product__about-heading {
+// }
+.product__about-info {
+    margin-bottom: 20px;
+}
+
+// ----------------------------------pestecides using section
+
+.product__pestecide-using {
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+//  таблица по пестецидам, занимает всвю ширину контейнера
+.product__pestecide-table { 
+    grid-column: 1 / -1;
+    
+    display: grid;
+}
+
+// заголовок блока
+.product__pestecide-heading { 
+    grid-column: 1 / -1;
+}
+
+// в таблице по гербицидам 4 ячейки
+.herbecide-table__list { 
+    font-size: clamp(10px, 1vw, 13px);
+    grid-template-columns: repeat(4, 1fr);
+
+    margin-bottom: 20px;
+}
+
+.herbecide-table__item {
+    border: 1px solid var(--text-footer);
+    //делим ячейку внутри на 2 равные области
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    text-align: center;
+}
+
+// заголовок таблички
+.herbecide-table__item--heading,
+.fungicide-table__item--heading,
+.insectecide-table__item--heading {
+    font-weight: 600;
+    background-color: var(--bg-field);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 5px;
+
+    grid-column: 1 / -1;
+}
+
+.herbecide-table__heading {
+
+}
+.herbecide-table__ceil--name,
+.herbecide-table__ceil--quality {
+    display: block;
+    flex: 1;
+    display: grid;
+    place-items: center;
+}
+.herbecide-table__ceil--quality {
+    color: var(--text-light);
+    text-transform: uppercase;
+    font-size: clamp(10px, 1vw, 13px);
+    font-weight: 600;
+    padding: clamp(8px, 1.5vw, 24px);
+}
+.pestecide__ceil--good {
+    background-color: var(--table-good);
+}
+.pestecide__ceil--bad {
+    background-color: var(--table-bad);
+}
+.pestecide__ceil--best {
+    background-color: var(--table-best);
+}
+.pestecide__ceil--normal {
+    background-color: var(--table-normal);
+}
+
+
+.fungicide-table__list {
+    grid-column: 1 / 2;
+    grid-template-columns: repeat(2, 1fr);
+
+    font-size: clamp(10px, 1vw, 13px);
+    margin-bottom: 20px;
+}
+.fungicide-table__item--heading {
+}
+.insectecide-table__list {
+    grid-column: 2 / -1;
+    grid-template-columns: repeat(2, 1fr);
+
+    font-size: clamp(10px, 1vw, 13px);
+    margin-bottom: 20px;
+}
+.insectecide-table__item--heading {
 }
