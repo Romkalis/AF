@@ -1,0 +1,11 @@
+.button {
+    background-color: var(--c-main);
+    padding: clamp(10px, 1.5vw, 20px) clamp(17px, 2.5vw, 34px);
+    color: var(--text-light);
+
+    
+}
+.button--small {
+    border-radius: 4px;
+}
+

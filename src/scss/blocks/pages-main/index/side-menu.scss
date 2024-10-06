@@ -59,8 +59,9 @@
     }
 
     .index-main__side-menu {
-        width: 100vw;
-        max-width: unset;
+        width: 98vw;
+        box-sizing: border-box;
+        max-width: 100%;
         background-color: var(--c-main);
         box-shadow: unset;
         transition: all 0.3s ease;

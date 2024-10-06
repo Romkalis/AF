@@ -11,6 +11,7 @@
 @import './base/colors';
 @import './base/links';
 @import './base/splide';
+@import './base/buttons';
 
 // --------------------/* Blocks */--------------------
 
@@ -23,6 +24,8 @@
 @import './blocks/pages-main/*.scss';
     //------index
     @import './blocks/pages-main/index/*.scss';
+    //------страница товара
+    @import './blocks/pages-main/product/*.scss';
 
 
 
