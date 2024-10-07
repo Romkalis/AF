@@ -32,9 +32,13 @@
 }
 
 .catalog-forsunki__item-title {
-
     text-align: center;
+    transition: all .3s ease;
 }
+.catalog-forsunki__link:hover .catalog-forsunki__item-title {
+    transition: all .3s ease;
+    color: var(--c-accent);
+    }
 
 .catalog-forsunki__item--arrow {
     display: inline-block;

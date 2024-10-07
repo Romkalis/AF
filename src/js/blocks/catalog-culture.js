@@ -5,7 +5,7 @@ let cultureSplide = null; // Переменная для хранения экз
 const startCultureSlider = () => {
   let windowSize = window.innerWidth; 
   const cultureSplideBlock = document.querySelector('.catalog-culture')
-  let cultureList = cultureSplideBlock.querySelector('.catalog-culture__list');
+  let cultureList = cultureSplideBlock?.querySelector('.catalog-culture__list');
   
   if (cultureList && windowSize < 769) { // Если есть элемент списка и размер окна меньше 769
     cultureSplideBlock.classList.add('splide')
@@ -59,6 +59,9 @@ const startCultureSlider = () => {
 
           cultureSplide.mount();
       }
+      
+      window.addEventListener('resize', startCultureSlider); 
+
   } else {
     if (cultureSplide) { // Если слайдер был инициализирован, уничтожаем его
       cultureSplide.destroy();
@@ -70,4 +73,3 @@ const startCultureSlider = () => {
 };
 
 document.addEventListener('DOMContentLoaded', startCultureSlider);
-window.addEventListener('resize', startCultureSlider); 

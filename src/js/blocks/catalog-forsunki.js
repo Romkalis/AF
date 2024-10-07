@@ -6,7 +6,7 @@ const startForsunkiSlider = () => {
   let windowSize = window.innerWidth; 
   const forsunkiSplideBlock = document.querySelector('.catalog-forsunki');
 
-  const forsunkiList = forsunkiSplideBlock.querySelector('.catalog-forsunki__list');
+  const forsunkiList = forsunkiSplideBlock?.querySelector('.catalog-forsunki__list');
   
   if (forsunkiList && windowSize < 769) { // Если есть элемент списка и размер окна меньше 769
     forsunkiSplideBlock.classList.add('splide')
@@ -43,6 +43,9 @@ const startForsunkiSlider = () => {
           } );
 
           forsunkiSplide.mount();
+
+          window.addEventListener('resize', startForsunkiSlider); 
+
       }
   } else {
     if (forsunkiSplide) { // Если слайдер был инициализирован, уничтожаем
@@ -55,4 +58,3 @@ const startForsunkiSlider = () => {
 };
 
 document.addEventListener('DOMContentLoaded', startForsunkiSlider);
-window.addEventListener('resize', startForsunkiSlider); 

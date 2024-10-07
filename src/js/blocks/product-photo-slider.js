@@ -1,7 +1,6 @@
 import Splide from "@splidejs/splide";
 
 const startProductPhotoSlider = () => {
-  //   let windowSize = window.innerWidth;
 
   const splideMainPhotoOptions = {
     arrows: true,
@@ -39,4 +38,7 @@ const startProductPhotoSlider = () => {
   productCarouselSplide.mount();
 };
 
-document.addEventListener("DOMContentLoaded", startProductPhotoSlider);
+if(document.getElementById('product-photo-slider')) {
+    document.addEventListener("DOMContentLoaded", startProductPhotoSlider);
+}
+// window.addEventListener('resize', startProductPhotoSlider);
