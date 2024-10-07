@@ -9,7 +9,7 @@
 }
 
 // кнопка в каталог
-.product__heading-button {
+.button.product__heading-button {
     background-color: var(--c-main);
     padding: 25px 55px;
     color: var(--text-light);
@@ -22,6 +22,7 @@
 
 .product__heading-button--text {
     position: relative;
+    display: inline-block;
     text-transform: uppercase;
 }
 

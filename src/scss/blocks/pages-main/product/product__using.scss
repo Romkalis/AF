@@ -12,3 +12,10 @@
     margin-left: 2em;
     list-style-type: disc;
 }
+
+@media (max-width: 768px) {
+    .product__features-using {
+    border-bottom: 1px solid var(--text-footer);
+    padding-bottom: 20px;
+    }
+}

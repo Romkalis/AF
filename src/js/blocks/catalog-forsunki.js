@@ -5,7 +5,6 @@ let forsunkiSplide = null; // Переменная для хранения эк�
 const startForsunkiSlider = () => {
   let windowSize = window.innerWidth; 
   const forsunkiSplideBlock = document.querySelector('.catalog-forsunki');
-  console.log('forsunkiSplideBlock _______', forsunkiSplideBlock)
 
   const forsunkiList = forsunkiSplideBlock.querySelector('.catalog-forsunki__list');
   

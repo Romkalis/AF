@@ -2,3 +2,21 @@
     display: grid;
     grid-template-columns: 40% 60%;
 }
+
+@media (max-width: 768px) {
+    .product__info {
+        grid-template-columns: 1fr;
+    }
+    .product__slider {
+        order: 1;
+    }
+    .product-variations {
+        order: 2;
+    }
+    .product__description {
+        order: 3;
+    }
+    .product__features {
+        order: 4;
+    }
+}

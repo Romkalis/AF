@@ -12,6 +12,26 @@
     margin-bottom: 20px;
 }
 
+.product__about-info--showmore {
+    display: none;
+}
+@media (max-width: 520px) {
+    .product__about {
+    
+        .desktop-view {
+            display: none;            
+        }
+        .product__about-info--showmore {
+            display: inline;
+            color: var(--c-main);
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+
 // ----------------------------------pestecides using section
 
 .product__pestecide-using {
@@ -110,4 +130,10 @@
     margin-bottom: 20px;
 }
 .insectecide-table__item--heading {
+}
+
+@media (max-width: 520px) {
+    .herbecide-table__item {
+        border: none;
+    }
 }

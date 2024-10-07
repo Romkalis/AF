@@ -265,3 +265,128 @@
 .variations__question-text {
     border-bottom: 1px dotted var(--c-main);
 }
+
+@media (max-width: 768px) {
+    .variations__delivery {
+        display: none;
+    }
+}
+
+//Мобильная версия (до 768 для этог7о блока хорошо смотрится десктоп, он более информативный)
+@media (max-width: 520px) {
+
+    .variations__article,
+    .variations__question {
+        display: none;
+    }
+    .product__features {
+        margin-right: 0;
+    }
+
+    .product-variations {
+        grid-template-columns: 1fr;
+    }
+    .variations__colors,
+    .variations__character,
+    .variations__order {
+        grid-column: 1 / -1;
+        grid-row: unset;
+    }
+
+    .variations__colors,
+    .variations__order {
+        padding-bottom: 25px;
+        border-bottom: 1px solid var(--text-footer);
+    }
+
+
+    .character__table-column,
+    .character__table-column--bold {
+        font-weight: 400;
+        padding-right: 1em;
+    }
+
+
+
+
+    // блок цены
+
+    .variations__pricing {
+        background-color: unset;
+        box-shadow: unset;
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    .variations__prices {
+        background-color: var(--bg-light);
+        box-shadow: 0px 5px 5px 0px var(--bg-field);
+        padding: clamp(15px, 2.2vw, 30px);
+        margin-bottom: clamp(15px, 2.2vw, 30px);
+    }
+
+
+    .variations__opt-price {
+        display: inline-block;
+        font-size: clamp(20px, 6.3vw, 32px);
+        margin-right: clamp(20px, 6.3vw, 32px);
+        margin-bottom: clamp(20px, 6.3vw, 32px);;
+    }
+    .variations__opt-explanation {
+        display: inline-block;
+        font-weight: 500;
+    }
+    .variations__regular-price--new,
+    .variations__regular-price--nold {
+        font-size: clamp(16px, 5vw, 24px);
+    }
+
+    // секция добавления в корзину
+    
+    .variations__cart-counter-section {
+        flex-direction: column;
+    }
+    .variations__cart-counter {
+        font-size: clamp(16px, 5vw, 24px);
+
+    }
+    .variations__counter-button {
+        padding: 10px;
+    }
+    .variations__counter-text {
+        padding: 0 clamp(16px, 5vw, 24px);
+    }
+    .variations__cart-button {
+        width: 90%;
+        max-width: 360px;
+    }
+
+    // блок по пестецидам
+
+    .product__pestecide-using {
+        grid-template-columns: 1fr;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--text-footer);
+    }
+    .product__pestecide-table {
+        grid-template-columns: 1fr;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .fungicide-table__list,
+    .insectecide-table__list {
+        grid-column: 1 / -1;
+    }
+
+    .herbecide-table__item {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+    }
+    .herbecide-table__ceil--quality {
+        color: var(--text-light);
+        text-transform: uppercase;
+        font-size: clamp(9px, 1vw, 12px);
+        padding: clamp(6px, 1.5vw, 24px);
+    }
+
+}
