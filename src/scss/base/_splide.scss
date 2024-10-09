@@ -18,13 +18,14 @@
         justify-content: space-between;
         transform:translateY(-50%);
         z-index: 2;
+        pointer-events: none;
     }
     .splide__arrow {
         width: 29px;
         height: 29px;
         background-position: center;
         margin: 10px;
-
+        pointer-events: auto;
     }
     .splide__arrow--prev:hover {}
     .splide__arrow--next:hover {}

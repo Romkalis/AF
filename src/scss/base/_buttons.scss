@@ -2,10 +2,32 @@
     background-color: var(--c-main);
     padding: clamp(10px, 1.5vw, 20px) clamp(17px, 2.5vw, 34px);
     color: var(--text-light);
+    transition: background-color .3s ease;
 
-    
+    &:hover,
+    &:active {
+        background-color: var(--c-hover);
+    }
 }
 .button--small {
     border-radius: 4px;
+}
+
+.button--light {
+    border-radius: 4px;
+    padding: clamp(10px, 1.5vw, 20px) clamp(17px, 2.5vw, 34px);
+    box-sizing: border-box;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    border: 2px solid var(--bg-field);
+    font-weight: 600;
+    transition: all .3s ease;
+
+
+    &:hover,
+    &:active {
+        background-color: var(--c-light--medium);
+        border: 2px solid var(--c-accent);
+    }
 }
 

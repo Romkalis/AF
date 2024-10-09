@@ -11,7 +11,7 @@ gulp.task(
 	gulp.series(
 		'clean:dev', 'fontsDev',
 		gulp.parallel('html:dev', 'sass:dev', 'images:dev', 'svg:dev', 'files:dev', 'js:dev', 'favicon:dev', 'manifest:dev'),
-		gulp.parallel('server:dev', 'watch:dev')
+		gulp.series('server:dev', 'watch:dev')
 	)
 );
 

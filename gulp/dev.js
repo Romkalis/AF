@@ -195,7 +195,7 @@ gulp.task('js:dev', function () {
 
 const serverOptions = {
 	livereload: true,
-	open: true,
+	open: true
 };
 
 gulp.task('server:dev', function () {

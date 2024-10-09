@@ -15,6 +15,9 @@ const config = {
 			},
 		],
 	},
+	optimization: {
+		minimize: false, // Включает минификацию
+	}
 };
 
 module.exports = config;
