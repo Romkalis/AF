@@ -1,0 +1,5 @@
+.catalog__grid {
+    display: grid;
+    gap: clamp(15px, 2.2vw, 30px);
+    grid-template-columns: auto auto;
+}
