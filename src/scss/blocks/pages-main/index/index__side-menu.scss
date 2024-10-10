@@ -1,41 +1,4 @@
 // -------------------DESKTOP-------------------
-.index-main__side-menu {
-    max-width: 267px;
-    background-color: var(--bg-light);
-    box-shadow: 0px 5px 5px 0px var(--bg-field);
-    transition: all 0.3s ease;
-    height: max-content;
-}
-.side-menu__heading {
-    background-color: var(--c-main);
-    color: var(--text-light);
-    
-    padding: clamp(12px, 1.7vw, 24px);
-}
-.side-menu__heading--desktop {
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.index-main__side-list {
-    padding: 10px 0;
-    background-color: var(--bg-light);
-
-}
-.index-main__side-item {
-    padding: 14px clamp(26px, 2.1vw, 40px);
-    transition: all .3s ease;
-    
-}
-.index-main__side-item:hover,
-.index-main__side-item:active {
-    background-color: var(--bg-medium);
-    color: var(--c-accent);
-    transition: all .3s ease;
-}
-
-// .index-main__side-link {
-// }
 
 .index-main__side-img--mob {
     display: none;
@@ -51,15 +14,13 @@
 
 @media (max-width: 768px) {
 
-    .index-main__side-menu {
-     order: 2;
-    }
     .container {
         padding: 0;
     }
-
-    .index-main__side-menu {
-        width: 98vw;
+    
+    .side-menu.index-main__side-menu {
+        order: 2;
+        width: 100vw;
         box-sizing: border-box;
         max-width: 100%;
         background-color: var(--c-main);

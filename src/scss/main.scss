@@ -30,6 +30,13 @@
     @import './blocks/pages-main/delivery/*.scss';
     //------страница  оплаты
     @import './blocks/pages-main/payment/*.scss';
+    //------страница  каталога
+    @import './blocks/pages-main/catalog/*.scss';
+    
+
+
+//---- SIDE Menu
+@import './blocks/side-menu/*.scss';
 
 // виджеты, встраиваемые на разные странички
 @import './blocks/slider-viewed/*.scss';
