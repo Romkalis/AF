@@ -1,0 +1,127 @@
+.main__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(24px, 3.5vw, 48px);
+    margin-bottom: clamp(20px, 3vw, 42px);
+}
+
+.button.main__heading-button {
+    background-color: var(--c-main);
+    padding: 25px 55px;
+    color: var(--text-light);
+
+    &:hover,
+    &:active {
+        background-color: var(--c-hover);
+    }
+}
+
+.main__heading-button--text {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.main__heading-button--text::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -2em;
+    width: 1em;
+    height: 1em;
+    border-top: 1px solid var(--text-light);
+    border-bottom: 1px solid var(--text-light);
+    transform: translateY(-50%);
+}
+
+.main__heading-button--text::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -2em;
+    width: 1em;
+    height: .22em;
+    border-bottom: 1px solid var(--text-light);
+    transform: translateY(-50%);
+}
+
+// Хлебные крошки и заголовок карточки товара
+
+.main__heading-info {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(12px, 2vw, 18px);
+    margin-right: auto;
+}
+
+.main__breadscrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 34px;
+    align-items: center;
+}
+
+.main__breadscrumb {
+    position: relative;
+    max-width: 60vw;
+}
+
+// стрелка появляеьтся у всех крошек, кроме последней
+.main__breadscrumb:not(:last-child)::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 6px;
+    background-image: url('../../../../img/icons/icon_arrow--grey.svg');
+}
+
+.main__breadscrumb-link {
+    color: var(--text-medium);
+
+    &:hover,
+    &:active {
+        color: var(--c-main);
+    }
+}
+
+.main__title {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.main__heading-share {
+    color: var(--text-medium);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    & svg {
+        fill: var(--text-medium);
+    }
+
+    &:hover,
+    &:active {
+        color: var(--c-main);
+    }
+
+    &:hover svg {
+        fill: var(--c-main);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .main__heading-button,
+    .main__heading-share {
+        display: none;
+    }
+
+    .main__heading-info {
+        flex-direction: column-reverse;
+    }
+
+}
