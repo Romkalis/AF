@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Page</title>
+	<link rel="stylesheet" href="./css/main.css" />
+	<link rel="preload" href="fonts/Montserrat.woff" as="font">
+	<link rel="preload" href="fonts/Montserrat-Bold.woff" as="font">
+	<link rel="icon" type="image/x-icon" href="./img/favicons/favicon.svg">
+	<link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png">
+
+</head>
+
+<body>
+	<!-- header -->
+	@@include('blocks/header.html')
+        
+    <main class="main__payment container">
+        <section class="main__heading payment__heading">
+            <a href="#" class="main__heading-button button">
+                <span class="main__heading-button--text">КАТАЛОГ ФОРСУНОК</span>
+            </a>
+            <div class="main__heading-info">
+                <ul class="main__breadscrumbs">
+                    <li class="main__breadscrumb">
+                        <a href="/index.html" class="main__breadscrumb-link">Главная</a>
+                    </li>
+                    <li class="main__breadscrumb">
+                        <a href="/payment.html" class="main__breadscrumb-link">Оплата</a>
+                    </li>
+
+                </ul>
+                <h1 class="main__title">Оплата</h1>
+            </div>
+        </section>
+
+        <section class="payment__info">
+            <p class="payment__text">
+                Принимаем оплату через расчетный счет от организаций и ИП. Счет на оплату формируется нашими специалистами
+                после получения Вашего заказа с сайта AgroForsunka.ru.
+            </p>
+
+            <ul class="payment__list">
+                <li class="payment__item">оформляете заказ на сайте AgroForsunka.ru</li>
+                <li class="payment__item">регистрируетесь и вводите свои данные</li>
+                <li class="payment__item">отправляете заказ</li>
+                <li class="payment__item">мы присылаем вам счет на оплату</li>
+                <li class="payment__item">после оплаты отправляем вам товар службой доставки, выбранной при заказе.</li>
+            </ul>
+
+            <p class="payment__text">
+                Срок оплаты заказа – 3 рабочих дня с момента оформления заказа. По истечении этого срока Ваш заказ будет
+                аннулирован.
+            </p>
+
+
+        </section>
+    </main>
+
+    <!-- footer -->
+	@@include('blocks/footer.html')
+	
+
+	<!-- jsCode -->
+	<script src="./js/index.bundle.js" type="module"></script>
+
+</body>
+
+</html>

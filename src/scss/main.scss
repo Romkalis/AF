@@ -28,7 +28,8 @@
     @import './blocks/pages-main/product/*.scss';
     //------страница  доставки
     @import './blocks/pages-main/delivery/*.scss';
-
+    //------страница  оплаты
+    @import './blocks/pages-main/payment/*.scss';
 
 // виджеты, встраиваемые на разные странички
 @import './blocks/slider-viewed/*.scss';
