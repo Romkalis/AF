@@ -20,7 +20,7 @@ const startQuestionSlider = () => {
         mediaQuery: "min",
         perPage: 1,
         breakpoints: {
-          531: {
+          520: {
             destroy: true,
           },
         },

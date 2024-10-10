@@ -9,6 +9,8 @@
     import './blocks/product-questions-slider.js';
     
     import './blocks/slider-viewed.js';
+    import './blocks/slider-additional.js';
+
 
     //развернуть описание товара product.html
     import './blocks/product-about-show-more.js'
