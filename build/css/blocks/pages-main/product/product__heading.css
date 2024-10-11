@@ -1,0 +1,14 @@
+@media (max-width: 768px) {
+  .product__specification {
+    background-color: var(--bg-light);
+    padding: 20px 20px;
+  }
+  .product__heading-button,
+  .product__heading-share {
+    display: none;
+  }
+  .product__heading-info {
+    flex-direction: column-reverse;
+  }
+}
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJsb2Nrcy9wYWdlcy1tYWluL3Byb2R1Y3QvcHJvZHVjdF9faGVhZGluZy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUdBO0VBQ0k7SUFDSTtJQUNBOztFQUdKO0FBQUE7SUFFSTs7RUFHSjtJQUNJIiwiZmlsZSI6ImJsb2Nrcy9wYWdlcy1tYWluL3Byb2R1Y3QvcHJvZHVjdF9faGVhZGluZy5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucHJvZHVjdF9fc3BlY2lmaWNhdGlvbiB7fVxuXG5cbkBtZWRpYSAobWF4LXdpZHRoOiA3NjhweCkge1xuICAgIC5wcm9kdWN0X19zcGVjaWZpY2F0aW9uIHtcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tYmctbGlnaHQpO1xuICAgICAgICBwYWRkaW5nOiAyMHB4IDIwcHg7XG4gICAgfVxuXG4gICAgLnByb2R1Y3RfX2hlYWRpbmctYnV0dG9uLFxuICAgIC5wcm9kdWN0X19oZWFkaW5nLXNoYXJlIHtcbiAgICAgICAgZGlzcGxheTogbm9uZTtcbiAgICB9XG5cbiAgICAucHJvZHVjdF9faGVhZGluZy1pbmZvIHtcbiAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbi1yZXZlcnNlO1xuICAgIH1cblxufSJdfQ== */

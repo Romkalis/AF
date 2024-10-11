@@ -1,0 +1,7 @@
+.product__features {
+  margin-right: clamp(18px, 2.6vw, 36px);
+  display: flex;
+  flex-direction: column;
+  row-gap: clamp(20px, 3.4vw, 48px);
+}
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJsb2Nrcy9wYWdlcy1tYWluL3Byb2R1Y3QvcHJvZHVjdF9fZmVhdHVyZXMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJO0VBQ0E7RUFDQTtFQUNBIiwiZmlsZSI6ImJsb2Nrcy9wYWdlcy1tYWluL3Byb2R1Y3QvcHJvZHVjdF9fZmVhdHVyZXMuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnByb2R1Y3RfX2ZlYXR1cmVzIHtcbiAgICBtYXJnaW4tcmlnaHQ6IGNsYW1wKDE4cHgsIDIuNnZ3LCAzNnB4KTsgIFxuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgICByb3ctZ2FwOiBjbGFtcCgyMHB4LCAzLjR2dywgNDhweCk7XG59Il19 */

@@ -1,0 +1,20 @@
+.product__features-using {
+  margin-bottom: clamp(13px, 2vw, 26px);
+}
+
+.product__using-description {
+  margin-bottom: 0.5em;
+}
+
+.product__using-item {
+  margin-left: 2em;
+  list-style-type: disc;
+}
+
+@media (max-width: 768px) {
+  .product__features-using {
+    border-bottom: 1px solid var(--text-footer);
+    padding-bottom: 20px;
+  }
+}
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJsb2Nrcy9wYWdlcy1tYWluL3Byb2R1Y3QvcHJvZHVjdF9fdXNpbmcuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJOzs7QUFJSjtFQUNJOzs7QUFJSjtFQUNJO0VBQ0E7OztBQUdKO0VBQ0k7SUFDQTtJQUNBIiwiZmlsZSI6ImJsb2Nrcy9wYWdlcy1tYWluL3Byb2R1Y3QvcHJvZHVjdF9fdXNpbmcuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnByb2R1Y3RfX2ZlYXR1cmVzLXVzaW5nIHtcbiAgICBtYXJnaW4tYm90dG9tOiBjbGFtcCgxM3B4LCAydncsIDI2cHgpO1xufVxuLy8gLnByb2R1Y3RfX3VzaW5nIHtcbi8vIH1cbi5wcm9kdWN0X191c2luZy1kZXNjcmlwdGlvbiB7XG4gICAgbWFyZ2luLWJvdHRvbTogLjVlbTtcbn1cbi8vIC5wcm9kdWN0X191c2luZy1saXN0IHtcbi8vIH1cbi5wcm9kdWN0X191c2luZy1pdGVtIHtcbiAgICBtYXJnaW4tbGVmdDogMmVtO1xuICAgIGxpc3Qtc3R5bGUtdHlwZTogZGlzYztcbn1cblxuQG1lZGlhIChtYXgtd2lkdGg6IDc2OHB4KSB7XG4gICAgLnByb2R1Y3RfX2ZlYXR1cmVzLXVzaW5nIHtcbiAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQgdmFyKC0tdGV4dC1mb290ZXIpO1xuICAgIHBhZGRpbmctYm90dG9tOiAyMHB4O1xuICAgIH1cbn0iXX0= */
