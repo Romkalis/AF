@@ -3,3 +3,8 @@
     gap: clamp(15px, 2.2vw, 30px);
     grid-template-columns: auto auto;
 }
+
+.catalog__bottom {
+    padding: clamp(20px, 4vw, 60px) 0;
+    background-color: var(--bg-light);
+}

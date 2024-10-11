@@ -9,10 +9,11 @@
     border-bottom: 1px solid var(--bg-field);
 }
 
-.catalog__side-button {
+.catalog__side-button.button--small {
     display: block;
     text-align: center;
     margin: 30px 13px 0 13px;
+    color: var(--text-light);
 }
 
 .catalog__side-additional-list {
