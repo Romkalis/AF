@@ -1,18 +1,27 @@
-.catalog__grid {
+.navigation__grid {
     display: grid;
     gap: clamp(15px, 2.2vw, 30px);
     grid-template-columns: auto auto;
 }
 
-.catalog__bottom {
+.navigation__bottom {
     padding: clamp(20px, 4vw, 60px) 0;
     background-color: var(--bg-light);
 }
 
+.navigation__main {
+    margin-bottom: clamp(20px, 4vw, 60px);
+}
+
 @media (max-width: 768px) {
-    .catalog__grid {
+    .navigation__grid {
         padding: 0 clamp(20px, 2.5vw, 30px);
         gap: 0;
         row-gap: clamp(15px, 2.2vw, 30px);
+    }
+    .navigation__bottom {
+        padding: clamp(20px, 4vw, 60px);
+        background-color: var(--bg-light);
+        margin-bottom: 20px;
     }
 }

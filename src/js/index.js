@@ -16,7 +16,7 @@
     import './blocks/product-about-show-more.js'
 
     //развернуть форму в карточке товара на наввигационной страничке
-    import './blocks'
+    import './blocks/navigation-showCardForm.js'
 
 
 

@@ -48,7 +48,7 @@
 .footer__email {
     padding: 6px;
 }
-.footer__catalog {
+.footer__navigation {
 }
 .footer__list {
     display: flex;
@@ -79,7 +79,7 @@
     text-decoration: underline;
 }
 
-.footer__catalog--mobile {
+.footer__navigation--mobile {
     display: none;
 }
 
@@ -89,7 +89,7 @@
 
 @media(max-width: 768px) {
     .footer__logo,
-    .footer__catalog--desktop,
+    .footer__navigation--desktop,
     .footer__copyright,
     .footer__oferta {
         display: none;
@@ -101,7 +101,7 @@
         grid-column: 1 / -1;
         flex-direction: column-reverse;
     }
-    .footer__catalog--mobile {
+    .footer__navigation--mobile {
         display: inline-block;
     }
 
@@ -110,7 +110,7 @@
     }
 
     .footer__item,
-    .footer__catalog {
+    .footer__navigation {
         border-bottom: 2px solid var(--text-meduim);
         padding: 14px clamp(30px, 9vw, 48px);
         font-weight: 600;

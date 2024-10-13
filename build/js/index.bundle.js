@@ -1,6 +1,38 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ 7:
+/***/ (function() {
+
+const navigationCards = document.querySelector('.navigation__cards')
+const cards = document.querySelectorAll(".navigation__card");
+
+navigationCards?.addEventListener('click', (evt) => {
+    if (evt.target.classList.contains('navigation__showmore')) {
+        console.log(evt.target)
+        const card = evt.target.closest('.navigation__card')
+        const form = card.querySelector('.navigation__card-form')
+        const closedButtonText = card.querySelector('.navigation__showmore--closed')
+        const openedButtonText = card.querySelector('.navigation__showmore--open')
+
+        form.classList.toggle("navigation__card-form--showed")
+
+
+
+        // показываем текст у кнопки, в зависимости от состояния меню
+        if (form.classList.contains('navigation__card-form--showed')) {
+            closedButtonText.style = "display: none;"
+            openedButtonText.style = "display: inline;"
+        } else {
+            closedButtonText.style = "display: inline;"
+            openedButtonText.style = "display: none;"
+        }
+    }
+})
+
+
+/***/ }),
+
 /***/ 842:
 /***/ (function() {
 
@@ -3973,38 +4005,46 @@ document.addEventListener('DOMContentLoaded', startQuestionSlider)
 
 const startViewedSlider = () => {
 
-  const splideViewedOptions = {
-    arrows: true,
-    pagination: false,
-    drag: true,
-    paginationKeyboard: true,
-    paginationDirection: true,
-    mediaQuery: "min",
-    lazyLoad: true,
-    omitEnd: true,
-    gap: "10px",
-    breakpoints: {
-        1200: {
-          perPage: 4, // Для экранов <= 1200px показываем 3 слайда
-          gap: '20px', // Устанавливаем отступы между слайдами
-        },
-        768: {
-          perPage: 3, // Для экранов <= 768px показываем 2 слайда
-          gap: '15px',
-        },
-        480: {
-          perPage: 1, // Для экранов <= 480px показываем 1 слайд
-          gap: '10px',
-        },
-      },
-  };
+  const viewedSplider = document.getElementById("slider-viewed")
 
-  let productPhotoSplide = new Splide(
-    "#slider-viewed",
-    splideViewedOptions
-  );
+    if (viewedSplider) {
 
-  productPhotoSplide.mount();
+      const splideViewedOptions = {
+        arrows: true,
+        pagination: false,
+        drag: true,
+        paginationKeyboard: true,
+        paginationDirection: true,
+        mediaQuery: "min",
+        lazyLoad: true,
+        omitEnd: true,
+        gap: "10px",
+        breakpoints: {
+            1200: {
+              perPage: 4, // Для экранов <= 1200px показываем 3 слайда
+              gap: '20px', // Устанавливаем отступы между слайдами
+            },
+            768: {
+              perPage: 3, // Для экранов <= 768px показываем 2 слайда
+              gap: '15px',
+            },
+            480: {
+              perPage: 1, // Для экранов <= 480px показываем 1 слайд
+              gap: '10px',
+            },
+          },
+      };
+    
+      let productPhotoSplide = new Splide(
+        viewedSplider,
+        splideViewedOptions
+      );
+    
+      productPhotoSplide.mount();
+
+    }
+  
+
 }
 
 document.addEventListener('DOMContentLoaded', startViewedSlider);
@@ -4013,45 +4053,50 @@ document.addEventListener('DOMContentLoaded', startViewedSlider);
 
 
 const startAdditionalSlider = () => {
+  let additionalSplideBlock = document.getElementById("#slider-additional");
 
-  const splideAdditionalOptions = {
-    arrows: true,
-    pagination: false,
-    drag: true,
-    paginationKeyboard: true,
-    paginationDirection: true,
-    mediaQuery: "min",
-    lazyLoad: true,
-    omitEnd: true,
-    gap: "10px",
-    breakpoints: {
+  if (additionalSplideBlock) {
+    const splideAdditionalOptions = {
+      arrows: true,
+      pagination: false,
+      drag: true,
+      paginationKeyboard: true,
+      paginationDirection: true,
+      mediaQuery: "min",
+      lazyLoad: true,
+      omitEnd: true,
+      gap: "10px",
+      breakpoints: {
         1200: {
           perPage: 5, // Для экранов <= 1200px показываем 3 слайда
-          gap: '20px', // Устанавливаем отступы между слайдами
+          gap: "20px", // Устанавливаем отступы между слайдами
         },
         768: {
           perPage: 4, // Для экранов <= 768px показываем 2 слайда
-          gap: '15px',
+          gap: "15px",
         },
         520: {
           perPage: 2, // Для экранов <= 480px показываем 1 слайд
-          gap: '10px',
+          gap: "10px",
         },
       },
-  };
+    };
 
-  let additionalSplide = new Splide(
-    "#slider-additional",
-    splideAdditionalOptions
-  );
+    let additionalSplider = new Splide(
+      additionalSplideBlock,
+      splideAdditionalOptions
+    );
 
-  additionalSplide.mount();
-}
+    additionalSplider.mount();
+  }
+};
 
-document.addEventListener('DOMContentLoaded', startAdditionalSlider);
+document.addEventListener("DOMContentLoaded", startAdditionalSlider);
 
 // EXTERNAL MODULE: ./src/js/blocks/product-about-show-more.js
 var product_about_show_more = __webpack_require__(842);
+// EXTERNAL MODULE: ./src/js/blocks/navigation-showCardForm.js
+var navigation_showCardForm = __webpack_require__(7);
 ;// CONCATENATED MODULE: ./src/js/index.js
 // Libraries
 
@@ -4068,6 +4113,9 @@ var product_about_show_more = __webpack_require__(842);
 
 
     //развернуть описание товара product.html
+    
+
+    //развернуть форму в карточке товара на наввигационной страничке
     
 
 

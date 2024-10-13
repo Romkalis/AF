@@ -1,6 +1,6 @@
-.catalog__info {}
+.navigation__info {}
 
-.catalog__navlist {
+.navigation__navlist {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -8,14 +8,14 @@
     margin-bottom: clamp(20px, 2.5vw, 40px);
 }
 
-.catalog__navitem {
+.navigation__navitem {
     border: 1px solid var(--bg-field);
     background: var(--bg-light);
     border-radius: 4px;
     transition: all .3s ease;
 }
 
-.catalog__navlink {
+.navigation__navlink {
     display: block;
     padding: 8px 18px;
     text-decoration: underline !important;
@@ -24,8 +24,8 @@
 
 }
 
-.catalog__navitem:hover,
-.catalog__navitem:active {
+.navigation__navitem:hover,
+.navigation__navitem:active {
     background-color: var(--c-main);
     color: var(--text-light);
 }
@@ -34,13 +34,13 @@
 
 
 
-.catalog__cards {
+.navigation__cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 13px;
 }
 
-.catalog__card {
+.navigation__card {
     border-radius: 4px;
     background-color: var(--bg-light);
     border: 1px solid var(--bg-field);
@@ -49,22 +49,22 @@
     position: relative;
 }
 
-.catalog__card-info {
+.navigation__card-info {
     position: relative;
     display: grid;
     height: 100%;
 }
 
-.catalog__card-manufacturer {
+.navigation__card-manufacturer {
     font-size: 12px;
     color: var(--text-footer);
     height: max-content;
 }
-.catalog__card-link {
+.navigation__card-link {
     display: grid;
 
 }
-.catalog__card-picture {
+.navigation__card-picture {
     align-self: start;
     justify-self: center;
     display: grid;
@@ -72,48 +72,53 @@
     margin-bottom: clamp(20px, 2vw, 30px);
 }
 
-.catalog__card-image {
+.navigation__card-image {
     min-height: 190px;
+    width: 190px;
     height: 190px;
+    aspect-ratio: 1/1;
     object-fit: contain;
 }
 
-.catalog__card-title {
+.navigation__card-title {
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 20px;
-    height: 4em;
+    height: 4.5em;
     // высота заголовка в карточке, если заголовки будут обрезаться под длинне - уменьшить.
 }
 
-.catalog__card-description {
+.navigation__card-description {
     margin-bottom: 20px;
 }
 
-.catalog__card-price {
+.navigation__card-price {
     align-self: end;
     font-size: 16px;
     font-weight: 600;
+    margin-bottom: 10px;
 }
 
 // отвечает за показ и скрытие доп меню с  добавлением в корзину
 // в мобильном варианте скрыта, вместо нее - ссылка на товар
-.catalog__showmore {
+.navigation__showmore {
     margin: 20px 0;
     max-width: 300px;
     justify-self: center;
     width: 100%;
+    padding: clamp(9px, 1.5vw, 12px) clamp(17px, 2.5vw, 34px);
+    margin-top: auto;
 }
 
-.catalog__showmore--closed {
+.navigation__showmore--closed {
 }
-.catalog__showmore--open {
+.navigation__showmore--open {
     display: none;
 }
 
 // Форма с добавлением товара в корзину
 
-.catalog__card-form {
+.navigation__card-form {
     position: absolute;
     bottom: 20px;
     left: -2px;
@@ -131,22 +136,26 @@
     display: none;
 }
 
-.catalog__card-form:first-child {
+.navigation__card-form--showed {
     display: block;
 }
 
-.catalog__form-section {
+.navigation__card-form:first-child {
+    display: block;
+}
+
+.navigation__form-section {
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid var(--bg-field);
 
 }
 
-.catalog__form-section__title {
+.navigation__form-section__title {
     padding: 10px 0;
 }
 
-.catalog__form-label {
+.navigation__form-label {
     padding: 10px;
     padding-left: 2em;
     color: var(--text-medium);
@@ -154,7 +163,7 @@
 }
 
 
-.catalog__form-checker {
+.navigation__form-checker {
     position: absolute;
     width: 8px;
     height: 6px;
@@ -163,23 +172,23 @@
     transform: translateY(-60%);
 }
 
-.catalog__form-checking {
+.navigation__form-checking {
     display: none;
 }
 
-.catalog__form-checking:checked~.catalog__form-text {
+.navigation__form-checking:checked~.navigation__form-text {
     color: red;
     font-weight: 600;
 }
 
-.catalog__form-checking:checked~.catalog__form-checker{
+.navigation__form-checking:checked~.navigation__form-checker{
     background-image: url(../../../../img/icons/icon_arrow--red.svg);
 }
 
 
-.catalog__form-text {}
+.navigation__form-text {}
 
-.catalog__card-form {
+.navigation__card-form {
 
     .variations__cart-counter-section {
         margin: 20px 0;
@@ -197,21 +206,21 @@
         padding: 10px;
     }
 }
-.catalog__linkto {
+.navigation__linkto {
     display: none;
 }
 @media (max-width: 768px) {
-    .catalog__cards {
+    .navigation__cards {
         grid-template-columns: repeat(2, 1fr);
     }
-    .catalog__info {
+    .navigation__info {
         width: 100%;
     }
     
 
 }
 @media (max-width: 520px) {
-    .button.catalog__linkto {
+    .button.navigation__linkto {
         display: inline-block;
         text-align: center;
         color: var(--text-light);
@@ -220,20 +229,40 @@
         justify-self: center;
         margin-top: 20px;
     }
-    .catalog__card-manufacturer,
-    .catalog__showmore {
+    .navigation__card-manufacturer,
+    .navigation__showmore {
         display: none;
     }
 
-    .catalog__cards {
+    .navigation__cards {
         grid-template-columns: 1fr;
         gap: 0;
     }
 
-    .catalog__card-info {
+    .navigation__card-info {
         padding: 30px;
     }
-    // .catalog__card-picture {
-    //     order: 1;
-    // }
+
+    .navigation__card-link {
+        order: 1;
+    }
+    .navigation__card-price {
+        order: 2;
+        margin-bottom: 10px;
+    }
+    .navigation__card-description {
+        order: 3;
+    }
+    .navigation__linkto {
+        order: 4;
+    }
+
+    .navigation__card-title {
+        height: min-content;
+        margin-bottom: 5px;
+    }
+
+    .navigation__card-description {
+        margin-bottom: 0;
+    }
 }
