@@ -19,6 +19,7 @@ const startQuestionSlider = () => {
         paginationDirection: true,
         mediaQuery: "min",
         perPage: 1,
+        gap: '5px',
         breakpoints: {
           520: {
             destroy: true,
@@ -34,3 +35,5 @@ const startQuestionSlider = () => {
 };
 
 document.addEventListener('DOMContentLoaded', startQuestionSlider)
+
+

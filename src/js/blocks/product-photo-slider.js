@@ -12,6 +12,7 @@ const startProductPhotoSlider = () => {
     lazyLoad: true,
     omitEnd: true,
     perPage: 1,
+    gap: '5px',
   };
   const splideCarouselPhotoOptions = {
     fixedWidth: '8vw', // Ширина каждой миниатюры

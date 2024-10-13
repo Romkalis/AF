@@ -8,3 +8,11 @@
     padding: clamp(20px, 4vw, 60px) 0;
     background-color: var(--bg-light);
 }
+
+@media (max-width: 768px) {
+    .catalog__grid {
+        padding: 0 clamp(20px, 2.5vw, 30px);
+        gap: 0;
+        row-gap: clamp(15px, 2.2vw, 30px);
+    }
+}

@@ -179,6 +179,11 @@
 
         display: grid;
     }
+
+    .questions__form-list {
+        width: calc(100vw - 40px);
+    }
+
     .questions__help {
         order: 2;
         display: grid;

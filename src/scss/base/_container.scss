@@ -4,6 +4,10 @@
     max-width: 1414px;
     padding: 0 40px;
     margin: 0 auto;
+
+    @media (max-width: 520px) { 
+        overflow: hidden;
+    }
     @media (max-width: 468px) {
         padding: 0 10px;
     }

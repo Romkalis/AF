@@ -8,8 +8,7 @@
 }
 .variations__section-title {
 }
-.splide__track {
-}
+
 .splide__arrows {
 }
 .splide__arrow--prev {
@@ -65,5 +64,10 @@
     .slider__additional {
         display: none;
     }
+    .splide__track {
+        overflow: visible!important;
+    }
+    
 }
+
 

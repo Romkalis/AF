@@ -29,7 +29,10 @@
 .catalog__side-additional-item:hover {
     color: var(--c-accent);
     background-color: var(--bg-light);
-
 }
 
-
+@media (max-width: 768px) {
+    .catalog__aside {
+        display: none;
+    }
+}
