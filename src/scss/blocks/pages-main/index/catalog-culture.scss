@@ -72,6 +72,16 @@
         width: clamp(150px, 18vw, 248px);
     }
 
-
-
+    .catalog-culture__item {
+        padding: clamp(12px, 2vw, 30px) 0;
+    }
+}
+@media (max-width: 520px) {
+    .catalog-culture__list {
+        width: 92vw;
+        gap: 5px;
+    }
+    .catalog-culture__img {
+        width: clamp(140px, 40vw, 248px);
+    }
 }
