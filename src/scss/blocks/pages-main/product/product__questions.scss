@@ -2,8 +2,7 @@
     background-color: var(--bg-light);
     padding-bottom: clamp(20px, 4.3vw, 60px);
 }
-.main-product__questions {
-}
+
 .questions {
     padding-top: 60px;
     display: grid;
@@ -45,7 +44,6 @@
     margin-bottom: 20px;
 }
 
-
 .questions__form-list {
     border-bottom: 1px solid var(--bg-field);
     padding-bottom: clamp(20px, 2.5vw, 40px);
@@ -59,40 +57,13 @@
     font-weight: 600;
     margin-right: clamp(20px, 2.5vw, 40px);
 }
-.question__date {
-}
-.question__text {
-}
-.question__answers {
-}
 
-.questions__answers-buttons {
-    display: flex;
-    width: 100%;
-    border-bottom: 1px solid var(--bg-field);;
-}
-.question__answer-show,
-.question__answer-reply {
-    
-    color: var(--text-medium);
-    cursor: pointer;
-    padding: 20px ;
-
-    &:hover {
-        color: var(--c-main);
-    }
-}
-.question__answer-reply {
-}
 .question__reply {
     display: inline-block;
     margin-top: 20px;
     margin-left: 1em;
 }
-.question__reply--close {
-}
-.question__reply--open {
-}
+
 .question__name--admin {
     font-weight: 600;
     color: var(--c-main);
@@ -103,6 +74,9 @@
 }
 
 //----------------------форма отправки сообщения------------------
+
+
+
 
 .answer-form {
     margin-left: 3em;
@@ -163,9 +137,41 @@
     display: none;
 }
 
-.answers__menu {
-    display: none;
+// логика открытия ответов
+
+.question__answers,
+.question__reply {
+    height: 0;
+    opacity: 0;
 }
+
+
+.show-modal-checkbox:checked ~ .question__answers {
+    height: max-content;
+    opacity: 1;
+
+    .question__reply--open {
+        height: auto;
+        opacity: 1;
+    }
+}
+
+.answers__menu {
+    color: var(--text-medium);
+    display: inline;
+}
+.answer__modal,
+.answer__modal-reply {
+    color: var(--text-medium);
+    display: inline-block;
+    padding: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+    &:hover {
+        color: var(--c-main);
+    }
+}
+
 
 
 @media( max-width: 768px) {
@@ -220,18 +226,12 @@
 
     
 
-    .question__reply,
-    .questions__answers-buttons {
+    .question__reply {
         height: 0;
         opacity: 0;
     }
-
-    #show-modal:checked ~ .question__answers {
-        
-        position: fixed;
-        bottom: 0;
-        border: 5px solid red;
-        height: max-content;
+    .answer__modal-reply {
+        display: none;
     }
 
     .questions__question {
@@ -275,3 +275,5 @@
         background-image: url('../../../../img/icons/icon_answer.svg');
     }
 }
+
+

@@ -3,6 +3,7 @@
     text-align: center;
     font-size: clamp(8px, .7vw, 10px);  
     width: 100%;
+    margin-bottom: clamp(20px, 2.5vw, 40px);
 }
 
 .product__table-title {
@@ -26,7 +27,9 @@
 }
 
 .product__table-button {
-    display: none;
+    display: flex;
+    max-width: 420px;
+    margin: auto;
 }
 
 
@@ -37,11 +40,7 @@
         }
     }
 
-    .product__table-button {
-        display: flex;
-        max-width: 360px;
-        margin: auto;
-    }
+
     // .product__table-row:not(:first-child) {
     //     .product__table-heading:not(:first-child):nth-child(even),
     //     .product__table-data:not(:first-child):nth-child(even) {

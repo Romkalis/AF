@@ -900,6 +900,8 @@
 								</button>
 							</div>
 
+							<!-- логика работы модалки в мобильном варианте в файле product-questions-mob-view -->
+
 							<ul class="questions__form-list splide-list">
 								<li class="questions__question splide__slide">
 									<p class="question__heading">
@@ -910,20 +912,19 @@
 										Добрый день! Какой расход получается из&#160;красной форсунки -04 при скорости 26 км/ч и&#160;давлении&#160;3 бара?
 									</p>
 
-									<div class="answers__menu mobile-view">
-										<button class="answer__modal">
-											<span class="answer__modal-text">Подробнее </span>
+									<label class="answers__menu" for="show-modal01">
+										<p class="answer__modal">
+											<span class="answer__modal-text">Посмотреть ответы </span>
 											<span class="answer__modal-counter">
-												1
+												(1)
 											</span>
-										</button>
-									</div>
+										</p>
+									</label>
+									<span class="answer__modal-reply">Ответить</span>
+									<!-- надо подгружать разные id для окон в input & label -->
+									<input type="checkbox" class="show-modal-checkbox visually-hidden" id="show-modal01" />
 
 									<div class="question__answers">
-										<div class="questions__answers-buttons">
-											<p class="question__answer-show">Посмотреть ответы (<span class="question__answer-counter">1</span>)</p>
-											<p class="question__answer-reply">Ответить</p>
-										</div>
 										<div class="question__reply question__reply--close"></div>
 									</div>
 								</li>
@@ -937,37 +938,31 @@
 										Доставка в&#160;Хабаровск возможна?
 									</p>
 
-									<!-- подумаать на открытием модального окна -->
-
-									<label class="answers__menu mobile-view" for="show-modal">
+									<label class="answers__menu" for="show-modal02">
 										<p class="answer__modal">
-											<span class="answer__modal-text">Подробнее </span>
+											<span class="answer__modal-text">Посмотреть ответы </span>
 											<span class="answer__modal-counter">
-												1
+												(2)
 											</span>
 										</p>
 									</label>
-									<input type="checkbox" class="show-modal-checkbox visually-hidden" id="show-modal" />
+									<span class="answer__modal-reply question__answer-reply">Ответить</span>
+									<!-- надо подгружать разные id для окон в input & label -->
+									<input type="checkbox" class="show-modal-checkbox visually-hidden" id="show-modal02" />
 
 									<div class="question__answers">
-										<div class="questions__answers-buttons">
-											<p class="question__answer-show">
-												Посмотреть ответы (
-												<span class="question__answer-counter">2</span>
-												)
-											</p>
-											<p class="question__answer-reply">Ответить</p>
-										</div>
-
 										<div class="question__reply question__reply--open">
 											<p class="question__heading">
 												<span class="question__name question__name--admin">AgroForsunka.ru</span>
 												<span class="question__date">24.06.2024</span>
 											</p>
 											<p class="question__text"><span class="question__answered-name">+ Кирилл </span>Здравствуйте! Да, возможна. СДЭК, Деловые, КИТ.</p>
+
 											<p class="question__answer-reply">Ответить</p>
 
-											<form action="#" class="question__answer-form answer-form" method="POST">
+											<!-- для появления формы навешивается класс answer-form--showed  -->
+
+											<form action="#" class="question__answer-form answer-form--showed answer-form" method="POST">
 												<label class="answer-form__reply-label answer-form-label" for="reply">Ответить пользователю AgroForsunka.ru</label>
 
 												<textarea

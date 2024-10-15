@@ -14,6 +14,7 @@
 
     //развернуть описание товара product.html
     import './blocks/product-about-show-more.js'
+    import './blocks/product-questions-mob-view.js'
 
     //развернуть форму в карточке товара на наввигационной страничке
     import './blocks/navigation-showCardForm.js'
