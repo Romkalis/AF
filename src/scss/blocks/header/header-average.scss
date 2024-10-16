@@ -98,9 +98,12 @@
 .header__finder {
     background-color: var(--bg-field);
     width: clamp(240px, 27vw, 380px);
-    padding: clamp(8px, 1.2vw, 16px);
+    padding: clamp(8px, 1.2vw, 12px);
     border-radius: 4px;
     position: relative;
+}
+.header__finder-field {
+    width: 90%;
 }
 .header__finder-button {
     right: 6px;

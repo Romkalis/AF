@@ -1,0 +1,17 @@
+.tables {}
+
+.tables__grid {
+  display: grid;
+  gap: clamp(15px, 2.2vw, 30px);
+  grid-template-columns: max-content auto;
+}
+
+@media (max-width: 768px) {
+  .tables {
+    padding: clamp(10px, 2.6vw, 20px);
+  }
+
+  .tables__grid {
+    grid-template-columns: 1fr;
+  }
+}
