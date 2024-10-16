@@ -33,6 +33,27 @@ navigationCards?.addEventListener('click', (evt) => {
 
 /***/ }),
 
+/***/ 432:
+/***/ (function() {
+
+const popup = document.querySelector('.popup')
+const openPopupButton = document.querySelector('.main__heading-button')
+
+if (popup && openPopupButton) {
+
+    openPopupButton.addEventListener('click', () => {
+        popup.classList.add('popup--open')
+    })
+
+
+    const closeButton = document.querySelector('.popup__close-button')
+    closeButton.addEventListener('click', () => {
+        popup.classList.remove('popup--open')
+    })
+}
+
+/***/ }),
+
 /***/ 842:
 /***/ (function() {
 
@@ -4169,6 +4190,8 @@ var product_about_show_more = __webpack_require__(842);
 var product_questions_mob_view = __webpack_require__(351);
 // EXTERNAL MODULE: ./src/js/blocks/navigation-showCardForm.js
 var navigation_showCardForm = __webpack_require__(7);
+// EXTERNAL MODULE: ./src/js/blocks/popup.js
+var popup = __webpack_require__(432);
 ;// CONCATENATED MODULE: ./src/js/index.js
 // Libraries
 
@@ -4190,7 +4213,13 @@ var navigation_showCardForm = __webpack_require__(7);
 
     //развернуть форму в карточке товара на наввигационной страничке
     
+    
+    
+    //открытие и закрытие попап
+    
 
+
+    
 
 
 

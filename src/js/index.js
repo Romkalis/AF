@@ -18,7 +18,13 @@
 
     //развернуть форму в карточке товара на наввигационной страничке
     import './blocks/navigation-showCardForm.js'
+    
+    
+    //открытие и закрытие попап
+    import './blocks/popup.js'
 
+
+    
 
 
 
