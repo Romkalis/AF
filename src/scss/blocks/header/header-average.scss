@@ -27,6 +27,7 @@
 //-----------------------title-----------------------
 .average__title {
     color: var(--text-header);
+    margin-right: clamp(20px, 3vw, 54px);
 }
 //-----------------------contacts-----------------------
 .average__contacts {
@@ -136,20 +137,32 @@
 .header__cart {
      display: flex;
      gap: 16px;
-     align-items: center;
+    //  align-items: center;
 }
 .header__cart-icon {
     position: relative;
+    height: 100%;
+    display: grid;
+    place-items: center;
 }
 
-.header__cart-icon svg{
-    fill: var(--c-accent-bright);
+.cart-icon {
+    margin-top: 3px;
+    display: block;
     min-width: 31px;
     min-height: 27px;
 }
 
-.header__cart-icon svg:hover{
-    fill: var(--c-accent);
+.cart-icon--empty {
+    fill: var(--c-accent-bright);
+}
+.cart-icon--full {
+    fill: var(--bg-counter--mob);
+}
+
+.cart-icon--empty:hover,
+.cart-icon--full:hover {
+    fill: var(--c-main);
 }
 .header__cart-counter {
     position: absolute;
@@ -256,6 +269,10 @@
         width: 25px;
         min-width: unset;
         min-height: unset;
+
+        &:hover {
+            fill: var(--border-light);
+        }
     }
 
     .header__cart-counter {

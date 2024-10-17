@@ -16,7 +16,7 @@
 
 .button--light {
     border-radius: 4px;
-    padding: clamp(10px, 1.5vw, 20px) clamp(17px, 2.5vw, 34px);
+    padding: clamp(10px, 1.5vw, 1em) clamp(17px, 2.5vw, 34px);
     box-sizing: border-box;
     background-color: var(--bg-light);
     color: var(--text-dark);

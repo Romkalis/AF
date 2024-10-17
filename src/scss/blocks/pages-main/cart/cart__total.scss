@@ -1,0 +1,24 @@
+.cart__orders-total {
+    justify-self: end;
+
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    column-gap: clamp(20px, 5vw, 50vw);
+}
+.cart__total-summary {
+    font-size: 16px;
+    font-weight: 600;
+}
+.cart__total-clear {
+    padding: 13px 44px;
+    border-radius: 4px;
+}
+
+@media (max-width: 520px) {
+    .cart__orders-total {
+        place-self: center;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
