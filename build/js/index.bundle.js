@@ -1,6 +1,50 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ 44:
+/***/ (function() {
+
+const showBurgerButton = document.querySelector(".header__burger-button");
+
+if (showBurgerButton && window.innerWidth <= 768) {
+  const burgerMenu = document.querySelector(".header__burger-menu");
+  
+  const showBurgerMenu = () => {
+    burgerMenu.classList.add("header__burger-menu--show");
+    burgerMenu.addEventListener("click", showBurgerSubmenu);
+
+    window.addEventListener("click", closeBurgerMenu);
+  };
+  const showBurgerSubmenu = (evt) => {
+    if (evt.target.classList.contains("burger__submenu")) {
+      const submenu = evt.target;
+      const sublist = submenu.nextElementSibling;
+      const backButton = sublist.querySelector(".header__submenu-back");
+
+      sublist.classList.add("burger__products-sublist--show");
+
+      const closeSubmenu = () => {
+        sublist.classList.remove("burger__products-sublist--show");
+      };
+
+      backButton.addEventListener("click", closeSubmenu);
+    }
+  };
+  const closeBurgerMenu = (evt) => {
+    if (
+      !burgerMenu.contains(evt.target) &&
+      !showBurgerButton.contains(evt.target)
+    ) {
+      burgerMenu.classList.remove("header__burger-menu--show");
+    }
+  };
+
+  showBurgerButton.addEventListener("click", showBurgerMenu);
+}
+
+
+/***/ }),
+
 /***/ 7:
 /***/ (function() {
 
@@ -9,7 +53,7 @@ const cards = document.querySelectorAll(".navigation__card");
 
 navigationCards?.addEventListener('click', (evt) => {
     if (evt.target.classList.contains('navigation__showmore')) {
-        console.log(evt.target)
+
         const card = evt.target.closest('.navigation__card')
         const form = card.querySelector('.navigation__card-form')
         const closedButtonText = card.querySelector('.navigation__showmore--closed')
@@ -37,19 +81,24 @@ navigationCards?.addEventListener('click', (evt) => {
 /***/ (function() {
 
 const popup = document.querySelector('.popup')
-const openPopupButton = document.querySelector('.main__heading-button')
+// const openPopupButton = document.querySelector('.main__heading-button')
+const openPopupButtons = document.querySelectorAll('.main__heading-button')
 
-if (popup && openPopupButton) {
+if (popup && openPopupButtons.length >= 1) {
 
-    openPopupButton.addEventListener('click', () => {
-        popup.classList.add('popup--open')
+    openPopupButtons.forEach( openPopupButton => {
+        openPopupButton.addEventListener('click', () => {
+            popup.classList.toggle('popup--open')
+
+            const closeButton = document.querySelector('.popup__close-button')
+            closeButton.addEventListener('click', () => {
+                popup.classList.remove('popup--open')
+            })
+        })
     })
 
 
-    const closeButton = document.querySelector('.popup__close-button')
-    closeButton.addEventListener('click', () => {
-        popup.classList.remove('popup--open')
-    })
+
 }
 
 /***/ }),
@@ -151,6 +200,30 @@ const showQuestionsModal = () => {
 
 document.addEventListener("DOMContentLoaded", showQuestionsModal);
 
+
+/***/ }),
+
+/***/ 314:
+/***/ (function() {
+
+const stickyBlock = document.querySelector('.sticky');
+
+if (stickyBlock && window.innerWidth > 1024) {
+    window.addEventListener('scroll', () => {
+        
+        const headerHeight = document.querySelector('.header').offsetHeight;
+        console.log(headerHeight)
+        
+        const scrollHeight = window.scrollY
+        console.log(scrollHeight)
+
+        if (scrollHeight > headerHeight) {
+            stickyBlock.classList.add('sticky--visible')
+        } else {
+            stickyBlock.classList.remove('sticky--visible')
+        }
+    })
+}
 
 /***/ })
 
@@ -3897,7 +3970,6 @@ const startCultureSlider = () => {
           cultureSplide = new Splide("#splide-culture", splideOptions);
 
           const bar = cultureSplideBlock.querySelector( '.my-slider-progress-bar');
-          console.log(bar)
 
           // Updates the bar width whenever the carousel moves:
           cultureSplide.on( 'mounted move', function () {
@@ -3907,22 +3979,6 @@ const startCultureSlider = () => {
             bar.style.width = String( 100 * rate ) + '%';
           } );
 
-
-          // ищем по событиям первый и последний слайд
-          cultureSplide.on('move', () => {
-            const currentIndex = cultureSplide.index; 
-            const totalSlides = cultureSplide.Components.Controller.getEnd() + 1; 
-    
-            // Проверка первый слайд
-            if (currentIndex === 0) {
-              console.log('Первый слайд - добавить логику по навеске на кнопку  влево disabled');
-            }
-    
-            // Проверка последний слайд
-            if (currentIndex === totalSlides - 1) {
-              console.log('Последний слайд - добавить логику по навеске на кнопку  вправо disabled');
-            }
-          });
 
           cultureSplide.mount();
       }
@@ -3976,7 +4032,6 @@ const startForsunkiSlider = () => {
           forsunkiSplide = new Splide("#splide-forsunki", splideOptions);
 
           const bar = forsunkiSplideBlock.querySelector( '.my-slider-progress-bar');
-          console.log(bar)
 
           // настройки прогрессбара
           forsunkiSplide.on( 'mounted move', function () {
@@ -4192,6 +4247,10 @@ var product_questions_mob_view = __webpack_require__(351);
 var navigation_showCardForm = __webpack_require__(7);
 // EXTERNAL MODULE: ./src/js/blocks/popup.js
 var popup = __webpack_require__(432);
+// EXTERNAL MODULE: ./src/js/blocks/sticky-header.js
+var sticky_header = __webpack_require__(314);
+// EXTERNAL MODULE: ./src/js/blocks/mobile-burger.js
+var mobile_burger = __webpack_require__(44);
 ;// CONCATENATED MODULE: ./src/js/index.js
 // Libraries
 
@@ -4217,6 +4276,13 @@ var popup = __webpack_require__(432);
     
     //открытие и закрытие попап
     
+    
+    // липкий хедер
+    
+
+    // мобильное бургер-меню
+    
+
 
 
     

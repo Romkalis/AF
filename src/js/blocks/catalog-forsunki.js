@@ -32,7 +32,6 @@ const startForsunkiSlider = () => {
           forsunkiSplide = new Splide("#splide-forsunki", splideOptions);
 
           const bar = forsunkiSplideBlock.querySelector( '.my-slider-progress-bar');
-          console.log(bar)
 
           // настройки прогрессбара
           forsunkiSplide.on( 'mounted move', function () {

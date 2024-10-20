@@ -30,7 +30,6 @@ const startCultureSlider = () => {
           cultureSplide = new Splide("#splide-culture", splideOptions);
 
           const bar = cultureSplideBlock.querySelector( '.my-slider-progress-bar');
-          console.log(bar)
 
           // Updates the bar width whenever the carousel moves:
           cultureSplide.on( 'mounted move', function () {
@@ -40,22 +39,6 @@ const startCultureSlider = () => {
             bar.style.width = String( 100 * rate ) + '%';
           } );
 
-
-          // ищем по событиям первый и последний слайд
-          cultureSplide.on('move', () => {
-            const currentIndex = cultureSplide.index; 
-            const totalSlides = cultureSplide.Components.Controller.getEnd() + 1; 
-    
-            // Проверка первый слайд
-            if (currentIndex === 0) {
-              console.log('Первый слайд - добавить логику по навеске на кнопку  влево disabled');
-            }
-    
-            // Проверка последний слайд
-            if (currentIndex === totalSlides - 1) {
-              console.log('Последний слайд - добавить логику по навеске на кнопку  вправо disabled');
-            }
-          });
 
           cultureSplide.mount();
       }

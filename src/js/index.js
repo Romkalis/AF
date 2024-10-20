@@ -22,6 +22,13 @@
     
     //открытие и закрытие попап
     import './blocks/popup.js'
+    
+    // липкий хедер
+    import './blocks/sticky-header.js'
+
+    // мобильное бургер-меню
+    import './blocks/mobile-burger.js'
+
 
 
     

@@ -21,7 +21,8 @@
     text-align: center;
     height: 100%;
 }
-
+.header__profile:hover,
+.header__profile:active,
 .header__navitem:hover,
 .header__navitem:active {
     background-color: var(--c-hover);
@@ -106,10 +107,7 @@
     padding: 20px clamp(8px, 1vw, 15px);
 }
 
-.header__profile:hover,
-.header__profile:active {
-    background-color: var(--c-main-hover);
-}
+
 
 .profile__name {
     color: inherit;
@@ -137,66 +135,93 @@
 
 @media (max-width: 768px) {
     .header__top {
+        display: none;
         position: relative;
         border-radius: 0 0 20px 20px;
     }
 
-    //------------------ выпадающее меню
-    .header__top-checklabel {
-        display: block;
-        position: absolute;
-        top: 40px;
-        left: 20px;
-        width: 20px;
-        height: 15px;
+    // //------------------ выпадающее меню
+    // .header__top-checklabel {
+    //     display: block;
+    //     position: absolute;
+    //     top: 40px;
+    //     left: 20px;
+    //     width: 20px;
+    //     height: 15px;
         
-        & svg {
-            fill: var(--text-dark);
-        }
+    //     & svg {
+    //         fill: var(--text-dark);
+    //     }
+    // }
+    // .header__top-checkbox:checked + .header__top-checklabel svg{
+    //     fill: red;
+    // }
+
+    // .header__top-checkbox:checked ~ .header__content {
+    //     height: auto;
+    //     visibility: visible;
+    //     opacity: 1;
+    // }
+
+    // .header__content {
+    //     top: 0;
+    //     height: 0;
+    //     visibility: hidden;
+    //     opacity:0;
+    //     flex-direction: column;
+    //     color: var(--text-light);
+    //     z-index:2;
+    // }
+
+    // .header__nav {
+    //     padding-top: 2em;
+    //     width: 100%;
+    // }
+    // .header__navlist {
+    //     flex-direction: column;
+    // }
+
+    // .header__navitem {
+    //     width: 100%;
+    //     padding: clamp(12px, 2vw, 16px);
+    //     border-bottom: 1px solid var(--bg-light);
+    // }
+
+    // .header__navlink--additional {
+    //     justify-content: center;
+
+    //     .header__sublist {
+    //         left: 50%;
+    //         transform: translateX(-50%);
+    //         max-width: 80vw;
+    //     }
+    // }
+
+    .header__profile:hover,
+    .header__finder-button:hover, 
+    .header__finder-button:active {
+        background-color: unset;
     }
-    .header__top-checkbox:checked + .header__top-checklabel svg{
-        fill: red;
+    .header__finder:hover svg,
+    .header__profile:hover svg,
+    .average__contacts-calls:hover svg {
+        fill: var(--bg-field);
     }
 
-    .header__top-checkbox:checked ~ .header__content {
-        height: auto;
-        visibility: visible;
-        opacity: 1;
-    }
-
-    .header__content {
+    .header__finder-chekbox:checked ~ .header__finder-field {
+        position: absolute;
         top: 0;
-        height: 0;
-        visibility: hidden;
-        opacity:0;
-        flex-direction: column;
-        color: var(--text-light);
-        z-index:2;
-    }
+        left: 0;
+        width: 250px;
+        padding: 8px;
+        background-color: var(--bg-field);
+        border-radius: 4px;
+        z-index: 5;
 
-    .header__nav {
-        padding-top: 2em;
-        width: 100%;
+        // сделать чекер
     }
-    .header__navlist {
-        flex-direction: column;
-    }
-
-    .header__navitem {
-        width: 100%;
-        padding: clamp(12px, 2vw, 16px);
-        border-bottom: 1px solid var(--bg-light);
-    }
-
-    .header__navlink--additional {
-        justify-content: center;
-
-        .header__sublist {
-            left: 50%;
-            transform: translateX(-50%);
-            max-width: 80vw;
-        }
-    }
-
 
 }
+
+
+

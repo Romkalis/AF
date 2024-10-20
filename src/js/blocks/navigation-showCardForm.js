@@ -3,7 +3,7 @@ const cards = document.querySelectorAll(".navigation__card");
 
 navigationCards?.addEventListener('click', (evt) => {
     if (evt.target.classList.contains('navigation__showmore')) {
-        console.log(evt.target)
+
         const card = evt.target.closest('.navigation__card')
         const form = card.querySelector('.navigation__card-form')
         const closedButtonText = card.querySelector('.navigation__showmore--closed')

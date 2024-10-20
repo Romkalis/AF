@@ -1,5 +1,12 @@
 .popup.popup--open {
     display: block;
+    padding-top: 50px;
+}
+@media (max-width: 1023px) {
+    // sticky header пропадает на 1024px, отступ становится не нужен
+    .popup.popup--open {
+        padding-top: 0px;
+    }
 }
 .popup {
     display: none;
@@ -229,6 +236,9 @@
 
 
 @media (max-width: 768px) {
+    .popup--open {
+        padding-top: 0;
+    }
     .popup__close-button {
         top: 15px;
         left: 30px;

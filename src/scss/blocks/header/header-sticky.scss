@@ -1,0 +1,138 @@
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    opacity: 0;
+    transition: all .5s ease;
+    height: 0;
+
+    background-color: var(--bg-light);
+    box-shadow: 0px 1px 2px 0px var(--bg-field);
+    pointer-events: none;
+}
+
+.sticky--visible {
+    height: max-content;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.header__sticky {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.sticky__burger {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+
+    display: grid;
+    place-items: center;
+}
+.burger__button svg{
+    fill: var(--text-dark);
+}
+.burger__button:hover svg{
+    fill: var(--c-main);
+}
+
+.sticky__logo {
+    display: inline-block;
+    padding: 5px 0;
+    margin-left: 30px;
+    width: 100px;
+}
+.sticky__info {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+
+    width: 60%;
+    background-color: var(--c-main);
+    color: var(--text-light);
+    padding: 10px clamp(30px, 10vw, 70px);
+}
+.sticky__phone-link {
+    font-size: 16px;
+    font-weight: 600;
+    text-wrap: nowrap;
+    &:hover {
+        color: var(--bg-field);
+    }
+}
+.sticky__mail-link {
+    text-wrap: nowrap;
+    &:hover {
+        color: var(--bg-field);
+    }
+}
+.sticky__finder {
+}
+.sticky__label {
+    position: relative;
+}
+.sticky__finder-field {
+    padding: 8px;
+    background-color: var(--bg-light);
+    border-radius: 4px;
+    color: var(--text-dark);
+    width: clamp(260px,20vw, 320px);
+}
+.sticky__finder-button {
+    position: absolute;
+    right: 10px;
+    top: 47%;
+    transform: translateY(-50%);
+    background-color: var(--c-main);
+    width: 26px;
+    height: 26px;
+    border-radius: 4px;
+
+    &:hover {
+        background-color: var(--c-hover);
+    }
+}
+.sticky__finder-icon {
+    fill: var(--bg-light);
+}
+
+.sticky__user-button {
+    padding: 10px;
+    display: flex;
+    height: 100%;
+    place-items: center;
+    column-gap: 20px;
+
+    &:hover {
+        text-decoration: underline;
+        text-decoration-style: dotted;
+        text-underline-offset: 4px;
+    }
+}
+
+.sticky__user-icon {
+    fill: var(--text-medium);
+}
+
+@media (max-width: 1200px) {
+    .sticky__mail-link {
+        display: none;
+    }
+    .sticky__info {
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media (max-width: 1024px) {
+    .sticky--visible {
+        opacity: 0;
+        height: 0;
+    }
+}

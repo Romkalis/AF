@@ -14,7 +14,10 @@
 
 .footer__info {
     display: flex;
-    column-gap: clamp(24px, 4.6vw, 68px);
+    column-gap: 16px;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    justify-content: space-between;
 }
 .footer__logo {
     min-width: 150px;
@@ -24,6 +27,7 @@
 .footer__link:visited {
     color: var(--text-footer);
     transition: all .3s ease;
+    margin: auto;
     &:hover,
     &:active {
         color:  var(--text-light);
@@ -48,20 +52,13 @@
 .footer__email {
     padding: 6px;
 }
-.footer__navigation {
-}
+
 .footer__list {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
-.footer__item {
-} 
-.footer__item-link {
-}
-.footer__info {
 
-}
 .footer__copyright {
     align-self: end;
 }
@@ -79,27 +76,20 @@
     text-decoration: underline;
 }
 
-.footer__navigation--mobile {
-    display: none;
-}
 
 .footer__contacts-icon {
     display: none;
 }
 
 @media(max-width: 768px) {
-    .footer__logo,
-    .footer__navigation--desktop,
-    .footer__copyright,
-    .footer__oferta {
-        display: none;
-    }
+
     .footer {
         padding: 0;
     }
     .footer__info {
         grid-column: 1 / -1;
         flex-direction: column-reverse;
+        row-gap: 0;
     }
     .footer__navigation--mobile {
         display: inline-block;
@@ -111,11 +101,22 @@
 
     .footer__item,
     .footer__navigation {
-        border-bottom: 2px solid var(--text-meduim);
-        padding: 14px clamp(30px, 9vw, 48px);
         font-weight: 600;
         text-transform: uppercase;
         font-size: clamp(12px, 3.8vw, 16px);
+        width: 100%;
+        padding: 14px clamp(30px, 9vw, 48px);
+        font-size: clamp(12px, 3.8vw, 16px);
+        border-bottom: 2px solid var(--text-footer);
+    }
+    .footer__link--mobile {
+        width: 100%;
+        display: block;
+        padding: 14px clamp(30px, 9vw, 48px);
+        font-weight: 600;
+        font-size: clamp(12px, 3.8vw, 16px);
+        text-transform: uppercase;
+        border-bottom: 2px solid var(--text-footer);
     }
 
     .footer__contacts {
@@ -158,5 +159,13 @@
     }
 
 
+
+    .footer__logo,
+    .footer__navigation--desktop,
+    .footer__copyright,
+    .footer__oferta,
+    .desktop-view {
+        display: none;
+    }
 
 }

@@ -1,13 +1,16 @@
 .header__average {
     border-bottom: 1px solid var(--c-light--medium);
     padding: 20px 25px;
+    position: relative;
 }
+
 .header__average-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: clamp(16px, 2.4vw, 32px);
 }
+
 .average__info {
     display: flex;
     align-items: center;
@@ -59,7 +62,9 @@
     
     &:hover,
     &:active {
-    color: var(--text-meduim);
+    color: var(--text-header);
+    text-decoration: underline;
+    text-decoration-style: dotted;
     }
 }
 .average__contacts--whatsapp {
@@ -83,6 +88,11 @@
 .average__contacts-email {
     padding-left: 30px;
     position: relative;
+
+    &:hover {
+        text-decoration: underline;
+        text-decoration-style: dotted;
+    }
 }
 .header__mail-icon {
     position: absolute;
@@ -191,13 +201,31 @@
 }
 
 
-
+.header__burger-button {
+    display: none;
+}
 
 
 
 //----------------Мобильная версия
 
 @media (max-width: 768px) {
+    .header__burger-button {
+        display: block;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: 30px;
+        left: 20px;
+        & svg {
+            fill: var(--text-dark);
+            &:hover,
+            &:active {
+                fill: var(--c-main);
+            }
+        }
+    }
+
 
     .header__average {
         padding: 0;

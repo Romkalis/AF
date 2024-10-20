@@ -9,6 +9,17 @@
     grid-template-columns: repeat(5, 1fr);
 }
 
+.catalog-culture__link {
+    transition: all .3s ease;
+    
+}
+.catalog-culture__link:hover .catalog-culture__img {
+    transition: all .2s ease;
+    border-radius: 4px;
+    outline: 3px solid var(--c-main);
+
+}
+
 @media (max-width: 1200px) {
     .catalog-culture__list {
         grid-template-columns: repeat(4, 1fr);
