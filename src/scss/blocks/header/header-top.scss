@@ -16,7 +16,6 @@
 }
 
 .header__navitem {
-    padding: 20px clamp(8px, 1vw, 15px);
     transition: all .3s ease;
     text-align: center;
     height: 100%;
@@ -31,6 +30,8 @@
 
 .header__navlink {
     color: inherit;
+    display: inline-block;
+    padding: 20px clamp(8px, 1vw, 15px);
 }
 
 // подменю
@@ -104,12 +105,12 @@
     align-items: center;
     color: var(--text-light);
     cursor: pointer;
-    padding: 20px clamp(8px, 1vw, 15px);
 }
 
 
 
 .profile__name {
+    padding: 20px clamp(8px, 1vw, 15px);
     color: inherit;
 }
 
@@ -139,63 +140,6 @@
         position: relative;
         border-radius: 0 0 20px 20px;
     }
-
-    // //------------------ выпадающее меню
-    // .header__top-checklabel {
-    //     display: block;
-    //     position: absolute;
-    //     top: 40px;
-    //     left: 20px;
-    //     width: 20px;
-    //     height: 15px;
-        
-    //     & svg {
-    //         fill: var(--text-dark);
-    //     }
-    // }
-    // .header__top-checkbox:checked + .header__top-checklabel svg{
-    //     fill: red;
-    // }
-
-    // .header__top-checkbox:checked ~ .header__content {
-    //     height: auto;
-    //     visibility: visible;
-    //     opacity: 1;
-    // }
-
-    // .header__content {
-    //     top: 0;
-    //     height: 0;
-    //     visibility: hidden;
-    //     opacity:0;
-    //     flex-direction: column;
-    //     color: var(--text-light);
-    //     z-index:2;
-    // }
-
-    // .header__nav {
-    //     padding-top: 2em;
-    //     width: 100%;
-    // }
-    // .header__navlist {
-    //     flex-direction: column;
-    // }
-
-    // .header__navitem {
-    //     width: 100%;
-    //     padding: clamp(12px, 2vw, 16px);
-    //     border-bottom: 1px solid var(--bg-light);
-    // }
-
-    // .header__navlink--additional {
-    //     justify-content: center;
-
-    //     .header__sublist {
-    //         left: 50%;
-    //         transform: translateX(-50%);
-    //         max-width: 80vw;
-    //     }
-    // }
 
     .header__profile:hover,
     .header__finder-button:hover, 

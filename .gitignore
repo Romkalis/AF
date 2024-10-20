@@ -14,7 +14,7 @@ uploads/posts/
 uploads/images/
 uploads/thumbs/
 build/
-docs/
+# docs/
 
 # Compiled Java class files
 *.class
