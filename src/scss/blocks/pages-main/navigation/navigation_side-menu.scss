@@ -30,6 +30,10 @@
     color: var(--c-accent);
     background-color: var(--bg-light);
 }
+.navigation__side-arrow {
+    display: inline-block;
+    margin-right: 5px;
+}
 
 @media (max-width: 768px) {
     .navigation__aside {
