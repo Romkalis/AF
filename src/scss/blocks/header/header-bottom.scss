@@ -8,7 +8,6 @@
     flex-wrap: wrap;
 }
 .header__bottom-item {
-    padding: 20px 8px;
 
     &:hover,
     &:active {
@@ -17,6 +16,8 @@
 }
 
 .header__bottom-link {
+    display: inline-block;
+    padding: 20px 8px;
     color: var(--text-dark);
 }
 
