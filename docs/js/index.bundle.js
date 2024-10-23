@@ -3949,7 +3949,7 @@ const startCultureSlider = () => {
     cultureSplideBlock.classList.add('splide')
       if (!cultureSplide) { // Инициализируем слайдер, если он еще не был создан
           const splideOptions = {
-              // type: "loop", // зацикливание слайдера сейчас отключено
+              type: "loop", // зацикливание слайдера сейчас отключено
               arrows: true,
               pagination: true,
               drag: true,
@@ -4011,7 +4011,7 @@ const startForsunkiSlider = () => {
       if (!forsunkiSplide) { // Инициализируем слайдер, если он еще не был создан
 
           const splideOptions = {
-              // type: "loop", // отключил зацикливание
+              type: "loop", // отключил зацикливание
               arrows: true,
               pagination: false,
               drag: true,
