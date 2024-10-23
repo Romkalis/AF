@@ -1,13 +1,29 @@
 @font-face {
     font-family: 'Montserrat';
-	font-display: swap;
-	src: local("Montserrat"), url("../fonts/Montserrat.woff2") format("woff2"), url("../fonts/Montserrat.woff") format("woff"), url("../fonts/Montserrat.ttf") format("truetype");
+    font-display: swap;
+    src: local("Montserrat"), 
+         url("../fonts/Montserrat.woff2") format("woff2"), 
+         url("../fonts/Montserrat.woff") format("woff"), 
+         url("../fonts/Montserrat.ttf") format("truetype");
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'Montserrat';
-	font-display: swap;
-	src: local("Montserrat"), url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff"), url("../fonts/Montserrat-Bold.ttf") format("truetype");
+    font-display: swap;
+    src: local("Montserrat"), 
+         url("../fonts/Montserrat.woff2") format("woff2"), 
+         url("../fonts/Montserrat.woff") format("woff"), 
+         url("../fonts/Montserrat.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-display: swap;
+    src: local("Montserrat"), 
+         url("../fonts/Montserrat.woff2") format("woff2"), 
+         url("../fonts/Montserrat.woff") format("woff"), 
+         url("../fonts/Montserrat.ttf") format("truetype");
     font-weight: 600;
 }

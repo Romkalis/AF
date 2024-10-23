@@ -35,9 +35,15 @@
         display: none;
     }
     .side-menu__heading--mob {
-        display: inline-block;
-        text-transform: initial;
-        text-align: start;
+        display: block;
+        margin: 0.5rem auto;
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
+        width: 100%;
+        position: relative;
+        margin-bottom: 0.8em;
+        color: var(--text-light);
     }
     .index-main__side-list {
         padding:  0;

@@ -42,20 +42,16 @@
     gap: 8px;
 }
 
-.header__navlink--additional::after {
-    content: '';
-    width: 5px;
-    height: 5px;
-    border-right: 3px solid var(--bg-light);
-    border-top: 3px solid var(--bg-light);
-    transform: rotate(135deg);
+.header__navlink--additional svg {
+    margin-left: 5px;
+    fill: (--text-light);
     transition: all .1s ease;
 }
 
 .header__navlink--additional:hover,
 .header__navlink--additional:active {
-    &::after {
-        transform: rotate(315deg);
+    & svg {
+        transform: rotate(180deg);
     }
 }
 
@@ -71,6 +67,7 @@
     transition: all .3s ease;
     z-index: 2;
     color: var(--text-dark);
+    text-align: start;
 }
 
 .header__navlink--additional:hover .header__sublist,
@@ -112,12 +109,17 @@
 .profile__name {
     padding: 20px clamp(8px, 1vw, 15px);
     color: inherit;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    place-items: center;
 }
 
 .profile__icon {
     display: inline-block;
     width: 15px;
     height: 18px;
+    fill: var(--text-light);
+    margin-left: 13px;
 }
 
 .profile__icon svg {

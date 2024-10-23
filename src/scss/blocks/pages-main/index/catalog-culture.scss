@@ -3,10 +3,13 @@
 }
 
 // .catalog-culture {}
-
+.catalog-culture__title {
+    display: none;
+}
 .catalog-culture__list {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    font-weight: 500;
 }
 
 .catalog-culture__link {
@@ -53,7 +56,6 @@
     max-width: 90%;
     text-wrap: wrap;
     text-align: center;
-    font-weight: 600;
 }
 
 @media (max-width: 1024px) {
@@ -78,6 +80,15 @@
             margin-left: 5vw;
         }
 
+    }
+    .catalog-culture__title {
+        display: block;
+        margin: 1rem auto;
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
+        width: 100%;
+        position: relative;
     }
     .catalog-culture__img {
         width: clamp(150px, 18vw, 248px);

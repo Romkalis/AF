@@ -6,6 +6,7 @@
 .catalog-forsunki__list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    font-weight: 500;
 }
 
 .catalog-forsunki__item {
@@ -90,6 +91,7 @@
         background-color: var(--c-main);
         color: var(--text-light);
         padding: clamp(7px, 2.2vw, 14px) clamp(20px, 6.2vw, 30px);
+        border-radius: 4px;
     }
     .catalog-forsunki__item-button:hover  {
         background-color: var(--c-hover);
