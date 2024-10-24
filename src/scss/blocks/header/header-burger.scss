@@ -7,6 +7,7 @@
     transition: transform .3s ease, opacity .1s linear;
 }
 
+
 .burger__products-list {
     width: 100%;
     position: relative;
@@ -150,6 +151,8 @@
 
 
 @media (max-width: 768px) {
+
+
     .header__burger-menu--show {
         opacity: 1;
         transform: translateX(0%);
@@ -160,10 +163,32 @@
         display: flex;
         flex-direction: column;
         width: 75%;
-        background-color: var(--bg-light);
         box-shadow: 2px 2px 12px 0px var(--bg-field);
-        z-index: 100;
+        background-color: var(--bg-light);
+
+        z-index: 5;
     }
+
+    // .burger__products-list,
+    // .burger__contacts-list,
+    // .burger__user-list {
+    //     z-index: 6;
+
+    // }
+
+    // добавляется через js
+    .header__burger-overlay {
+        position: fixed;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, .2);
+        transition: all .3s ease;
+        backdrop-filter: blur(1px);
+    }
+
     
     .burger__products-sublist--show {
         display: block;
@@ -177,4 +202,5 @@
         box-shadow: 2px 2px 12px 0px var(--bg-field);
         z-index: 1;
     }
+
 }
