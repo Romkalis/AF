@@ -13,7 +13,7 @@
 
 .variations__color-title {
     color: var(--text-header);
-    font-size: 10px;
+    font-size: 13px;
     margin-bottom: 1em;
 }
 
@@ -33,11 +33,19 @@
     transition: all .3s ease;
 
     &:hover {
-        border-color: var(--c-main);
+        border-color: var(--variations-hover);
+    }
+    &:active {
+        background-color: var(--bg-light);
+        border-color: transparent;
+        outline: 3px solid var(--c-main);
     }
 }
 
-.variations__link {}
+.variations__link {
+    font-size: 14px;
+    font-weight: 600;
+}
 
 // --------------блок характеристик
 .variations__character {
@@ -51,7 +59,7 @@
 }
 
 .variations__character-title {
-    padding: clamp(12px, 1.7vw, 24px);
+    padding: clamp(12px, 1.7vw, 24px) 0;
 }
 
 .character__table {
@@ -61,8 +69,6 @@
 .character__table-row {
     border-top: 1px solid var(--border-light);
     border-bottom: 1px solid var(--border-light);
-    font-size: 10px;
-
 }
 
 .character__table-column {
@@ -143,6 +149,7 @@
     background-color: var(--bg-light);
     box-shadow: 0px 5px 5px 0px var(--bg-field);
     padding: clamp(15px, 2.2vw, 30px);
+    padding-bottom: 15px;
     border-radius: 4px;
     margin-bottom: 20px;
 }
@@ -152,12 +159,12 @@
 .variations__opt-price {
     background-color: var(--bg-price);
     color: var(--text-light);
-    padding: 14px;
-    font-size: 16px;
+    padding: 10px;
+    font-size: 20px;
     font-weight: 600;
     width: max-content;
     border-radius: 4px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .variations__opt-explanation {
@@ -172,30 +179,29 @@
     flex-wrap: wrap;
     gap: 14px;
     align-items: baseline;
-    margin-bottom: clamp(20px, 3vw, 40px);
+    margin-bottom: clamp(16px, 2.5vw, 30px);
 }
 
 .variations__regular-price--new {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
 }
 
 .variations__regular-price--old {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
-    color: var(--text-medium);
+    color: var(--text-footer);
 }
 
 .variations__regular-explanation {
-    font-size: 8px;
-    font-weight: 600;
+    font-size: 13px;
 }
 
 // встроенный блок добавления в корзину
 .variations__cart {
     display: flex;
     flex-wrap: wrap;
-
+    justify-content: space-between;
 }
 
 .variations__cart-counter-section {
@@ -220,7 +226,9 @@
 }
 
 .variations__cart-button {
-    margin: auto;
+    margin-left: auto;
+    padding: 12px 20px;
+    font-weight: 500;
 }
 
 
@@ -367,6 +375,8 @@
         grid-template-columns: 1fr;
         padding-bottom: 20px;
         border-bottom: 1px solid var(--text-footer);
+        column-gap: 0;
+
     }
     .product__pestecide-table {
         grid-template-columns: 1fr;

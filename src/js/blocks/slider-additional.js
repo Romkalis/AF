@@ -1,7 +1,7 @@
 import Splide from "@splidejs/splide";
 
 const startAdditionalSlider = () => {
-  let additionalSplideBlock = document.getElementById("#slider-additional");
+  let additionalSplideBlock = document.getElementById("slider-additional");
 
   if (additionalSplideBlock) {
     const splideAdditionalOptions = {

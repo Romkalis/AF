@@ -22,13 +22,20 @@
     margin-bottom: 30px;
 }
 .navigation__side-additional-item {
-    padding: 14px clamp(18px, 2.1vw, 40px);
+    padding: 14px clamp(18px, 2.1vw, 40px) 14px 14px;
     font-weight: 600;
     transition: all .3s ease;
 }
 .navigation__side-additional-item:hover {
     color: var(--c-accent);
     background-color: var(--bg-light);
+}
+
+.navigation__side-additional-link {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 8px;
+    justify-content: start;
 }
 .navigation__side-arrow {
     display: inline-block;

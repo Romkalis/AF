@@ -28,7 +28,7 @@
     margin-bottom: 20px;
 }
 .questions__help-text {
-    font-size: 10px;
+    font-size: 13px;
     color: var(--text-medium);
     max-width: 228px;
     margin-bottom: clamp(20px, 2.5vw, 40px);
@@ -37,6 +37,7 @@
     width: 228px;
     padding: 14px;
     max-width: 100%;
+    font-weight: 500;
 }
 
 // questions - answers & form section
@@ -114,6 +115,7 @@
 }
 .answer-form__submit {
     padding: 14px 40px;
+    font-weight: 500;
     
 }
 .answer-form__cancel {
@@ -123,6 +125,7 @@
 .questions__show-all-button {
     margin: clamp(20px, 2.5vw, 40px) 0;
     min-width: 218px;
+    font-weight: 500;
 }
 
 .questions__viewed-slider {

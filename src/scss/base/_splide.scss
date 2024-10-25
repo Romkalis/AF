@@ -1,4 +1,7 @@
 // настройки слайдеров в мобильной версии
+.splide__arrow--img {
+    fill: var(--text-medium);
+}
 @media ( max-width: 768px) {
 
       
@@ -33,9 +36,7 @@
     .splide__arrow--bg {
         fill: var(--bg-light);
     }
-    .splide__arrow--img {
-        fill: var(--text-medium);
-    }
+
     .splide__arrow:hover .splide__arrow--img { 
         fill: var(--c-main);
     }

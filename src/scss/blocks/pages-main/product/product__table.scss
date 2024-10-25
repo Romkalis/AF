@@ -6,9 +6,9 @@
     margin-bottom: clamp(20px, 2.5vw, 40px);
 }
 
-.product__table-title {
-    display: none;
-}
+// .product__table-title {
+//     display: none;
+// }
 .product__table-heading,
 .product__table-row,
 .product__table-data {
@@ -30,6 +30,7 @@
     display: flex;
     max-width: 420px;
     margin: auto;
+    font-weight: 500;
 }
 
 

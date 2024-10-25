@@ -18,6 +18,7 @@
 }
 .main__heading-button {
     cursor: pointer;
+    font-weight: 500;
 }
 
 .main__heading-button--text {
@@ -87,11 +88,11 @@
 
     &:hover,
     &:active {
-        color: var(--c-main);
+        color: var(--bg-price);
     }
 
     &:hover svg {
-        fill: var(--c-main);
+        fill: var(--bg-price);
     }
 }
 

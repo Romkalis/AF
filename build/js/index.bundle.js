@@ -4207,7 +4207,7 @@ document.addEventListener('DOMContentLoaded', startViewedSlider);
 
 
 const startAdditionalSlider = () => {
-  let additionalSplideBlock = document.getElementById("#slider-additional");
+  let additionalSplideBlock = document.getElementById("slider-additional");
 
   if (additionalSplideBlock) {
     const splideAdditionalOptions = {
