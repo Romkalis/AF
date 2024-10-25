@@ -245,7 +245,9 @@
     .average__info {
         background-color: var(--c-main);
         width: 100%;
-        padding: 10px 40px;
+        padding: 10px 20px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
     }
 
     // Логитип
@@ -275,6 +277,7 @@
     .header__finder {
         padding: 0;
         width: min-content;
+        margin: 20px;
     }
     .header__finder-field {
         width: 0;

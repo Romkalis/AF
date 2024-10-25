@@ -154,6 +154,10 @@
         fill: var(--bg-field);
     }
 
+    .profile__icon {
+        margin-left: 0px;
+    }
+
     .header__finder-chekbox:checked ~ .header__finder-field {
         position: absolute;
         top: 0;
