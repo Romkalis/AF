@@ -21,33 +21,12 @@
 }
 
 .main__heading-button--text {
-    position: relative;
-    display: inline-block;
+    display: flex;
     text-transform: uppercase;
+    align-items: center;
+    gap: 8px;
 }
 
-.main__heading-button--text::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: -2em;
-    width: 1em;
-    height: 1em;
-    border-top: 1px solid var(--text-light);
-    border-bottom: 1px solid var(--text-light);
-    transform: translateY(-50%);
-}
-
-.main__heading-button--text::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: -2em;
-    width: 1em;
-    height: .22em;
-    border-bottom: 1px solid var(--text-light);
-    transform: translateY(-50%);
-}
 
 // Хлебные крошки и заголовок карточки товара
 
