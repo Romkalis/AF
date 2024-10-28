@@ -3,10 +3,6 @@
 }
 
 
-.product__slider {
-    
-}
-
 .product__photo-slider,
 .product__carousel-slider {
     position: relative;
@@ -26,13 +22,6 @@
     top: 50%;
     transform: translateY(-50%);
 }
-.mobile-view {
-}
-
-.product__picture-list {
-    
-
-}
 
 .product__picture-item {
 
@@ -43,8 +32,7 @@ object-fit: cover;
     object-fit: cover;
     width: 100%;
 }
-.product__carousel-list {
-}
+
 .product__carousel-item {
     max-width: 80px;
     max-height: 80px;
@@ -53,6 +41,8 @@ object-fit: cover;
     object-fit: cover;
     width: 100%;
 }
+
+
 
 @media (max-width: 768px) {
     .product__slider {

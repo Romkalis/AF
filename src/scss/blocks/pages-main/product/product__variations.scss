@@ -205,8 +205,8 @@
 }
 
 .variations__cart-counter-section {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
     align-items: center;
     justify-content: space-between;
     width: 100%;
@@ -274,10 +274,22 @@
     border-bottom: 1px dotted var(--c-main);
 }
 
+@media (max-width: 1200px) {
+    .variations__cart-counter-section {
+        grid-template-columns: 1fr;
+        place-items: center;
+        gap: 1em;
+    }
+    .variations__cart-button {
+        margin: 0;
+    }
+}
+
 @media (max-width: 768px) {
     .variations__delivery {
         display: none;
     }
+
 }
 
 //Мобильная версия (до 768 для этог7о блока хорошо смотрится десктоп, он более информативный)

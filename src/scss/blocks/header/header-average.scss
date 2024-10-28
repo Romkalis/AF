@@ -187,11 +187,7 @@
     border: 2px solid #fff;
     border-radius: 50%;
 }
-.header__cart-description {
 
-}
-.header__cart-text {
-}
 .header__cart-text--unactive {
     color: var(--text-meduim);
 }
@@ -248,6 +244,7 @@
         padding: 10px 20px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        place-items: center;
     }
 
     // Логитип

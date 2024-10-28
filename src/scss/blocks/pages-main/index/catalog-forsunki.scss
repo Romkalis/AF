@@ -54,6 +54,10 @@
     display: none;
 }
 
+.catalog-forsunki .splide__arrows {
+        visibility: hidden;
+    }
+
 @media (max-width: 1024px) {
     .catalog-forsunki__list {
         grid-template-columns: repeat(3, 1fr);
@@ -104,6 +108,9 @@
         margin: clamp(10px, 3.2vw, 20px) auto;
         width: 90vw;
 
+        .splide__arrows {
+            visibility: visible;
+        }
         .splide__arrow {
             margin: 0
         }

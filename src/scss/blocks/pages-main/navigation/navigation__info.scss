@@ -1,5 +1,3 @@
-.navigation__info {}
-
 .navigation__navlist {
     display: flex;
     flex-wrap: wrap;
@@ -119,8 +117,6 @@
     font-weight: 500;
 }
 
-.navigation__showmore--closed {
-}
 .navigation__showmore--open {
     display: none;
 }
@@ -165,7 +161,7 @@
 }
 
 .navigation__form-label {
-    padding: 10px;
+    padding: 6px;
     padding-left: 2em;
     color: var(--text-medium);
     position: relative;
@@ -193,9 +189,6 @@
 .navigation__form-checking:checked~.navigation__form-checker{
     background-image: url(../../../../img/icons/icon_arrow--red.svg);
 }
-
-
-.navigation__form-text {}
 
 .navigation__card-form {
 

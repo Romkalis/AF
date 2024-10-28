@@ -2,31 +2,35 @@
     background-color: var(--bg-light);
     padding: clamp(20px, 4vw, 50px) clamp(10px, 3vw, 50px);
 }
+
 // блок finder
 .tables__finder {
     margin-bottom: clamp(20px, 2vw, 30px);
     padding-bottom: clamp(20px, 2.5vw, 30px);
     border-bottom: 1px solid var(--text-footer);
-    
+
 }
+
 .tables__finder-label {
-     display: inline-block;
+    display: inline-block;
     margin-bottom: 16px;
 }
+
 .tables__finder-block {
     margin-bottom: clamp(20px, 2vw, 28px);
 }
+
 .tables__finded-heading {
     font-size: clamp(14px, 1.2vw, 16px);
     font-weight: 600;
 }
+
 .tables__finded-list {
     margin: 10px;
 }
 
 
-.tables__finded-link.tables__link,
-.tables__info-download.tables__link {
+.tables__finded-link.tables__link {
     display: inline-block;
     padding: 10px;
     color: var(--c-main);
@@ -35,6 +39,7 @@
     text-decoration-style: dotted;
     text-underline-offset: 4px;
     transition: all .3s ease;
+
     &:hover {
         color: var(--c-accent);
         text-decoration: none;
@@ -43,7 +48,7 @@
 
 // класс используется, если будет релизация подгрузки таблицы по кликнутой ссылке
 .tables__finded-link--checked {
-    color: var(--c-accent)!important;
+    color: var(--c-accent) !important;
 }
 
 
@@ -54,38 +59,47 @@
     font-size: clamp(14px, 1.2vw, 16px);
     font-weight: 600;
 }
-.tables__info-download.tables__link {
-    padding-left: 0;
-    padding-bottom: 10px;
-}
+
 .tables__table .product__table {
     max-width: 600px;
 }
+
 .tables__table .product__table-data {
-    padding: 8px  5px;
+    padding: 8px 5px;
 }
+
 .tables__table .desktop-view {
-    display: table-cell;           
+    display: table-cell;
+}
+
+
+.tables__table .tables__download-button {
+    display: inline-block;
+    color: var(--text-light);
+    font-weight: 500;
+    border-radius: 5px;
 }
 
 @media (max-width: 768px) {
-       .tables__finder-block {
+    .tables__finder-block {
         width: unset;
+    }
+
+    .tables__finder {
+        .header__finder-field {
+            width: 100%;
         }
-        .tables__finder{
-            .header__finder-field {
-                width: 100%;
-            }
-            .header__finder-button {
-                right: 10px;
-                width: 24px;
-                height: 24px;
-            }
+
+        .header__finder-button {
+            right: 10px;
+            width: 24px;
+            height: 24px;
         }
+    }
 }
 
 @media (max-width: 520px) {
     .tables__table .desktop-view {
-        display: none;           
+        display: none;
     }
 }
