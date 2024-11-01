@@ -43,22 +43,23 @@
             </div>
         </section>
 
-        <section class="payment__info">
-            <p class="payment__text">
+        <section class="article--main">
+            <p>
                 Принимаем оплату через расчетный счет от организаций и ИП. Счет на оплату формируется нашими
                 специалистами
                 после получения Вашего заказа с сайта AgroForsunka.ru.
             </p>
 
             <ul class="payment__list">
-                <li class="payment__item">оформляете заказ на сайте AgroForsunka.ru</li>
-                <li class="payment__item">регистрируетесь и вводите свои данные</li>
-                <li class="payment__item">отправляете заказ</li>
-                <li class="payment__item">мы присылаем вам счет на оплату</li>
-                <li class="payment__item">после оплаты отправляем вам товар службой доставки, выбранной при заказе.</li>
+                <li class="list-item--main">оформляете заказ на сайте AgroForsunka.ru</li>
+                <li class="list-item--main">регистрируетесь и вводите свои данные</li>
+                <li class="list-item--main">отправляете заказ</li>
+                <li class="list-item--main">мы присылаем вам счет на оплату</li>
+                <li class="list-item--main">после оплаты отправляем вам товар службой доставки, выбранной при заказе.
+                </li>
             </ul>
 
-            <p class="payment__text">
+            <p>
                 Срок оплаты заказа – 3 рабочих дня с момента оформления заказа. По истечении этого срока Ваш заказ будет
                 аннулирован.
             </p>
@@ -72,6 +73,9 @@
 
     <!-- Pop-up -->
     @@include('blocks/popup.html')
+
+    <!-- spinner -->
+    @@include('blocks/spinner/spinner.html')
 
     <!-- jsCode -->
     <script src="./js/index.bundle.js" type="module"></script>

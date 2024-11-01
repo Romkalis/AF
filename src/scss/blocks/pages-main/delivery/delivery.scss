@@ -2,32 +2,6 @@
     padding: 20px;
 }
 
-.delivery__info {
-    background-color: var(--bg-light);
-    border-radius: 4px;
-    // margin: clamp(20px, 4vw, 60px);
-    padding: clamp(20px, 3vw, 50px) 20px;
 
-    font-size: clamp(13px, 2vw, 16px);
-    line-height: 1.5;
 
-    margin-bottom: clamp(20px, 2.5vw, 40px);
-}
-.delivery__section {
-    margin-bottom: clamp(25px, 2.5vw, 40px);
-}
-.delivery__title {
-    font-size: clamp(14px, 2.5vw, 18px);
-    font-weight: 600;
-    margin-bottom: clamp(20px, 2.5vw, 28px);
-}
-// .delivery__text {
-// }
-.delivery__list {
-    margin-left: 3em;
-    line-height: 1.5;
-}
-.delivery__item {
-    list-style-type: disc;
-}
 
