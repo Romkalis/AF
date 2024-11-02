@@ -821,6 +821,11 @@
 												<img src="./img/products_images/photo-4.jpg" alt="изображение форсунки" class="product__picture-image" />
 											</picture>
 										</li>
+										<li class="product__picture-item splide__slide">
+											<video class="product__picture-video" controls autoplay loop>
+												<source src="./img/video/city.mp4" type="video/mp4" />
+											</video>
+										</li>
 									</ul>
 								</div>
 							</div>
@@ -901,6 +906,12 @@
 												<source srcset="./img/products_images/photo-4.jpg 1x, ./img/products_images/photo-4@2x.jpg 2x" type="image/jpeg" />
 												<img src="./img/products_images/photo-4.jpg" alt="изображение форсунки" class="product__carousel-image" />
 											</picture>
+										</li>
+
+										<li class="product__carousel-item splide__slide">
+											<video class="product__picture-video">
+												<source src="./img/video/city.mp4" type="video/mp4" />
+											</video>
 										</li>
 									</ul>
 								</div>
@@ -2033,10 +2044,7 @@
 			<span class="spinner"></span>
 		</div>
 
-		<dialog id="pictureModal">
-			<img src="" alt="изображение товара" class="product-picture" />
-		</dialog>
-		`);
+		<dialog id="pictureModal"></dialog>
 
 		<!-- jsCode -->
 		<script src="./js/index.bundle.js" type="module"></script>

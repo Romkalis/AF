@@ -23,20 +23,26 @@
     transform: translateY(-50%);
 }
 
-.product__picture-item {
 
-object-fit: cover;
+.product__picture-item {
+    object-fit: cover;
+    display: grid;
+    place-items: center;
 }
 
-.product__picture-image {
+.product__picture-image,
+.product__picture-video {
     object-fit: cover;
     width: 100%;
 }
+
 
 .product__carousel-item {
     max-width: 80px;
     max-height: 80px;
     cursor: pointer;
+    display: grid;
+    place-items: center;
 }
 .product__carousel-image {
     object-fit: cover;
