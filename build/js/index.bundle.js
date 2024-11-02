@@ -145,6 +145,34 @@ if (aboutSection) {
 
 /***/ }),
 
+/***/ 544:
+/***/ (function() {
+
+const sliderList = document.querySelector(".product__picture-list");
+
+// сработает если найден элемент и ширина экрана больше 520 пикселей.
+
+if (sliderList && window.innerWidth > 520) {
+  sliderList.addEventListener("click", (evt) => {
+        const modal = document.getElementById('pictureModal')
+        const picture = modal.querySelector('.product-picture')
+
+        picture.src = evt.target.src
+
+        modal.showModal()
+
+        const closeModal = () => {
+            modal.close()
+            modal.removeEventListener('click', closeModal)
+        }
+        modal.addEventListener('click', closeModal)
+
+  });
+}
+
+
+/***/ }),
+
 /***/ 351:
 /***/ (function() {
 
@@ -4254,6 +4282,8 @@ document.addEventListener("DOMContentLoaded", startAdditionalSlider);
 var product_about_show_more = __webpack_require__(842);
 // EXTERNAL MODULE: ./src/js/blocks/product-questions-mob-view.js
 var product_questions_mob_view = __webpack_require__(351);
+// EXTERNAL MODULE: ./src/js/blocks/product-photo-modal.js
+var product_photo_modal = __webpack_require__(544);
 // EXTERNAL MODULE: ./src/js/blocks/navigation-showCardForm.js
 var navigation_showCardForm = __webpack_require__(7);
 // EXTERNAL MODULE: ./src/js/blocks/popup.js
@@ -4278,6 +4308,7 @@ var mobile_burger = __webpack_require__(44);
 
 
     //развернуть описание товара product.html
+    
     
     
 
