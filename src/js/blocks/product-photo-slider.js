@@ -18,8 +18,9 @@ const startProductPhotoSlider = () => {
     fixedWidth: '8vw', // Ширина каждой миниатюры
     fixedHeight: '8vw', // Высота каждой миниатюры
     isNavigation: true, // Включаем навигационную функцию
+    rewind: false,
     gap: '5px', // Пробелы между миниатюрами
-    pagination: false, // Отключаем стандартную пагинацию
+    pagination: true, // Отключаем стандартную пагинацию
     cover: true, // Убедитесь, что изображения покрывают миниатюры
     arrows: true, // Отключаем стрелки у карусели миниатюр
   };

@@ -2,8 +2,14 @@
 .splide__arrow--img {
     fill: var(--text-medium);
 }
-@media ( max-width: 768px) {
 
+.splide__arrows {
+    pointer-events: none;
+}
+.splide__arrow {
+    pointer-events: auto;
+}
+@media ( max-width: 768px) {
       
       .my-slider-progress-bar {
         background: var(--c-main);

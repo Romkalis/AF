@@ -36,6 +36,7 @@ object-fit: cover;
 .product__carousel-item {
     max-width: 80px;
     max-height: 80px;
+    cursor: pointer;
 }
 .product__carousel-image {
     object-fit: cover;
