@@ -1,3 +1,7 @@
+.navigation__info-description {
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
 .navigation__navlist {
     display: flex;
     flex-wrap: wrap;
@@ -28,10 +32,9 @@
     color: var(--text-light);
 }
 
+
+
 // cards
-
-
-
 .navigation__cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -213,6 +216,9 @@
     display: none;
 }
 @media (max-width: 768px) {
+    .navigation__info-description {
+        display: none;
+    }
     .navigation__cards {
         grid-template-columns: repeat(2, 1fr);
     }
