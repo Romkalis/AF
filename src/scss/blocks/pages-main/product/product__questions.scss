@@ -80,7 +80,7 @@
 
 
 .answer-form {
-    margin-left: 3em;
+    margin-left: 1em;
     display: flex;
     flex-direction: column;
     max-width: 502px;
@@ -206,7 +206,9 @@
 
     .answer-form {
         max-width: calc(90vw - 3em - 20px);
+        margin-left: 0;
     }
+
     .answer-form__buttons {
         justify-content: space-between;
     }

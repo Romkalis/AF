@@ -190,6 +190,34 @@ if (sliderList && window.innerWidth > 520) {
 
 /***/ }),
 
+/***/ 605:
+/***/ (function() {
+
+const form = document.getElementById('question-form')
+
+if (form) {
+    const showButton = document.querySelector('.questions__help-button')
+    const showForm = () => {
+        form.showModal()
+    }
+    const closeForm = () => {
+        form.close()
+    }
+
+    showButton.addEventListener('click', () => {
+        showForm()
+
+        const backButton = form.querySelector('.question__button--back')
+        const closeButton = form.querySelector('.question__button--close')
+
+        backButton.addEventListener('click', closeForm)
+        closeButton.addEventListener('click', closeForm)
+
+    })
+}
+
+/***/ }),
+
 /***/ 351:
 /***/ (function() {
 
@@ -4301,6 +4329,8 @@ var product_about_show_more = __webpack_require__(842);
 var product_questions_mob_view = __webpack_require__(351);
 // EXTERNAL MODULE: ./src/js/blocks/product-photo-modal.js
 var product_photo_modal = __webpack_require__(544);
+// EXTERNAL MODULE: ./src/js/blocks/product-question-form.js
+var product_question_form = __webpack_require__(605);
 // EXTERNAL MODULE: ./src/js/blocks/navigation-showCardForm.js
 var navigation_showCardForm = __webpack_require__(7);
 // EXTERNAL MODULE: ./src/js/blocks/popup.js
@@ -4325,6 +4355,7 @@ var mobile_burger = __webpack_require__(44);
 
 
     //развернуть описание товара product.html
+    
     
     
     

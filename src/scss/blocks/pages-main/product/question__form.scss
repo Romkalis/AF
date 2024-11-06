@@ -1,0 +1,103 @@
+.question__popup {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 0 20px;
+    
+}
+.question__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--text-footer);
+}
+.question__button--back,
+.question__button--close {
+    padding: 30px 14px;
+
+    & svg {
+        fill: var(--text-footer);
+        transition: fill .3s ease;
+    }
+    &:hover svg,
+    &:active svg {
+        fill: var(--text-dark);
+    }
+}
+
+.question__title {
+    font-weight: 500;
+    font-size: clamp(14px, 2.7vw, 20px);
+}
+
+.question__form {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 8px;
+}
+
+.question-form__reply {
+    margin-bottom: 8px;
+}
+.question-form__field {
+    border: 1px solid var(--text-footer);
+    border-radius: 5px;
+    padding: 12px 14px;
+    width: 100%;
+    max-width: 520px;
+
+    &:focus {
+        outline: 2px solid var(--text-dark);
+    }
+}
+.question-form__name-label {
+    font-size: 12px;
+    font-weight: 500;
+}
+.question-form__buttons {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 520px;
+}
+
+@media (max-width: 468px) {
+    .question-form__buttons {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}
+.question-form__submit {
+    font-weight: 500;
+    padding: clamp(10px, 1.5vw, 1em) clamp(17px, 2.5vw, 34px);
+}
+.question-form__cancel {
+    padding: clamp(10px, 1.5vw, 1em) clamp(17px, 2.5vw, 34px);
+}
+.question__oferta {
+    color: var(--text-medium);
+    max-width: 520px;
+
+    .question__link {
+        color: var(--text-medium);
+        text-decoration: underline;
+    }
+}
+@media (min-width: 768px) {
+    .question__popup {
+        width: 100%;
+        max-width: 760px;
+        height: max-content;
+        padding: 0 30px 40px 30px;
+        border-radius: 5px;
+
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        font-size: 13px;
+    }
+}
