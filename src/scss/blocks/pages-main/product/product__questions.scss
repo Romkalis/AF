@@ -85,7 +85,18 @@
     flex-direction: column;
     max-width: 502px;
 
+    margin: 0;
+    height: 0px;
+    opacity: 0;
+    transition: opacity .7s ease, height .5s ease;
 }
+
+.answer-form--showed {
+    height: max-content;
+    opacity: 1;
+}
+
+
 
 .answer-form-label {
     padding: 1em 0;
@@ -164,7 +175,8 @@
     display: inline;
 }
 .answer__modal,
-.answer__modal-reply {
+.answer__modal-reply,
+.question__answer-reply {
     color: var(--text-medium);
     display: inline-block;
     padding: 24px;
