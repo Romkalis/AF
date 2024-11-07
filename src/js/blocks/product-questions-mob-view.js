@@ -1,3 +1,5 @@
+import { replyForm } from "./product-answer-form";
+
 const showQuestionsModal = () => {
   const questionsList = document.getElementById("questions-slider-list");
 
@@ -35,6 +37,10 @@ const showQuestionsModal = () => {
 
         document.body.appendChild(modalContainer);
 
+        // запускаем функцию показа формы
+        modalContainer.addEventListener('click', replyForm)
+
+
         const closeModalButton = modalContainer.querySelector(
           ".question__close-modal"
         );
@@ -51,8 +57,12 @@ const showQuestionsModal = () => {
             }
             questionBlock.appendChild(child);
           });
+
+          modalContainer.removeEventListener('click', replyForm)
           modalContainer.remove();
+
         };
+
 
         closeModalButton.addEventListener("click", closeModal);
       }

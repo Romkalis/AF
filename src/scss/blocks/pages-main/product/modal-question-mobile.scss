@@ -57,13 +57,16 @@
         margin: 0;
         height: 0px;
         opacity: 0;
-        transition: opacity .7s ease, height .5s ease;
+        transition: all .3s ease, height .5s ease;
+        pointer-events: none;
     }
 
     .answer-form--showed {
         height: max-content;
         opacity: 1;
+        pointer-events: all;
     }
+
 
 }
 

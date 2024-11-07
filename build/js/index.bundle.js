@@ -145,61 +145,6 @@ if (aboutSection) {
 
 /***/ }),
 
-/***/ 917:
-/***/ (function() {
-
-const questionList = document.querySelector(".questions__form-list");
-
-if (questionList) {
-  //   const form = `
-  //     <form action="#" class="question__answer-form answer-form--showed answer-form" method="POST">
-
-  //         <label class="answer-form__reply-label answer-form-label" for="reply">Ответить пользователю AgroForsunka.ru</label>
-
-  //         <textarea class="answer-form__reply answer-form__field" id="reply" name="reply" rows="4"
-  //             cols="50" placeholder="Ваш ответ *" required></textarea>
-
-  //         <label class="answer-form__name-label answer-form-label" for="name">Вы отвечаете как:</label>
-  //             <input class="answer-form__name answer-form__field" type="text" id="name" name="name"
-  //             placeholder="Имя *" required>
-
-  //         <label class="answer-form__email-label answer-form-label" for="email">
-  //         <input class="answer-form__email answer-form__field" type="email" id="email" name="email"
-  //             placeholder="E-mail (не будет виден другим пользователям)" required>
-  //         </label>
-
-  //         <div class="answer-form__buttons">
-  //             <button class="answer-form__submit button button--small"
-  //                 type="submit">Отправить</button>
-  //             <button class="answer-form__cancel button--light"
-  //                 type="reset">Отменить</button>
-  //         </div>
-  //     </form>
-  //     `;
-
-  questionList.addEventListener("click", (evt) => {
-    if (evt.target.classList.contains("question__answer-reply")) {
-      const answerBlock = evt.target.parentElement;
-
-      //   answerBlock.insertAdjacentHTML('beforeend', form)
-
-      const form = questionList.querySelector(".question__answer-form");
-      form.classList.add("answer-form--showed");
-
-      const closeForm = () => {
-        form.classList.remove("answer-form--showed");
-        closeFormButton.removeEventListener("click", closeForm);
-      };
-
-      const closeFormButton = form.querySelector(".answer-form__cancel");
-      closeFormButton.addEventListener("click", closeForm);
-    }
-  });
-}
-
-
-/***/ }),
-
 /***/ 544:
 /***/ (function() {
 
@@ -272,76 +217,6 @@ if (form) {
 
     })
 }
-
-/***/ }),
-
-/***/ 351:
-/***/ (function() {
-
-const showQuestionsModal = () => {
-  const questionsList = document.getElementById("questions-slider-list");
-
-  if (questionsList && window.innerWidth <= 521) {
-    questionsList.addEventListener("click", (evt) => {
-      const showModalButton = evt.target.closest(".answers__menu");
-
-      if (showModalButton) {
-        const questionBlock = showModalButton.closest(".questions__question");
-        const questionChildren = Array.from(questionBlock.children);
-
-        // создаем контейнер для модалки
-        const modalContainer = document.createElement("div");
-        modalContainer.id = "modalQuestion";
-
-        questionChildren.forEach((child) => {
-          if (child.type === "checkbox") {
-            child.cheked = null;
-          }
-          modalContainer.appendChild(child);
-        });
-
-        // создаем кнопку для закрытия контейнера
-        modalContainer.insertAdjacentHTML(
-          "afterbegin",
-          `
-                    <button class='question__close-modal'>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                        <line x1="17" y1="7" x2="7" y2="17" stroke="black" stroke-width="2" stroke-linecap="round" />
-                        <line x1="7" y1="7" x2="17" y2="17" stroke="black" stroke-width="2" stroke-linecap="round" />
-                        </svg>
-                    </button>
-                    `
-        );
-
-        document.body.appendChild(modalContainer);
-
-        const closeModalButton = modalContainer.querySelector(
-          ".question__close-modal"
-        );
-        const changedChildren = Array.from(modalContainer.children);
-        const closeModal = () => {
-          changedChildren.forEach((child) => {
-            // делаем проверку что выпадающий список будет закрыт
-            if (child.classList.contains("show-modal-checkbox")) {
-              child.checked = false;
-            }
-            // не копируем кнопку закрытия модалки
-            if (child.classList.contains("question__close-modal")) {
-              return;
-            }
-            questionBlock.appendChild(child);
-          });
-          modalContainer.remove();
-        };
-
-        closeModalButton.addEventListener("click", closeModal);
-      }
-    });
-  }
-};
-
-document.addEventListener("DOMContentLoaded", showQuestionsModal);
-
 
 /***/ }),
 
@@ -4382,14 +4257,107 @@ document.addEventListener("DOMContentLoaded", startAdditionalSlider);
 
 // EXTERNAL MODULE: ./src/js/blocks/product-about-show-more.js
 var product_about_show_more = __webpack_require__(842);
-// EXTERNAL MODULE: ./src/js/blocks/product-questions-mob-view.js
-var product_questions_mob_view = __webpack_require__(351);
+;// CONCATENATED MODULE: ./src/js/blocks/product-answer-form.js
+const questionList = document.querySelector(".questions__form-list");
+
+const replyForm = (evt) => {
+  if (evt.target.classList.contains("question__answer-reply")) {
+    const form = document.querySelector(".question__answer-form");
+    form.classList.toggle("answer-form--showed");
+
+    const closeForm = () => {
+      form.classList.remove("answer-form--showed");
+      closeFormButton.removeEventListener("click", closeForm);
+    };
+
+    const closeFormButton = form.querySelector(".answer-form__cancel");
+    closeFormButton.addEventListener("click", closeForm);
+  }
+};
+
+if (questionList) {
+  questionList.addEventListener("click", replyForm);
+}
+
+;// CONCATENATED MODULE: ./src/js/blocks/product-questions-mob-view.js
+
+
+const showQuestionsModal = () => {
+  const questionsList = document.getElementById("questions-slider-list");
+
+  if (questionsList && window.innerWidth <= 521) {
+    questionsList.addEventListener("click", (evt) => {
+      const showModalButton = evt.target.closest(".answers__menu");
+
+      if (showModalButton) {
+        const questionBlock = showModalButton.closest(".questions__question");
+        const questionChildren = Array.from(questionBlock.children);
+
+        // создаем контейнер для модалки
+        const modalContainer = document.createElement("div");
+        modalContainer.id = "modalQuestion";
+
+        questionChildren.forEach((child) => {
+          if (child.type === "checkbox") {
+            child.cheked = null;
+          }
+          modalContainer.appendChild(child);
+        });
+
+        // создаем кнопку для закрытия контейнера
+        modalContainer.insertAdjacentHTML(
+          "afterbegin",
+          `
+                    <button class='question__close-modal'>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                        <line x1="17" y1="7" x2="7" y2="17" stroke="black" stroke-width="2" stroke-linecap="round" />
+                        <line x1="7" y1="7" x2="17" y2="17" stroke="black" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </button>
+                    `
+        );
+
+        document.body.appendChild(modalContainer);
+
+        // запускаем функцию показа формы
+        modalContainer.addEventListener('click', replyForm)
+
+
+        const closeModalButton = modalContainer.querySelector(
+          ".question__close-modal"
+        );
+        const changedChildren = Array.from(modalContainer.children);
+        const closeModal = () => {
+          changedChildren.forEach((child) => {
+            // делаем проверку что выпадающий список будет закрыт
+            if (child.classList.contains("show-modal-checkbox")) {
+              child.checked = false;
+            }
+            // не копируем кнопку закрытия модалки
+            if (child.classList.contains("question__close-modal")) {
+              return;
+            }
+            questionBlock.appendChild(child);
+          });
+
+          modalContainer.removeEventListener('click', replyForm)
+          modalContainer.remove();
+
+        };
+
+
+        closeModalButton.addEventListener("click", closeModal);
+      }
+    });
+  }
+};
+
+document.addEventListener("DOMContentLoaded", showQuestionsModal);
+
 // EXTERNAL MODULE: ./src/js/blocks/product-photo-modal.js
 var product_photo_modal = __webpack_require__(544);
 // EXTERNAL MODULE: ./src/js/blocks/product-question-form.js
 var product_question_form = __webpack_require__(605);
-// EXTERNAL MODULE: ./src/js/blocks/product-answer-form.js
-var product_answer_form = __webpack_require__(917);
 // EXTERNAL MODULE: ./src/js/blocks/navigation-showCardForm.js
 var navigation_showCardForm = __webpack_require__(7);
 // EXTERNAL MODULE: ./src/js/blocks/popup.js
