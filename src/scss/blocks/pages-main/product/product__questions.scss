@@ -110,7 +110,7 @@
     background-color: var(--bg-field);
     border-radius: 4px;
     padding: 14px;
-    font-size: 11px;
+    font-size: 13px;
 }
 
 .answer-form__email,
@@ -140,7 +140,7 @@
 }
 
 .questions__viewed-slider {
-    padding: clamp(20px, 2.5vw, 40px);
+    // padding: clamp(20px, 2.5vw, 40px);
 
     .splide__arrow {
         margin: 0;
