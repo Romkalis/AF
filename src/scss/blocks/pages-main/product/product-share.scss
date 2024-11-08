@@ -1,0 +1,18 @@
+.product__share {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: 'Montserrat', sans-serif;
+    transform: translateX(50px);
+    transition: transform .3s ease;
+}
+
+.product__share--show {
+    transform: translateX(0);
+}
+
+.ya-share2__title {
+    display: none!important;
+}
+
+

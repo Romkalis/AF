@@ -220,6 +220,20 @@ if (form) {
 
 /***/ }),
 
+/***/ 794:
+/***/ (function() {
+
+const shareButton = document.querySelector('.main__heading-share')
+
+if (shareButton) {
+    shareButton.addEventListener('click', () => {
+        const share = document.querySelector('.product__share')
+        share.classList.toggle('product__share--show')
+    })
+}
+
+/***/ }),
+
 /***/ 314:
 /***/ (function() {
 
@@ -4358,6 +4372,8 @@ document.addEventListener("DOMContentLoaded", showQuestionsModal);
 var product_photo_modal = __webpack_require__(544);
 // EXTERNAL MODULE: ./src/js/blocks/product-question-form.js
 var product_question_form = __webpack_require__(605);
+// EXTERNAL MODULE: ./src/js/blocks/product-share.js
+var product_share = __webpack_require__(794);
 // EXTERNAL MODULE: ./src/js/blocks/navigation-showCardForm.js
 var navigation_showCardForm = __webpack_require__(7);
 // EXTERNAL MODULE: ./src/js/blocks/popup.js
@@ -4382,6 +4398,7 @@ var mobile_burger = __webpack_require__(44);
 
 
     //развернуть описание товара product.html
+    
     
     
     

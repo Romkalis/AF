@@ -18,6 +18,7 @@
     import './blocks/product-photo-modal.js'
     import './blocks/product-question-form.js'
     import './blocks/product-answer-form.js'
+    import './blocks/product-share.js'
 
     //развернуть форму в карточке товара на наввигационной страничке
     import './blocks/navigation-showCardForm.js'
