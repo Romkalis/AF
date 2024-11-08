@@ -1,0 +1,19 @@
+.cultures__info {
+    .catalog-culture__list {
+        margin-bottom: clamp(20px, 5vw, 60px);
+    }
+}
+@media (max-width: 520px) {
+    .cultures__info {
+        .catalog-culture__list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+@media (max-width: 375px) {
+    .cultures__info {
+        .catalog-culture__list {
+            grid-template-columns: 1fr;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Форсунки по культурам</title>
+	<link rel="stylesheet" href="./css/main.css" />
+	<link rel="preload" href="/fonts/Montserrat.woff" as="font">
+	<link rel="icon" type="image/x-icon" href="./img/favicons/favicon.svg">
+	<link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png">
+</head>
+
+<body>
+	<!-- header -->
+	@@include('blocks/header.html')
+
+
+	<!-- главная страница -->
+	@@include('blocks/pages-main/main-cultures.html')
+
+
+	<!-- footer -->
+	@@include('blocks/footer.html')
+
+
+	<!-- Pop-up -->
+	@@include('blocks/popup.html')
+
+	<!-- spinner -->
+	@@include('blocks/spinner/spinner.html')
+	
+	<div class="ya-share2" data-curtain data-color-scheme="whiteblack" data-services="messenger,vkontakte,odnoklassniki,telegram,viber,whatsapp,skype"></div>
+	<!-- jsCode -->
+	<script src="./js/index.bundle.js" type="module"></script>
+	<script src="https://yastatic.net/share2/share.js"></script>
+
+</body>
+
+</html>

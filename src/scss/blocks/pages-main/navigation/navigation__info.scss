@@ -1,4 +1,4 @@
-.navigation__info-description {
+.page__info-description {
     font-weight: 500;
     margin-bottom: 2rem;
 }
@@ -216,7 +216,7 @@
     display: none;
 }
 @media (max-width: 768px) {
-    .navigation__info-description {
+    .page__info-description {
         display: none;
     }
     .navigation__cards {
