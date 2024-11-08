@@ -31,6 +31,9 @@
     place-items: center;
     height: 100%;
 }
+.catalog-forsunki__img {
+    width: clamp(100px, 18vw, 150px);
+}
 
 .catalog-forsunki__item-title {
     text-align: center;
@@ -120,8 +123,7 @@
     }
 
     .catalog-forsunki__img {
-        width: 20vw;
-        max-width: 220px;
+        width: clamp(100px, 18vw, 150px);
     }
 
 }
