@@ -190,73 +190,47 @@ if (sliderList && window.innerWidth > 520) {
 
 /***/ }),
 
-/***/ 351:
+/***/ 605:
 /***/ (function() {
 
-const showQuestionsModal = () => {
-  const questionsList = document.getElementById("questions-slider-list");
+const form = document.getElementById('question-form')
 
-  if (questionsList && window.innerWidth <= 521) {
-    questionsList.addEventListener("click", (evt) => {
-      const showModalButton = evt.target.closest(".answers__menu");
+if (form) {
+    const showButton = document.querySelector('.questions__help-button')
+    const showForm = () => {
+        form.showModal()
+    }
+    const closeForm = () => {
+        form.close()
+    }
 
-      if (showModalButton) {
-        const questionBlock = showModalButton.closest(".questions__question");
-        const questionChildren = Array.from(questionBlock.children);
+    showButton.addEventListener('click', () => {
+        showForm()
 
-        // создаем контейнер для модалки
-        const modalContainer = document.createElement("div");
-        modalContainer.id = "modalQuestion";
+        const backButton = form.querySelector('.question__button--back')
+        const closeButton = form.querySelector('.question__button--close')
+        const cancelButton = form.querySelector('.question-form__cancel')
 
-        questionChildren.forEach((child) => {
-          if (child.type === "checkbox") {
-            child.cheked = null;
-          }
-          modalContainer.appendChild(child);
-        });
+        backButton.addEventListener('click', closeForm)
+        closeButton.addEventListener('click', closeForm)
+        cancelButton.addEventListener('click', closeForm)
 
-        // создаем кнопку для закрытия контейнера
-        modalContainer.insertAdjacentHTML(
-          "afterbegin",
-          `
-                    <button class='question__close-modal'>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                        <line x1="17" y1="7" x2="7" y2="17" stroke="black" stroke-width="2" stroke-linecap="round" />
-                        <line x1="7" y1="7" x2="17" y2="17" stroke="black" stroke-width="2" stroke-linecap="round" />
-                        </svg>
-                    </button>
-                    `
-        );
+    })
+}
 
-        document.body.appendChild(modalContainer);
+/***/ }),
 
-        const closeModalButton = modalContainer.querySelector(
-          ".question__close-modal"
-        );
-        const changedChildren = Array.from(modalContainer.children);
-        const closeModal = () => {
-          changedChildren.forEach((child) => {
-            // делаем проверку что выпадающий список будет закрыт
-            if (child.classList.contains("show-modal-checkbox")) {
-              child.checked = false;
-            }
-            // не копируем кнопку закрытия модалки
-            if (child.classList.contains("question__close-modal")) {
-              return;
-            }
-            questionBlock.appendChild(child);
-          });
-          modalContainer.remove();
-        };
+/***/ 794:
+/***/ (function() {
 
-        closeModalButton.addEventListener("click", closeModal);
-      }
-    });
-  }
-};
+const shareButton = document.querySelector('.main__heading-share')
 
-document.addEventListener("DOMContentLoaded", showQuestionsModal);
-
+if (shareButton) {
+    shareButton.addEventListener('click', () => {
+        const share = document.querySelector('.product__share')
+        share.classList.toggle('product__share--show')
+    })
+}
 
 /***/ }),
 
@@ -4297,10 +4271,109 @@ document.addEventListener("DOMContentLoaded", startAdditionalSlider);
 
 // EXTERNAL MODULE: ./src/js/blocks/product-about-show-more.js
 var product_about_show_more = __webpack_require__(842);
-// EXTERNAL MODULE: ./src/js/blocks/product-questions-mob-view.js
-var product_questions_mob_view = __webpack_require__(351);
+;// CONCATENATED MODULE: ./src/js/blocks/product-answer-form.js
+const questionList = document.querySelector(".questions__form-list");
+
+const replyForm = (evt) => {
+  if (evt.target.classList.contains("question__answer-reply")) {
+    const form = document.querySelector(".question__answer-form");
+    form.classList.toggle("answer-form--showed");
+
+    const closeForm = () => {
+      form.classList.remove("answer-form--showed");
+      closeFormButton.removeEventListener("click", closeForm);
+    };
+
+    const closeFormButton = form.querySelector(".answer-form__cancel");
+    closeFormButton.addEventListener("click", closeForm);
+  }
+};
+
+if (questionList) {
+  questionList.addEventListener("click", replyForm);
+}
+
+;// CONCATENATED MODULE: ./src/js/blocks/product-questions-mob-view.js
+
+
+const showQuestionsModal = () => {
+  const questionsList = document.getElementById("questions-slider-list");
+
+  if (questionsList && window.innerWidth <= 521) {
+    questionsList.addEventListener("click", (evt) => {
+      const showModalButton = evt.target.closest(".answers__menu");
+
+      if (showModalButton) {
+        const questionBlock = showModalButton.closest(".questions__question");
+        const questionChildren = Array.from(questionBlock.children);
+
+        // создаем контейнер для модалки
+        const modalContainer = document.createElement("div");
+        modalContainer.id = "modalQuestion";
+
+        questionChildren.forEach((child) => {
+          if (child.type === "checkbox") {
+            child.cheked = null;
+          }
+          modalContainer.appendChild(child);
+        });
+
+        // создаем кнопку для закрытия контейнера
+        modalContainer.insertAdjacentHTML(
+          "afterbegin",
+          `
+                    <button class='question__close-modal'>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                        <line x1="17" y1="7" x2="7" y2="17" stroke="black" stroke-width="2" stroke-linecap="round" />
+                        <line x1="7" y1="7" x2="17" y2="17" stroke="black" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </button>
+                    `
+        );
+
+        document.body.appendChild(modalContainer);
+
+        // запускаем функцию показа формы
+        modalContainer.addEventListener('click', replyForm)
+
+
+        const closeModalButton = modalContainer.querySelector(
+          ".question__close-modal"
+        );
+        const changedChildren = Array.from(modalContainer.children);
+        const closeModal = () => {
+          changedChildren.forEach((child) => {
+            // делаем проверку что выпадающий список будет закрыт
+            if (child.classList.contains("show-modal-checkbox")) {
+              child.checked = false;
+            }
+            // не копируем кнопку закрытия модалки
+            if (child.classList.contains("question__close-modal")) {
+              return;
+            }
+            questionBlock.appendChild(child);
+          });
+
+          modalContainer.removeEventListener('click', replyForm)
+          modalContainer.remove();
+
+        };
+
+
+        closeModalButton.addEventListener("click", closeModal);
+      }
+    });
+  }
+};
+
+document.addEventListener("DOMContentLoaded", showQuestionsModal);
+
 // EXTERNAL MODULE: ./src/js/blocks/product-photo-modal.js
 var product_photo_modal = __webpack_require__(544);
+// EXTERNAL MODULE: ./src/js/blocks/product-question-form.js
+var product_question_form = __webpack_require__(605);
+// EXTERNAL MODULE: ./src/js/blocks/product-share.js
+var product_share = __webpack_require__(794);
 // EXTERNAL MODULE: ./src/js/blocks/navigation-showCardForm.js
 var navigation_showCardForm = __webpack_require__(7);
 // EXTERNAL MODULE: ./src/js/blocks/popup.js
@@ -4325,6 +4398,9 @@ var mobile_burger = __webpack_require__(44);
 
 
     //развернуть описание товара product.html
+    
+    
+    
     
     
     

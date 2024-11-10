@@ -204,7 +204,9 @@
     .questions__form-list {
         width: calc(100vw - 40px);
     }
-
+    .question__heading { 
+        max-width: 90vw;
+    }
     .questions__help {
         order: 2;
         display: grid;

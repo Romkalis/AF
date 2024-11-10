@@ -47,8 +47,8 @@
     font-weight: 600;
     align-self: flex-end;
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .slider__viewed {
-        padding: clamp(20px, 2.5vw, 40px);
+        padding: 20px;
     }
 }
