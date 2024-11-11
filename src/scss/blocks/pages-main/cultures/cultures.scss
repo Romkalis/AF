@@ -1,8 +1,10 @@
 .cultures__info {
     .catalog-culture__list {
         margin-bottom: clamp(20px, 5vw, 60px);
+        padding: 2px;
     }
 }
+
 @media (max-width: 520px) {
     .cultures__info {
         .catalog-culture__list {
@@ -10,6 +12,7 @@
         }
     }
 }
+
 @media (max-width: 375px) {
     .cultures__info {
         .catalog-culture__list {
