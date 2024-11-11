@@ -254,6 +254,34 @@ if (stickyBlock && window.innerWidth > 1024) {
     })
 }
 
+/***/ }),
+
+/***/ 813:
+/***/ (function() {
+
+const counterBlocks = document.querySelectorAll('.variations__cart-counter')
+
+if (counterBlocks.length > 0) {
+    counterBlocks.forEach( block => {
+        block.addEventListener('click', (evt) => {
+            
+            const inputField = block.querySelector('.variations__counter-text')
+            
+            if(evt.target.classList.contains('variations__counter--remove')) {
+                evt.preventDefault()
+                if (inputField.value > 0) {
+                    inputField.value --
+                }
+            } else if (evt.target.classList.contains('variations__counter--add')) {
+                evt.preventDefault()
+                    inputField.value ++
+            }
+        })
+    })
+}
+
+
+
 /***/ })
 
 /******/ 	});
@@ -4376,6 +4404,8 @@ var product_question_form = __webpack_require__(605);
 var product_share = __webpack_require__(794);
 // EXTERNAL MODULE: ./src/js/blocks/navigation-showCardForm.js
 var navigation_showCardForm = __webpack_require__(7);
+// EXTERNAL MODULE: ./src/js/blocks/variations-counter.js
+var variations_counter = __webpack_require__(813);
 // EXTERNAL MODULE: ./src/js/blocks/popup.js
 var popup = __webpack_require__(432);
 // EXTERNAL MODULE: ./src/js/blocks/sticky-header.js
@@ -4408,6 +4438,10 @@ var mobile_burger = __webpack_require__(44);
     //развернуть форму в карточке товара на наввигационной страничке
     
     
+    //управление счетчиками добавления количества товара.
+    
+    
+
     
     //открытие и закрытие попап
     
