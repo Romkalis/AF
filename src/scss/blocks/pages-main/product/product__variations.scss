@@ -222,6 +222,10 @@
 
 .variations__counter-text {
     margin: 4px;
+    width: max-content;
+    max-width: 4rem;
+    appearance: textfield;
+    text-align: center;
 }
 
 .variations__cart-button {
@@ -367,13 +371,16 @@
     }
     .variations__cart-counter {
         font-size: clamp(16px, 5vw, 24px);
-
+        display: flex;
+        justify-content: space-between;
     }
     .variations__counter-button {
         padding: 10px;
     }
     .variations__counter-text {
         padding: 0 clamp(16px, 5vw, 24px);
+        width: max-content;
+        max-width: 4em;
     }
     .variations__cart-button {
         width: 90%;

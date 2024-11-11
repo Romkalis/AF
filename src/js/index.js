@@ -23,6 +23,10 @@
     //развернуть форму в карточке товара на наввигационной страничке
     import './blocks/navigation-showCardForm.js'
     
+    //управление счетчиками добавления количества товара.
+    import './blocks/variations-counter.js'
+    
+
     
     //открытие и закрытие попап
     import './blocks/popup.js'

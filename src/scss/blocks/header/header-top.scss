@@ -143,6 +143,10 @@
         border-radius: 0 0 20px 20px;
     }
 
+    .header__finder-button.mobile-view {
+        display: block;
+    }
+
     .header__profile:hover,
     .header__finder-button:hover, 
     .header__finder-button:active {
@@ -160,14 +164,15 @@
 
     .header__finder-chekbox:checked ~ .header__finder-field {
         position: absolute;
-        top: 0;
+        top: 14px;
         left: 0;
-        width: 250px;
+        transform: translateX(-40%); 
+        width: 70vw;
+        max-width: 250px;
         padding: 8px;
         background-color: var(--bg-field);
         border-radius: 4px;
         z-index: 5;
-
         // сделать чекер
     }
 
