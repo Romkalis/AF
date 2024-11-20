@@ -9,16 +9,18 @@ if (form) {
         form.close()
     }
 
-    showButton?.addEventListener('click', () => {
-        showForm()
-
-        const backButton = form.querySelector('.question__button--back')
-        const closeButton = form.querySelector('.question__button--close')
-        const cancelButton = form.querySelector('.question-form__cancel')
-
-        backButton.addEventListener('click', closeForm)
-        closeButton.addEventListener('click', closeForm)
-        cancelButton.addEventListener('click', closeForm)
-
-    })
+    if (showButton) {
+        showButton.addEventListener('click', () => {
+            showForm()
+    
+            const backButton = form.querySelector('.question__button--back')
+            const closeButton = form.querySelector('.question__button--close')
+            const cancelButton = form.querySelector('.question-form__cancel')
+    
+            backButton.addEventListener('click', closeForm)
+            closeButton.addEventListener('click', closeForm)
+            cancelButton.addEventListener('click', closeForm)
+    
+        })
+    }
 }

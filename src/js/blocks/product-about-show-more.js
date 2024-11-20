@@ -5,19 +5,23 @@ if (aboutSection) {
     ".product__about-info--showmore"
   );
 
-  showMoreButton?.addEventListener("click", () => {
-    
-    showMoreButton.textContent = ''
+  if (showMoreButton) {
 
-    const aboutInfoBlocks = aboutSection.querySelectorAll(
-      ".product__about-info"
-    );
+    showMoreButton?.addEventListener("click", () => {
+      
+      showMoreButton.textContent = ''
+  
+      const aboutInfoBlocks = aboutSection.querySelectorAll(
+        ".product__about-info"
+      );
+  
+      aboutInfoBlocks.forEach((block) => {
+  
+        if (block.classList.contains("desktop-view")) {
+          block.classList.remove("desktop-view");
+        }
+      });
+    })
 
-    aboutInfoBlocks.forEach((block) => {
-
-      if (block.classList.contains("desktop-view")) {
-        block.classList.remove("desktop-view");
-      }
-    });
-  });
+  }
 }
