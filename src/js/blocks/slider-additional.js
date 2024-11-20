@@ -1,3 +1,4 @@
+import Splide from '@splidejs/splide';
 
 const startAdditionalSlider = () => {
   let additionalSplideBlock = document.getElementById("slider-additional");

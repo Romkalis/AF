@@ -1,3 +1,5 @@
+import Splide from '@splidejs/splide';
+
 const sliderList = document.querySelector(".product__picture-list");
 
 // сработает если найден элемент и ширина экрана больше 520 пикселей.

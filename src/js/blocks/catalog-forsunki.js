@@ -1,3 +1,5 @@
+import Splide from '@splidejs/splide';
+
 let forsunkiSplide = null; // Переменная для хранения экземпляра слайдера
 
 const startForsunkiSlider = () => {

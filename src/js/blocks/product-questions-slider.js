@@ -1,3 +1,4 @@
+import Splide from '@splidejs/splide';
 
 const startQuestionSlider = () => {
   let questionsSlider = null;

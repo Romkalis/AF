@@ -1,11 +1,15 @@
+const path = require('path')
+
 const config = {
 	mode: 'production',
 	entry: {
-		index: './src/js/index.js'
+		index: './src/js/index.js',
+		splide: path.resolve(__dirname, 'node_modules/@splidejs/splide/dist/js/splide.min.js'), // отдельный бандл для Splide
 		// при вложенности - добавить пути здесь
 	},
 	output: {
 		filename: '[name].bundle.js',
+		path: path.resolve(__dirname, 'docs')
 	},
 	module: {
 		rules: [

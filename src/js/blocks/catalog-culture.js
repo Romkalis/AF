@@ -1,3 +1,5 @@
+import Splide from '@splidejs/splide';
+
 let cultureSplide = null; // Переменная для хранения экземпляра слайдера
 
 const startCultureSlider = () => {
