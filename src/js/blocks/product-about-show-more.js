@@ -7,7 +7,7 @@ if (aboutSection) {
 
   if (showMoreButton) {
 
-    showMoreButton?.addEventListener("click", () => {
+    showMoreButton.addEventListener("click", () => {
       
       showMoreButton.textContent = ''
   

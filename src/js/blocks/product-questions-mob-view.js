@@ -23,7 +23,7 @@ const showQuestionsModal = () => {
         });
 
         // создаем кнопку для закрытия контейнера
-        modalContainer.insertAdjacentHTML(
+        modalContainer?.insertAdjacentHTML(
           "afterbegin",
           `
                     <button class='question__close-modal'>
@@ -38,7 +38,7 @@ const showQuestionsModal = () => {
         document.body.appendChild(modalContainer);
 
         // запускаем функцию показа формы
-        modalContainer.addEventListener('click', replyForm)
+        modalContainer?.addEventListener('click', replyForm)
 
 
         const closeModalButton = modalContainer.querySelector(

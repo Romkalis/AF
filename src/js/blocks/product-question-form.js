@@ -17,9 +17,9 @@ if (form) {
             const closeButton = form.querySelector('.question__button--close')
             const cancelButton = form.querySelector('.question-form__cancel')
     
-            backButton.addEventListener('click', closeForm)
-            closeButton.addEventListener('click', closeForm)
-            cancelButton.addEventListener('click', closeForm)
+            backButton?.addEventListener('click', closeForm)
+            closeButton?.addEventListener('click', closeForm)
+            cancelButton?.addEventListener('click', closeForm)
     
         })
     }
