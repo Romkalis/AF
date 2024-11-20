@@ -1,5 +1,3 @@
-import Splide from "@splidejs/splide";
-
 const startProductPhotoSlider = () => {
 
   const splideMainPhotoOptions = {

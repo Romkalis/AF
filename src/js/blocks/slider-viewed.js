@@ -1,5 +1,3 @@
-import Splide from "@splidejs/splide";
-
 const startViewedSlider = () => {
 
   const viewedSplider = document.getElementById("slider-viewed")

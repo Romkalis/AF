@@ -17,6 +17,9 @@ const config = {
 	},
 	optimization: {
 		minimize: false, // Включает минификацию
+	},
+	externals: {
+		splide: 'Splide'
 	}
 };
 
