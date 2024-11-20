@@ -9,7 +9,7 @@ if (form) {
         form.close()
     }
 
-    showButton.addEventListener('click', () => {
+    showButton?.addEventListener('click', () => {
         showForm()
 
         const backButton = form.querySelector('.question__button--back')

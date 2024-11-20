@@ -125,7 +125,7 @@ if (aboutSection) {
     ".product__about-info--showmore"
   );
 
-  showMoreButton.addEventListener("click", () => {
+  showMoreButton?.addEventListener("click", () => {
     
     showMoreButton.textContent = ''
 
@@ -159,7 +159,7 @@ if (form) {
         form.close()
     }
 
-    showButton.addEventListener('click', () => {
+    showButton?.addEventListener('click', () => {
         showForm()
 
         const backButton = form.querySelector('.question__button--back')

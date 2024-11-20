@@ -5,7 +5,7 @@ if (aboutSection) {
     ".product__about-info--showmore"
   );
 
-  showMoreButton.addEventListener("click", () => {
+  showMoreButton?.addEventListener("click", () => {
     
     showMoreButton.textContent = ''
 
