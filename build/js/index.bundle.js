@@ -1,6 +1,23 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ 63:
+/***/ (function() {
+
+const clearButton = document.querySelector('.cart__total-clear')
+
+if (clearButton) {
+    clearButton.addEventListener('click', () => {
+        const cartList = document.querySelector(".cart__orders-list")
+        cartList.textContent = null
+        cartList.insertAdjacentHTML('afterbegin', `
+            <li style="text-align: center; font-size: 1.5rem; padding: 4rem 0;"> В корзине ничего нет</li>
+            `)
+    })
+}
+
+/***/ }),
+
 /***/ 636:
 /***/ (function() {
 
@@ -4453,6 +4470,8 @@ var product_question_form = __webpack_require__(605);
 var product_share = __webpack_require__(794);
 // EXTERNAL MODULE: ./src/js/blocks/cart-counter.js
 var cart_counter = __webpack_require__(636);
+// EXTERNAL MODULE: ./src/js/blocks/cart-clear.js
+var cart_clear = __webpack_require__(63);
 // EXTERNAL MODULE: ./src/js/blocks/navigation-showCardForm.js
 var navigation_showCardForm = __webpack_require__(7);
 // EXTERNAL MODULE: ./src/js/blocks/variations-counter.js
@@ -4487,8 +4506,10 @@ var mobile_burger = __webpack_require__(44);
     
 
     // добавлениеи удаление товаров в корзине
-
     
+    // кнопка очистить корзину
+        
+        
 
     //развернуть форму в карточке товара на наввигационной страничке
     

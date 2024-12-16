@@ -21,8 +21,10 @@
     import './blocks/product-share.js'
 
     // добавлениеи удаление товаров в корзине
-
     import './blocks/cart-counter.js'
+    // кнопка очистить корзину
+        import './blocks/cart-clear.js'
+        
 
     //развернуть форму в карточке товара на наввигационной страничке
     import './blocks/navigation-showCardForm.js'
