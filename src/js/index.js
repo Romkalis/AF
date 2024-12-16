@@ -20,6 +20,10 @@
     import './blocks/product-answer-form.js'
     import './blocks/product-share.js'
 
+    // добавлениеи удаление товаров в корзине
+
+    import './blocks/cart-counter.js'
+
     //развернуть форму в карточке товара на наввигационной страничке
     import './blocks/navigation-showCardForm.js'
     

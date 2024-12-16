@@ -1,6 +1,52 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ 636:
+/***/ (function() {
+
+const cartList = document.querySelector('.cart__orders-list')
+
+if (cartList) {
+
+    cartList.addEventListener('click', (evt) => {
+        
+        // обработка счетчиков по нажатию на кнопку
+
+        if (evt.target.classList.contains('cart__card-counter-button')) {
+
+            const goods = evt.target.closest('.cart__card-counter')
+            
+            const currentInput = goods.querySelector('.cart__card-counter-field')
+            
+            switch (evt.target.textContent) {
+                case "+": {
+                    currentInput.value = +currentInput.value + 1
+                    break
+                }
+                case "-": {
+                    if(currentInput.value > 0) {
+                    currentInput.value = +currentInput.value - 1
+                    }
+                    break
+                }
+
+            }
+        }
+
+        // удаление товара
+
+        if (
+            evt.target.classList.contains('cart__card-delete-icon') || 
+            evt.target.classList.contains('cart__card-delete-button')
+        ) {
+            const elem = evt.target.closest('.cart__card')
+            elem.remove()
+        }
+    })
+}
+
+/***/ }),
+
 /***/ 44:
 /***/ (function() {
 
@@ -61,30 +107,34 @@ if (showBurgerButton && window.innerWidth <= 768) {
 const navigationCards = document.querySelector('.navigation__cards')
 const cards = document.querySelectorAll(".navigation__card");
 
-navigationCards?.addEventListener('click', (evt) => {
+if (navigationCards) {
     
-    const showMoreButton = evt.target.closest('.navigation__showmore');
+    navigationCards?.addEventListener('click', (evt) => {
     
-    if(showMoreButton) {
-        const card = evt.target.closest('.navigation__card')
-        const form = card.querySelector('.navigation__card-form')
-        const closedButtonText = card.querySelector('.navigation__showmore--closed')
-        const openedButtonText = card.querySelector('.navigation__showmore--open')
-
-        form.classList.toggle("navigation__card-form--showed")
-
-
-
-        // показываем текст у кнопки, в зависимости от состояния меню
-        if (form.classList.contains('navigation__card-form--showed')) {
-            closedButtonText.style = "display: none;"
-            openedButtonText.style = "display: inline;"
-        } else {
-            closedButtonText.style = "display: inline;"
-            openedButtonText.style = "display: none;"
+        const showMoreButton = evt.target.closest('.navigation__showmore');
+        
+        if(showMoreButton) {
+            const card = evt.target.closest('.navigation__card')
+            const form = card.querySelector('.navigation__card-form')
+            const closedButtonText = card.querySelector('.navigation__showmore--closed')
+            const openedButtonText = card.querySelector('.navigation__showmore--open')
+    
+            form.classList.toggle("navigation__card-form--showed")
+    
+    
+    
+            // показываем текст у кнопки, в зависимости от состояния меню
+            if (form.classList.contains('navigation__card-form--showed')) {
+                closedButtonText.style = "display: none;"
+                openedButtonText.style = "display: inline;"
+            } else {
+                closedButtonText.style = "display: inline;"
+                openedButtonText.style = "display: none;"
+            }
         }
-    }
-})
+    })
+        
+}
 
 
 /***/ }),
@@ -125,21 +175,25 @@ if (aboutSection) {
     ".product__about-info--showmore"
   );
 
-  showMoreButton?.addEventListener("click", () => {
-    
-    showMoreButton.textContent = ''
+  if (showMoreButton) {
 
-    const aboutInfoBlocks = aboutSection.querySelectorAll(
-      ".product__about-info"
-    );
+    showMoreButton.addEventListener("click", () => {
+      
+      showMoreButton.textContent = ''
+  
+      const aboutInfoBlocks = aboutSection.querySelectorAll(
+        ".product__about-info"
+      );
+  
+      aboutInfoBlocks.forEach((block) => {
+  
+        if (block.classList.contains("desktop-view")) {
+          block.classList.remove("desktop-view");
+        }
+      });
+    })
 
-    aboutInfoBlocks.forEach((block) => {
-
-      if (block.classList.contains("desktop-view")) {
-        block.classList.remove("desktop-view");
-      }
-    });
-  });
+  }
 }
 
 
@@ -167,9 +221,9 @@ if (form) {
             const closeButton = form.querySelector('.question__button--close')
             const cancelButton = form.querySelector('.question-form__cancel')
     
-            backButton.addEventListener('click', closeForm)
-            closeButton.addEventListener('click', closeForm)
-            cancelButton.addEventListener('click', closeForm)
+            backButton?.addEventListener('click', closeForm)
+            closeButton?.addEventListener('click', closeForm)
+            cancelButton?.addEventListener('click', closeForm)
     
         })
     }
@@ -216,27 +270,25 @@ if (stickyBlock && window.innerWidth > 1024) {
 /***/ 813:
 /***/ (function() {
 
-const counterBlocks = document.querySelectorAll('.variations__cart-counter')
+const counterBlocks = document.querySelectorAll(".variations__cart-counter");
 
 if (counterBlocks.length > 0) {
-    counterBlocks.forEach( block => {
-        block.addEventListener('click', (evt) => {
-            
-            const inputField = block.querySelector('.variations__counter-text')
-            
-            if(evt.target.classList.contains('variations__counter--remove')) {
-                evt.preventDefault()
-                if (inputField.value > 0) {
-                    inputField.value --
-                }
-            } else if (evt.target.classList.contains('variations__counter--add')) {
-                evt.preventDefault()
-                    inputField.value ++
-            }
-        })
-    })
-}
+  counterBlocks.forEach((block) => {
+    block.addEventListener("click", (evt) => {
+      const inputField = block.querySelector(".variations__counter-text");
 
+      if (evt.target.classList.contains("variations__counter--remove")) {
+        evt.preventDefault();
+        if (inputField.value > 0) {
+          inputField.value--;
+        }
+      } else if (evt.target.classList.contains("variations__counter--add")) {
+        evt.preventDefault();
+        inputField.value++;
+      }
+    });
+  });
+}
 
 
 /***/ })
@@ -4304,7 +4356,7 @@ const showQuestionsModal = () => {
         });
 
         // создаем кнопку для закрытия контейнера
-        modalContainer.insertAdjacentHTML(
+        modalContainer?.insertAdjacentHTML(
           "afterbegin",
           `
                     <button class='question__close-modal'>
@@ -4319,7 +4371,7 @@ const showQuestionsModal = () => {
         document.body.appendChild(modalContainer);
 
         // запускаем функцию показа формы
-        modalContainer.addEventListener('click', replyForm)
+        modalContainer?.addEventListener('click', replyForm)
 
 
         const closeModalButton = modalContainer.querySelector(
@@ -4399,6 +4451,8 @@ if (sliderList && window.innerWidth > 520) {
 var product_question_form = __webpack_require__(605);
 // EXTERNAL MODULE: ./src/js/blocks/product-share.js
 var product_share = __webpack_require__(794);
+// EXTERNAL MODULE: ./src/js/blocks/cart-counter.js
+var cart_counter = __webpack_require__(636);
 // EXTERNAL MODULE: ./src/js/blocks/navigation-showCardForm.js
 var navigation_showCardForm = __webpack_require__(7);
 // EXTERNAL MODULE: ./src/js/blocks/variations-counter.js
@@ -4430,6 +4484,10 @@ var mobile_burger = __webpack_require__(44);
     
     
     
+    
+
+    // добавлениеи удаление товаров в корзине
+
     
 
     //развернуть форму в карточке товара на наввигационной страничке

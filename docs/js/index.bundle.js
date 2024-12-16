@@ -61,30 +61,34 @@ if (showBurgerButton && window.innerWidth <= 768) {
 const navigationCards = document.querySelector('.navigation__cards')
 const cards = document.querySelectorAll(".navigation__card");
 
-navigationCards?.addEventListener('click', (evt) => {
+if (navigationCards) {
     
-    const showMoreButton = evt.target.closest('.navigation__showmore');
+    navigationCards?.addEventListener('click', (evt) => {
     
-    if(showMoreButton) {
-        const card = evt.target.closest('.navigation__card')
-        const form = card.querySelector('.navigation__card-form')
-        const closedButtonText = card.querySelector('.navigation__showmore--closed')
-        const openedButtonText = card.querySelector('.navigation__showmore--open')
-
-        form.classList.toggle("navigation__card-form--showed")
-
-
-
-        // показываем текст у кнопки, в зависимости от состояния меню
-        if (form.classList.contains('navigation__card-form--showed')) {
-            closedButtonText.style = "display: none;"
-            openedButtonText.style = "display: inline;"
-        } else {
-            closedButtonText.style = "display: inline;"
-            openedButtonText.style = "display: none;"
+        const showMoreButton = evt.target.closest('.navigation__showmore');
+        
+        if(showMoreButton) {
+            const card = evt.target.closest('.navigation__card')
+            const form = card.querySelector('.navigation__card-form')
+            const closedButtonText = card.querySelector('.navigation__showmore--closed')
+            const openedButtonText = card.querySelector('.navigation__showmore--open')
+    
+            form.classList.toggle("navigation__card-form--showed")
+    
+    
+    
+            // показываем текст у кнопки, в зависимости от состояния меню
+            if (form.classList.contains('navigation__card-form--showed')) {
+                closedButtonText.style = "display: none;"
+                openedButtonText.style = "display: inline;"
+            } else {
+                closedButtonText.style = "display: inline;"
+                openedButtonText.style = "display: none;"
+            }
         }
-    }
-})
+    })
+        
+}
 
 
 /***/ }),
@@ -125,66 +129,25 @@ if (aboutSection) {
     ".product__about-info--showmore"
   );
 
-  showMoreButton.addEventListener("click", () => {
-    
-    showMoreButton.textContent = ''
+  if (showMoreButton) {
 
-    const aboutInfoBlocks = aboutSection.querySelectorAll(
-      ".product__about-info"
-    );
-
-    aboutInfoBlocks.forEach((block) => {
-
-      if (block.classList.contains("desktop-view")) {
-        block.classList.remove("desktop-view");
-      }
-    });
-  });
-}
-
-
-/***/ }),
-
-/***/ 544:
-/***/ (function() {
-
-const sliderList = document.querySelector(".product__picture-list");
-
-// сработает если найден элемент и ширина экрана больше 520 пикселей.
-
-if (sliderList && window.innerWidth > 520) {
-
-  sliderList.addEventListener("click", (evt) => {
-
-        const modal = document.getElementById('pictureModal')
-
-        const additional = evt.target.cloneNode(true)
-
-        if (additional.classList.contains('product__picture-image')) {
-            
-            additional.classList.remove('product__picture-image')
-            additional.classList.add('product-view')
-
-        } else if (additional.classList.contains('product__picture-video')) {
-            
-            additional.classList.remove('product__picture-video')
-            additional.classList.add('product-view')
+    showMoreButton.addEventListener("click", () => {
+      
+      showMoreButton.textContent = ''
+  
+      const aboutInfoBlocks = aboutSection.querySelectorAll(
+        ".product__about-info"
+      );
+  
+      aboutInfoBlocks.forEach((block) => {
+  
+        if (block.classList.contains("desktop-view")) {
+          block.classList.remove("desktop-view");
         }
+      });
+    })
 
-        modal.appendChild(additional)
- 
-
-        modal.showModal()
-
-        const closeModal = () => {
-
-            modal.close()
-            modal.removeChild(additional)
-            modal.removeEventListener('click', closeModal)
-        }
-        modal.addEventListener('click', closeModal)
-
-  });
+  }
 }
 
 
@@ -204,18 +167,20 @@ if (form) {
         form.close()
     }
 
-    showButton.addEventListener('click', () => {
-        showForm()
-
-        const backButton = form.querySelector('.question__button--back')
-        const closeButton = form.querySelector('.question__button--close')
-        const cancelButton = form.querySelector('.question-form__cancel')
-
-        backButton.addEventListener('click', closeForm)
-        closeButton.addEventListener('click', closeForm)
-        cancelButton.addEventListener('click', closeForm)
-
-    })
+    if (showButton) {
+        showButton.addEventListener('click', () => {
+            showForm()
+    
+            const backButton = form.querySelector('.question__button--back')
+            const closeButton = form.querySelector('.question__button--close')
+            const cancelButton = form.querySelector('.question-form__cancel')
+    
+            backButton?.addEventListener('click', closeForm)
+            closeButton?.addEventListener('click', closeForm)
+            cancelButton?.addEventListener('click', closeForm)
+    
+        })
+    }
 }
 
 /***/ }),
@@ -259,27 +224,25 @@ if (stickyBlock && window.innerWidth > 1024) {
 /***/ 813:
 /***/ (function() {
 
-const counterBlocks = document.querySelectorAll('.variations__cart-counter')
+const counterBlocks = document.querySelectorAll(".variations__cart-counter");
 
 if (counterBlocks.length > 0) {
-    counterBlocks.forEach( block => {
-        block.addEventListener('click', (evt) => {
-            
-            const inputField = block.querySelector('.variations__counter-text')
-            
-            if(evt.target.classList.contains('variations__counter--remove')) {
-                evt.preventDefault()
-                if (inputField.value > 0) {
-                    inputField.value --
-                }
-            } else if (evt.target.classList.contains('variations__counter--add')) {
-                evt.preventDefault()
-                    inputField.value ++
-            }
-        })
-    })
-}
+  counterBlocks.forEach((block) => {
+    block.addEventListener("click", (evt) => {
+      const inputField = block.querySelector(".variations__counter-text");
 
+      if (evt.target.classList.contains("variations__counter--remove")) {
+        evt.preventDefault();
+        if (inputField.value > 0) {
+          inputField.value--;
+        }
+      } else if (evt.target.classList.contains("variations__counter--add")) {
+        evt.preventDefault();
+        inputField.value++;
+      }
+    });
+  });
+}
 
 
 /***/ })
@@ -4347,7 +4310,7 @@ const showQuestionsModal = () => {
         });
 
         // создаем кнопку для закрытия контейнера
-        modalContainer.insertAdjacentHTML(
+        modalContainer?.insertAdjacentHTML(
           "afterbegin",
           `
                     <button class='question__close-modal'>
@@ -4362,7 +4325,7 @@ const showQuestionsModal = () => {
         document.body.appendChild(modalContainer);
 
         // запускаем функцию показа формы
-        modalContainer.addEventListener('click', replyForm)
+        modalContainer?.addEventListener('click', replyForm)
 
 
         const closeModalButton = modalContainer.querySelector(
@@ -4396,8 +4359,48 @@ const showQuestionsModal = () => {
 
 document.addEventListener("DOMContentLoaded", showQuestionsModal);
 
-// EXTERNAL MODULE: ./src/js/blocks/product-photo-modal.js
-var product_photo_modal = __webpack_require__(544);
+;// CONCATENATED MODULE: ./src/js/blocks/product-photo-modal.js
+
+
+const sliderList = document.querySelector(".product__picture-list");
+
+// сработает если найден элемент и ширина экрана больше 520 пикселей.
+
+if (sliderList && window.innerWidth > 520) {
+
+  sliderList.addEventListener("click", (evt) => {
+
+        const modal = document.getElementById('pictureModal')
+
+        const additional = evt.target.cloneNode(true)
+
+        if (additional.classList.contains('product__picture-image')) {
+            
+            additional.classList.remove('product__picture-image')
+            additional.classList.add('product-view')
+
+        } else if (additional.classList.contains('product__picture-video')) {
+            
+            additional.classList.remove('product__picture-video')
+            additional.classList.add('product-view')
+        }
+
+        modal.appendChild(additional)
+ 
+
+        modal.showModal()
+
+        const closeModal = () => {
+
+            modal.close()
+            modal.removeChild(additional)
+            modal.removeEventListener('click', closeModal)
+        }
+        modal.addEventListener('click', closeModal)
+
+  });
+}
+
 // EXTERNAL MODULE: ./src/js/blocks/product-question-form.js
 var product_question_form = __webpack_require__(605);
 // EXTERNAL MODULE: ./src/js/blocks/product-share.js

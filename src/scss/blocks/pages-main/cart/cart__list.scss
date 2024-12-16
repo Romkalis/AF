@@ -71,7 +71,11 @@
 }
 
 .cart__card-counter-field {
+    text-align: center;
+    max-width: 4rem;
+    -moz-appearance: textfield;
 }
+
 .cart-card__sum {
 }
 
