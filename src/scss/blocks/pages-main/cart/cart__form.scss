@@ -34,8 +34,22 @@
     max-width: 380px;
     
 }
+
+
+.cart__form-input--upload {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    clip: rect(0, 0, 0, 0); /* Скрываем input */
+    overflow: hidden;
+}
+
 .cart__form-button,
 .cart__form-send {
+    text-align: center;
     padding-top: 1em;
     padding-bottom: 1em;
     max-width: 280px;
