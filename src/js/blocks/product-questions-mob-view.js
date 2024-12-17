@@ -1,10 +1,13 @@
 import { replyForm } from "./product-answer-form";
 
+
+
 const showQuestionsModal = () => {
   const questionsList = document.getElementById("questions-slider-list");
 
   if (questionsList && window.innerWidth <= 521) {
     questionsList.addEventListener("click", (evt) => {
+      
       const showModalButton = evt.target.closest(".answers__menu");
 
       if (showModalButton) {
@@ -21,6 +24,8 @@ const showQuestionsModal = () => {
           }
           modalContainer.appendChild(child);
         });
+
+
 
         // создаем кнопку для закрытия контейнера
         modalContainer?.insertAdjacentHTML(
@@ -46,6 +51,11 @@ const showQuestionsModal = () => {
         );
         const changedChildren = Array.from(modalContainer.children);
         const closeModal = () => {
+
+          // ..закрываем форму ответа, если она открыта
+          const modalForm = modalContainer.querySelector('.question__answer-form')
+          modalForm.classList.remove('answer-form--showed')
+
           changedChildren.forEach((child) => {
             // делаем проверку что выпадающий список будет закрыт
             if (child.classList.contains("show-modal-checkbox")) {
@@ -56,17 +66,27 @@ const showQuestionsModal = () => {
               return;
             }
             questionBlock.appendChild(child);
-          });
 
+
+            
+          });
+          showModalFormButton.removeEventListener("click", toggleShowReplyForm);
           modalContainer.removeEventListener('click', replyForm)
           modalContainer.remove();
-
+          
         };
+        
+        const showModalFormButton = modalContainer.querySelector('.answer__modal-reply')
+        const toggleShowReplyForm = () => {
+          const modalForm = modalContainer.querySelector('.question__answer-form')
+          modalForm.classList.toggle('answer-form--showed')
+        }
 
-
+        showModalFormButton.addEventListener("click", toggleShowReplyForm);
         closeModalButton.addEventListener("click", closeModal);
       }
     });
+
   }
 };
 
