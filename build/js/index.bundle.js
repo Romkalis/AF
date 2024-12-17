@@ -49,6 +49,12 @@ if (cartList) {
 
       switch (evt.target.textContent) {
         case "+": {
+          
+          if (currentInput.value < 0) {
+            
+            currentInput.value = Math.abs(currentInput.value)
+          }
+
           currentInput.value = +currentInput.value + 1;
           isDiscount(evt.target);
           break;
