@@ -1,5 +1,4 @@
 import { replyForm } from "./product-answer-form";
-// import { toggleQuestionsVisibility } from "./product-question-open";
 
 const showQuestionsModal = () => {
   const questionsList = document.getElementById("questions-slider-list");
@@ -10,7 +9,6 @@ const showQuestionsModal = () => {
 
       if (showModalButton) {
         const questionBlock = showModalButton.closest(".questions__question");
-
         const questionChildren = Array.from(questionBlock.children);
 
         // создаем контейнер для модалки
@@ -39,38 +37,9 @@ const showQuestionsModal = () => {
 
         document.body.appendChild(modalContainer);
 
-        const toggleForm = (evt) => {
-          if (evt.target.classList.contains("question__answer-reply")) {
-          
-            const question = evt.target.closest("#modalQuestion");
-        
-            
-            const form = question.querySelector(".question__answer-form");
-        
-            form.classList.toggle("answer-form--showed");
-        
-            const closeForm = () => {
-              form.classList.remove("answer-form--showed");
-              closeFormButton.removeEventListener("click", closeForm);
-            };
-        
-            const closeFormButton = form.querySelector(".answer-form__cancel");
-            closeFormButton.addEventListener("click", closeForm);
-          }
-        };
-          
-          if (questionList) {
-            questionList.addEventListener("click", replyForm);
-          }
-          
-        }
         // запускаем функцию показа формы
-        modalContainer?.addEventListener('click', (e) =>{
-          replyForm(e)
-          console.log('click')
-        })
+        modalContainer?.addEventListener('click', replyForm)
 
-        
 
         const closeModalButton = modalContainer.querySelector(
           ".question__close-modal"
@@ -93,7 +62,6 @@ const showQuestionsModal = () => {
           modalContainer.remove();
 
         };
-
 
 
         closeModalButton.addEventListener("click", closeModal);

@@ -4380,10 +4380,9 @@ const questionList = document.querySelector(".questions__form-list");
 const replyForm = (evt) => {
   if (evt.target.classList.contains("question__answer-reply")) {
 
-    console.log('replyF')
-
     const question = evt.target.closest(".questions__question");
 
+    
     const form = question.querySelector(".question__answer-form");
 
     form.classList.toggle("answer-form--showed");
@@ -4404,7 +4403,6 @@ if (questionList) {
 
 ;// CONCATENATED MODULE: ./src/js/blocks/product-questions-mob-view.js
 
-// import { toggleQuestionsVisibility } from "./product-question-open";
 
 const showQuestionsModal = () => {
   const questionsList = document.getElementById("questions-slider-list");
@@ -4415,7 +4413,6 @@ const showQuestionsModal = () => {
 
       if (showModalButton) {
         const questionBlock = showModalButton.closest(".questions__question");
-
         const questionChildren = Array.from(questionBlock.children);
 
         // создаем контейнер для модалки
@@ -4445,12 +4442,8 @@ const showQuestionsModal = () => {
         document.body.appendChild(modalContainer);
 
         // запускаем функцию показа формы
-        modalContainer?.addEventListener('click', (e) =>{
-          replyForm(e)
-          console.log('click')
-        })
+        modalContainer?.addEventListener('click', replyForm)
 
-        
 
         const closeModalButton = modalContainer.querySelector(
           ".question__close-modal"
