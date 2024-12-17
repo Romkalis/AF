@@ -201,11 +201,6 @@
         color: var(--c-main);
     }
 }
-.subquestion__reply {
-    display: block;
-}
-
-
 
 @media( max-width: 768px) {
     .questions {
@@ -260,11 +255,6 @@
     .question__answers {
         height: 0;
     }
-
-    .subquestion__reply {
-        display: none;
-    }
-    
 
     .question__reply {
         height: 0;
