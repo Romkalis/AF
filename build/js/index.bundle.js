@@ -4379,6 +4379,9 @@ const questionList = document.querySelector(".questions__form-list");
 
 const replyForm = (evt) => {
   if (evt.target.classList.contains("question__answer-reply")) {
+
+    console.log('replyF')
+
     const question = evt.target.closest(".questions__question");
 
     const form = question.querySelector(".question__answer-form");

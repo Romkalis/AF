@@ -39,6 +39,31 @@ const showQuestionsModal = () => {
 
         document.body.appendChild(modalContainer);
 
+        const toggleForm = (evt) => {
+          if (evt.target.classList.contains("question__answer-reply")) {
+          
+            const question = evt.target.closest("#modalQuestion");
+        
+            
+            const form = question.querySelector(".question__answer-form");
+        
+            form.classList.toggle("answer-form--showed");
+        
+            const closeForm = () => {
+              form.classList.remove("answer-form--showed");
+              closeFormButton.removeEventListener("click", closeForm);
+            };
+        
+            const closeFormButton = form.querySelector(".answer-form__cancel");
+            closeFormButton.addEventListener("click", closeForm);
+          }
+        };
+          
+          if (questionList) {
+            questionList.addEventListener("click", replyForm);
+          }
+          
+        }
         // запускаем функцию показа формы
         modalContainer?.addEventListener('click', (e) =>{
           replyForm(e)
@@ -68,6 +93,7 @@ const showQuestionsModal = () => {
           modalContainer.remove();
 
         };
+
 
 
         closeModalButton.addEventListener("click", closeModal);

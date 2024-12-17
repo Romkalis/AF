@@ -2,8 +2,10 @@ const questionList = document.querySelector(".questions__form-list");
 
 export const replyForm = (evt) => {
   if (evt.target.classList.contains("question__answer-reply")) {
+
     const question = evt.target.closest(".questions__question");
 
+    
     const form = question.querySelector(".question__answer-form");
 
     form.classList.toggle("answer-form--showed");
