@@ -177,12 +177,11 @@
 
 .show-modal-checkbox:checked ~ .question__answers {
 
-
-    // .question__reply--open {
-    //     height: auto;
-    //     opacity: 1;
-    //     width: -moz-available;
-    // }
+    .question__reply--open {
+        height: auto;
+        opacity: 1;
+        width: -moz-available;
+    }
 
 }
 
