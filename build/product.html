@@ -1371,7 +1371,7 @@
 										<span class="question__date">20.05.2024</span>
 									</p>
 									<p class="question__text">
-										Добрый день! Какой расход получается из&#160;красной форсунки -04 при скорости 26 км/ч и&#160;давлении&#160;3 бара?
+										Добрый день! Какой расход получается из&#160;красной форсунки -04 при скорости 26 км/ч и&#160;давлении 3 бара?
 									</p>
 
 									<label class="answers__menu" for="show-modal01">
@@ -1387,8 +1387,41 @@
 									<input type="checkbox" class="show-modal-checkbox visually-hidden" id="show-modal01" />
 
 									<div class="question__answers">
-										<div class="question__reply question__reply--close"></div>
+										<div class="question__reply"></div>
 									</div>
+
+									<form action="#" class="question__answer-form answer-form" method="POST">
+										<label class="answer-form__reply-label answer-form-label" for="reply">Ответить пользователю AgroForsunka.ru</label>
+
+										<textarea
+											class="answer-form__reply answer-form__field"
+											id="reply"
+											name="reply"
+											rows="4"
+											cols="50"
+											placeholder="Ваш ответ *"
+											required
+										></textarea>
+
+										<label class="answer-form__name-label answer-form-label" for="name">Вы&#160;отвечаете как:</label>
+										<input class="answer-form__name answer-form__field" type="text" id="name" name="name" placeholder="Имя *" required />
+
+										<label class="answer-form__email-label answer-form-label" for="email">
+											<input
+												class="answer-form__email answer-form__field"
+												type="email"
+												id="email"
+												name="email"
+												placeholder="E-mail (не будет виден другим пользователям)"
+												required
+											/>
+										</label>
+
+										<div class="answer-form__buttons">
+											<button class="answer-form__submit button button--small" type="submit">Отправить</button>
+											<button class="answer-form__cancel button--light" type="reset">Отменить</button>
+										</div>
+									</form>
 								</li>
 
 								<li class="questions__question splide__slide">
@@ -1413,7 +1446,7 @@
 									<input type="checkbox" class="show-modal-checkbox visually-hidden" id="show-modal02" />
 
 									<div class="question__answers">
-										<div class="question__reply question__reply--open">
+										<div class="question__reply">
 											<p class="question__heading">
 												<span class="question__name question__name--admin">AgroForsunka.ru</span>
 												<span class="question__date">24.06.2024</span>
@@ -1421,43 +1454,133 @@
 											<p class="question__text"><span class="question__answered-name">+ Кирилл </span>Здравствуйте! Да, возможна. СДЭК, Деловые, КИТ.</p>
 
 											<p class="question__answer-reply">Ответить</p>
-
-											<!-- для появления формы навешивается класс answer-form--showed  -->
-
-											<form action="#" class="question__answer-form answer-form" method="POST">
-												<label class="answer-form__reply-label answer-form-label" for="reply">Ответить пользователю AgroForsunka.ru</label>
-
-												<textarea
-													class="answer-form__reply answer-form__field"
-													id="reply"
-													name="reply"
-													rows="4"
-													cols="50"
-													placeholder="Ваш ответ *"
-													required
-												></textarea>
-
-												<label class="answer-form__name-label answer-form-label" for="name">Вы&#160;отвечаете как:</label>
-												<input class="answer-form__name answer-form__field" type="text" id="name" name="name" placeholder="Имя *" required />
-
-												<label class="answer-form__email-label answer-form-label" for="email">
-													<input
-														class="answer-form__email answer-form__field"
-														type="email"
-														id="email"
-														name="email"
-														placeholder="E-mail (не будет виден другим пользователям)"
-														required
-													/>
-												</label>
-
-												<div class="answer-form__buttons">
-													<button class="answer-form__submit button button--small" type="submit">Отправить</button>
-													<button class="answer-form__cancel button--light" type="reset">Отменить</button>
-												</div>
-											</form>
 										</div>
 									</div>
+
+									<!-- для появления формы навешивается класс answer-form--showed  -->
+
+									<form action="#" class="question__answer-form answer-form" method="POST">
+										<label class="answer-form__reply-label answer-form-label" for="reply">Ответить пользователю AgroForsunka.ru</label>
+
+										<textarea
+											class="answer-form__reply answer-form__field"
+											id="reply"
+											name="reply"
+											rows="4"
+											cols="50"
+											placeholder="Ваш ответ *"
+											required
+										></textarea>
+
+										<label class="answer-form__name-label answer-form-label" for="name">Вы&#160;отвечаете как:</label>
+										<input class="answer-form__name answer-form__field" type="text" id="name" name="name" placeholder="Имя *" required />
+
+										<label class="answer-form__email-label answer-form-label" for="email">
+											<input
+												class="answer-form__email answer-form__field"
+												type="email"
+												id="email"
+												name="email"
+												placeholder="E-mail (не будет виден другим пользователям)"
+												required
+											/>
+										</label>
+
+										<div class="answer-form__buttons">
+											<button class="answer-form__submit button button--small" type="submit">Отправить</button>
+											<button class="answer-form__cancel button--light" type="reset">Отменить</button>
+										</div>
+									</form>
+								</li>
+
+								<hr />
+
+								<li class="questions__question splide__slide">
+									<p class="question__heading">
+										<span class="question__name">USER</span>
+										<span class="question__date">24.06.2024</span>
+									</p>
+									<p class="question__text">
+										QUESTION
+									</p>
+
+									<label class="answers__menu" for="show-modal03">
+										<p class="answer__modal">
+											<span class="answer__modal-text">Посмотреть ответы </span>
+											<span class="answer__modal-counter">
+												(2)
+											</span>
+										</p>
+									</label>
+									<span class="answer__modal-reply question__answer-reply">Ответить</span>
+									<!-- надо подгружать разные id для окон в input & label -->
+									<input type="checkbox" class="show-modal-checkbox visually-hidden" id="show-modal03" />
+
+									<div class="question__answers">
+										<div class="question__reply">
+											<p class="question__heading">
+												<span class="question__name question__name--admin">TEST</span>
+												<span class="question__date">24.06.2024</span>
+											</p>
+											<p class="question__text"><span class="question__answered-name">+ Кирилл </span>Здравствуйте! Да, возможна. СДЭК, Деловые, КИТ.</p>
+
+											<!-- сюда внутрь вставляем блок с следующим вопросом -->
+
+											<div class="question__reply">
+												<p class="question__heading">
+													<span class="question__name question__name--admin">AgroForsunka.ru</span>
+													<span class="question__date">24.06.2024</span>
+												</p>
+												<p class="question__text"><span class="question__answered-name">+ USER </span>Здравствуйте! Да, возможна. СДЭК, Деловые, КИТ.</p>
+
+												<!-- в него можно вставить еще и еще -->
+
+												<div class="question__reply">
+													<p class="question__heading">
+														<span class="question__name question__name--admin">User</span>
+														<span class="question__date">24.06.2024</span>
+													</p>
+													<p class="question__text"><span class="question__answered-name">+ AgroForsunka.ru </span>Text2</p>
+												</div>
+											</div>
+
+											<p class="question__answer-reply subquestion__reply">Ответить</p>
+										</div>
+									</div>
+
+									<!-- для появления формы навешивается класс answer-form--showed  -->
+									<form action="#" class="question__answer-form answer-form" method="POST">
+										<label class="answer-form__reply-label answer-form-label" for="reply">Ответить пользователю AgroForsunka.ru</label>
+
+										<textarea
+											class="answer-form__reply answer-form__field"
+											id="reply"
+											name="reply"
+											rows="4"
+											cols="50"
+											placeholder="Ваш ответ *"
+											required
+										></textarea>
+
+										<label class="answer-form__name-label answer-form-label" for="name">Вы&#160;отвечаете как:</label>
+										<input class="answer-form__name answer-form__field" type="text" id="name" name="name" placeholder="Имя *" required />
+
+										<label class="answer-form__email-label answer-form-label" for="email">
+											<input
+												class="answer-form__email answer-form__field"
+												type="email"
+												id="email"
+												name="email"
+												placeholder="E-mail (не будет виден другим пользователям)"
+												required
+											/>
+										</label>
+
+										<div class="answer-form__buttons">
+											<button class="answer-form__submit button button--small" type="submit">Отправить</button>
+											<button class="answer-form__cancel button--light" type="reset">Отменить</button>
+										</div>
+									</form>
 								</li>
 							</ul>
 						</div>

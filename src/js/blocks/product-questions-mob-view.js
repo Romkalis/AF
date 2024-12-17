@@ -1,4 +1,5 @@
 import { replyForm } from "./product-answer-form";
+import { toggleQuestionsVisibility } from "./path-to-toggle-function";
 
 const showQuestionsModal = () => {
   const questionsList = document.getElementById("questions-slider-list");

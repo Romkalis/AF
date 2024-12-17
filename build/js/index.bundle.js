@@ -4347,6 +4347,31 @@ const startAdditionalSlider = () => {
 
 document.addEventListener("DOMContentLoaded", startAdditionalSlider);
 
+;// CONCATENATED MODULE: ./src/js/blocks/product-question-open.js
+const questionsList = document.querySelector(".questions__form-list");
+
+const toggleQuestionsVisibility = (question) => {
+    const questionBlock = question.querySelector('.question__answers')
+    questionBlock.classList.toggle('question__answers--visible')
+
+  const replies = question.querySelectorAll(".question__reply");
+  replies.forEach((reply) => reply.classList.toggle("question__reply--open"));
+};
+
+if (questionsList) {
+  const questions = questionsList.querySelectorAll(".questions__question");
+
+  questions.forEach((question) => {
+    const showReplyButton = question.querySelector(".answer__modal-text");
+
+    // Используем стрелочную функцию, чтобы сохранялся контекст
+    showReplyButton?.addEventListener("click", () => {
+      toggleQuestionsVisibility(question); // передаем сам элемент вопроса
+    });
+  });
+}
+
+
 // EXTERNAL MODULE: ./src/js/blocks/product-about-show-more.js
 var product_about_show_more = __webpack_require__(842);
 ;// CONCATENATED MODULE: ./src/js/blocks/product-answer-form.js
@@ -4354,7 +4379,10 @@ const questionList = document.querySelector(".questions__form-list");
 
 const replyForm = (evt) => {
   if (evt.target.classList.contains("question__answer-reply")) {
-    const form = document.querySelector(".question__answer-form");
+    const question = evt.target.closest(".questions__question");
+
+    const form = question.querySelector(".question__answer-form");
+
     form.classList.toggle("answer-form--showed");
 
     const closeForm = () => {
@@ -4521,6 +4549,11 @@ var mobile_burger = __webpack_require__(44);
     
 
 
+    // блок показа/ скрытия вопросов
+    
+
+    
+
     //развернуть описание товара product.html
     
     
@@ -4535,7 +4568,7 @@ var mobile_burger = __webpack_require__(44);
         
         
 
-    //развернуть форму в карточке товара на наввигационной страничке
+    //развернуть форму в карточке товара на навигационной страничке
     
     
     //управление счетчиками добавления количества товара.

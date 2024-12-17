@@ -60,6 +60,7 @@
 }
 
 .question__reply {
+    box-sizing: border-box;
     display: inline-block;
     margin-top: 20px;
     margin-left: 1em;
@@ -160,14 +161,26 @@
 }
 
 
-.show-modal-checkbox:checked ~ .question__answers {
+.question__reply--open {
+    height: auto;
+    opacity: 1;
+    width: -moz-available;
+}
+
+.question__answers--visible {
     height: max-content;
     opacity: 1;
+}
 
-    .question__reply--open {
-        height: auto;
-        opacity: 1;
-    }
+.show-modal-checkbox:checked ~ .question__answers {
+
+
+    // .question__reply--open {
+    //     height: auto;
+    //     opacity: 1;
+    //     width: -moz-available;
+    // }
+
 }
 
 .answers__menu {
@@ -185,6 +198,9 @@
     &:hover {
         color: var(--c-main);
     }
+}
+.subquestion__reply {
+    display: block;
 }
 
 

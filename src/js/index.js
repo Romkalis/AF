@@ -12,6 +12,11 @@
     import './blocks/slider-additional.js';
 
 
+    // блок показа/ скрытия вопросов
+    import './blocks/product-question-open.js'
+
+    
+
     //развернуть описание товара product.html
     import './blocks/product-about-show-more.js'
     import './blocks/product-questions-mob-view.js'
@@ -26,7 +31,7 @@
         import './blocks/cart-clear.js'
         
 
-    //развернуть форму в карточке товара на наввигационной страничке
+    //развернуть форму в карточке товара на навигационной страничке
     import './blocks/navigation-showCardForm.js'
     
     //управление счетчиками добавления количества товара.
