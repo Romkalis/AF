@@ -1,5 +1,5 @@
 import { replyForm } from "./product-answer-form";
-import { toggleQuestionsVisibility } from "./path-to-toggle-function";
+// import { toggleQuestionsVisibility } from "./product-question-open";
 
 const showQuestionsModal = () => {
   const questionsList = document.getElementById("questions-slider-list");
@@ -10,6 +10,7 @@ const showQuestionsModal = () => {
 
       if (showModalButton) {
         const questionBlock = showModalButton.closest(".questions__question");
+
         const questionChildren = Array.from(questionBlock.children);
 
         // создаем контейнер для модалки
@@ -39,8 +40,12 @@ const showQuestionsModal = () => {
         document.body.appendChild(modalContainer);
 
         // запускаем функцию показа формы
-        modalContainer?.addEventListener('click', replyForm)
+        modalContainer?.addEventListener('click', (e) =>{
+          replyForm(e)
+          console.log('click')
+        })
 
+        
 
         const closeModalButton = modalContainer.querySelector(
           ".question__close-modal"
