@@ -1,6 +1,6 @@
 import Splide from '@splidejs/splide';
 
-const startQuestionSlider = () => {
+export const startQuestionSlider = () => {
   let questionsSlider = null;
     const questionsSplideBlock = document.querySelector(".questions__form");
     if (questionsSplideBlock) {
