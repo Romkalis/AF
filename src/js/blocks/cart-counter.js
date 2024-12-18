@@ -66,6 +66,8 @@ if (cartList) {
       // Корректируем значение инпута (если оно отрицательное или не числовое)
       if (+input.value < 0) {
         input.value = Math.abs(input.value); // Присваиваем минимальное значение
+      } else if (input.value == 0) {
+        input.value = 1; // 
       }
       isDiscount(input); // Проверяем скидку
     }

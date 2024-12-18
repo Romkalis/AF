@@ -89,6 +89,8 @@ if (cartList) {
       // Корректируем значение инпута (если оно отрицательное или не числовое)
       if (+input.value < 0) {
         input.value = Math.abs(input.value); // Присваиваем минимальное значение
+      } else if (input.value == 0) {
+        input.value = 1; // 
       }
       isDiscount(input); // Проверяем скидку
     }
@@ -4271,8 +4273,8 @@ document.addEventListener('DOMContentLoaded', startQuestionSlider)
 ;// CONCATENATED MODULE: ./src/js/blocks/slider-viewed.js
 
 
-const startViewedSlider = () => {
 
+function startViewedSlider () {
   const viewedSplider = document.getElementById("slider-viewed")
 
     if (viewedSplider) {
@@ -4311,8 +4313,6 @@ const startViewedSlider = () => {
       productPhotoSplide.mount();
 
     }
-  
-
 }
 
 document.addEventListener('DOMContentLoaded', startViewedSlider);
@@ -4365,10 +4365,11 @@ document.addEventListener("DOMContentLoaded", startAdditionalSlider);
 const questionsList = document.querySelector(".questions__form-list");
 
 const toggleQuestionsVisibility = (question) => {
-    const questionBlock = question.querySelector('.question__answers')
-    questionBlock.classList.toggle('question__answers--visible')
-
   const replies = question.querySelectorAll(".question__reply");
+  const questionBlock = question.querySelector('.question__answers')
+  if(questionBlock) {
+  questionBlock.classList.toggle('question__answers--visible')
+  }
   replies.forEach((reply) => reply.classList.toggle("question__reply--open"));
 };
 

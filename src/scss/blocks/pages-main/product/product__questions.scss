@@ -176,13 +176,11 @@
 }
 
 .show-modal-checkbox:checked ~ .question__answers {
-
     .question__reply--open {
         height: auto;
         opacity: 1;
         width: -moz-available;
     }
-
 }
 
 .answers__menu {
@@ -247,6 +245,11 @@
 }
 
 @media( max-width: 520px) {
+
+    .questions__question .answer-form {
+        pointer-events: none;
+    } 
+
     .questions__form .splide__arrow {
         display: flex;
         margin: 0;

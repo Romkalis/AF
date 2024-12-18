@@ -1,7 +1,7 @@
 import Splide from '@splidejs/splide';
 
-function startViewedSlider () {
 
+export function startViewedSlider () {
   const viewedSplider = document.getElementById("slider-viewed")
 
     if (viewedSplider) {
@@ -40,8 +40,6 @@ function startViewedSlider () {
       productPhotoSplide.mount();
 
     }
-  
-
 }
 
 document.addEventListener('DOMContentLoaded', startViewedSlider);

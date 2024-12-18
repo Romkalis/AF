@@ -1,10 +1,11 @@
 const questionsList = document.querySelector(".questions__form-list");
 
 export const toggleQuestionsVisibility = (question) => {
-    const questionBlock = question.querySelector('.question__answers')
-    questionBlock.classList.toggle('question__answers--visible')
-
   const replies = question.querySelectorAll(".question__reply");
+  const questionBlock = question.querySelector('.question__answers')
+  if(questionBlock) {
+  questionBlock.classList.toggle('question__answers--visible')
+  }
   replies.forEach((reply) => reply.classList.toggle("question__reply--open"));
 };
 
