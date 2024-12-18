@@ -224,10 +224,6 @@
     .navigation__info {
         width: 100%;
     }
-    
-
-}
-@media (max-width: 520px) {
     .button.navigation__linkto {
         display: inline-block;
         text-align: center;
@@ -237,6 +233,9 @@
         justify-self: center;
         margin-top: 20px;
     }
+
+}
+@media (max-width: 520px) {
     .navigation__card-manufacturer,
     .navigation__showmore {
         display: none;

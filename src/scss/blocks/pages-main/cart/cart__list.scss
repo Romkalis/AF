@@ -34,8 +34,10 @@
 .cart__card-description {
     width: 260px;
 }
-// .cart-card__pricing {
-// }
+.cart-card__pricing {
+    min-width: 154px;
+    min-height: 101px;
+}
 
 .cart__card-section-title {
     margin-bottom: 20px;
