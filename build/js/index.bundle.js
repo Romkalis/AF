@@ -374,7 +374,7 @@ const showQuestionsModal = () => {
         const showModalFormButtons = modalContainer.querySelectorAll('.question__answer-reply')
         const toggleShowReplyForm = () => {
           const modalForm = modalContainer.querySelector('.question__answer-form')
-          modalForm.classList.toggle('answer-form--showed')
+          modalForm?.classList.toggle('answer-form--showed')
         }
 
         // запускаем функцию показа формы

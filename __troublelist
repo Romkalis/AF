@@ -1,15 +1,3 @@
-7. вытягивать из какого-нибудь тега у товара из параметра "data-" а не просто константа, потому что я ж говорю, что у каждого товара может быть разное количество, ну либо мне это функцию нужно будет закомментить и писать свою.
-
-    const DISCOUNT_STARTS_FROM = 100
-    if (DISCOUNT_STARTS_FROM !== 0) {
-      currentInput.value >= DISCOUNT_STARTS_FROM
-
-...7. вот у этого тега, например,
-<p class="cart__discount-price visually-hidden">
-сделай
-<p class="cart__discount-price visually-hidden" data-discount-amount = "100" > и это значение проверяй
-или у этого <div class="cart__card-additions"> или ещё где-нибудь в товаре
-
 8. вот эту строчку тоже можно с "?" вместо: 
 modalForm.classList.toggle('answer-form--showed')
 modalForm?.classList.toggle('answer-form--showed')
