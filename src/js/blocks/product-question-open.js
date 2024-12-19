@@ -16,7 +16,7 @@ if (questionsList) {
   const questions = questionsList.querySelectorAll(".questions__question");
 
   questions?.forEach((question) => {
-    const showReplyButton = question.querySelector(".answer__modal-text");
+    const showReplyButton = question.querySelector(".answer__modal");
 
     // Используем стрелочную функцию, чтобы сохранялся контекст
     showReplyButton?.addEventListener("click", () => {

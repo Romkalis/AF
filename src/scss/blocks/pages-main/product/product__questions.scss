@@ -294,9 +294,11 @@
     }
     .answer__modal-text {
         margin-right: auto;
+        pointer-events: none;
     }
     .answer__modal-counter {
         position: relative;
+        pointer-events: none;
     }
     .answer__modal-counter::before {
         position: absolute;
