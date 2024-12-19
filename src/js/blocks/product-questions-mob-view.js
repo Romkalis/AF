@@ -1,7 +1,3 @@
-import { replyForm } from "./product-answer-form";
-
-
-
 const showQuestionsModal = () => {
   const questionsList = document.getElementById("questions-slider-list");
 
@@ -19,13 +15,21 @@ const showQuestionsModal = () => {
         modalContainer.id = "modalQuestion";
 
         questionChildren.forEach((child) => {
+
           if (child.type === "checkbox") {
-            child.cheked = null;
+            child.checked = false; 
+            // флаг будут ли вопросы сразу открыты при открытии модалки false - да, будут.
           }
+          
+          if (child.classList.contains('question__answers')) {
+            child.classList.remove('visually-hidden')
+            child.classList.add('question__answers--visible')
+            child.querySelectorAll('.question__reply')
+                 .forEach(children => children.classList.add('question__reply--open'))
+          }
+
           modalContainer.appendChild(child);
         });
-
-
 
         // создаем кнопку для закрытия контейнера
         modalContainer?.insertAdjacentHTML(
@@ -39,11 +43,8 @@ const showQuestionsModal = () => {
                     </button>
                     `
         );
-
         document.body.appendChild(modalContainer);
 
-        // запускаем функцию показа формы
-        modalContainer?.addEventListener('click', replyForm)
 
 
         const closeModalButton = modalContainer.querySelector(
@@ -54,39 +55,42 @@ const showQuestionsModal = () => {
 
           // ..закрываем форму ответа, если она открыта
           const modalForm = modalContainer.querySelector('.question__answer-form')
-          modalForm.classList.remove('answer-form--showed')
+          modalForm?.classList.remove('answer-form--showed')
 
           changedChildren.forEach((child) => {
             // делаем проверку что выпадающий список будет закрыт
             if (child.classList.contains("show-modal-checkbox")) {
               child.checked = false;
             }
+            // закрываем все вложенные вопросы и их рожительский блок
+            if (child.classList.contains('question__answers')) {
+              child.classList.add('visually-hidden')
+              child.classList.remove('question__answers--visible')
+              child.querySelectorAll('.question__reply')
+                   .forEach(children => children.classList.remove('question__reply--open'))
+            }
+
             // не копируем кнопку закрытия модалки
             if (child.classList.contains("question__close-modal")) {
               return;
             }
             questionBlock.appendChild(child);
-
-
-            
           });
-          showModalFormButton.removeEventListener("click", toggleShowReplyForm);
-          modalContainer.removeEventListener('click', replyForm)
+          showModalFormButtons.forEach(button => button.removeEventListener("click", toggleShowReplyForm));
           modalContainer.remove();
-          
         };
         
-        const showModalFormButton = modalContainer.querySelector('.answer__modal-reply')
+        const showModalFormButtons = modalContainer.querySelectorAll('.question__answer-reply')
         const toggleShowReplyForm = () => {
           const modalForm = modalContainer.querySelector('.question__answer-form')
           modalForm.classList.toggle('answer-form--showed')
         }
 
-        showModalFormButton.addEventListener("click", toggleShowReplyForm);
+        // запускаем функцию показа формы
+        showModalFormButtons.forEach(button => button.addEventListener("click", toggleShowReplyForm));
         closeModalButton.addEventListener("click", closeModal);
       }
     });
-
   }
 };
 

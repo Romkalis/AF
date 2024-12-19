@@ -29,12 +29,13 @@ if (cartList) {
     const item = elem.closest(".cart__orders-item");
     const currentInput = item.querySelector(".cart__card-counter-field");
     const discountPrice = item.querySelector(".cart__discount-price");
+    const DISCOUNT_STARTS_FROM = 100
 
-    if (currentInput.value >= 100) {
-      discountPrice.classList.remove("visually-hidden");
-    } else {
-      discountPrice.classList.add("visually-hidden");
-    }
+    if (DISCOUNT_STARTS_FROM !== 0) {
+      currentInput.value >= DISCOUNT_STARTS_FROM 
+        ? discountPrice.classList.remove("visually-hidden")
+        : discountPrice.classList.add("visually-hidden")
+  }
   }
   // при загрузке данных проверяем товары кол-во которых больше условия, и показываем плашку со скидкой
   const cartItems = document.querySelectorAll(".cart__orders-item");
@@ -285,6 +286,110 @@ if (form) {
         })
     }
 }
+
+/***/ }),
+
+/***/ 351:
+/***/ (function() {
+
+const showQuestionsModal = () => {
+  const questionsList = document.getElementById("questions-slider-list");
+
+  if (questionsList && window.innerWidth <= 521) {
+    questionsList.addEventListener("click", (evt) => {
+      
+      const showModalButton = evt.target.closest(".answers__menu");
+
+      if (showModalButton) {
+        const questionBlock = showModalButton.closest(".questions__question");
+        const questionChildren = Array.from(questionBlock.children);
+
+        // создаем контейнер для модалки
+        const modalContainer = document.createElement("div");
+        modalContainer.id = "modalQuestion";
+
+        questionChildren.forEach((child) => {
+
+          if (child.type === "checkbox") {
+            child.checked = false; 
+            // флаг будут ли вопросы сразу открыты при открытии модалки false - да, будут.
+          }
+          
+          if (child.classList.contains('question__answers')) {
+            child.classList.remove('visually-hidden')
+            child.classList.add('question__answers--visible')
+            child.querySelectorAll('.question__reply')
+                 .forEach(children => children.classList.add('question__reply--open'))
+          }
+
+          modalContainer.appendChild(child);
+        });
+
+        // создаем кнопку для закрытия контейнера
+        modalContainer?.insertAdjacentHTML(
+          "afterbegin",
+          `
+                    <button class='question__close-modal'>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                        <line x1="17" y1="7" x2="7" y2="17" stroke="black" stroke-width="2" stroke-linecap="round" />
+                        <line x1="7" y1="7" x2="17" y2="17" stroke="black" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </button>
+                    `
+        );
+        document.body.appendChild(modalContainer);
+
+
+
+        const closeModalButton = modalContainer.querySelector(
+          ".question__close-modal"
+        );
+        const changedChildren = Array.from(modalContainer.children);
+        const closeModal = () => {
+
+          // ..закрываем форму ответа, если она открыта
+          const modalForm = modalContainer.querySelector('.question__answer-form')
+          modalForm?.classList.remove('answer-form--showed')
+
+          changedChildren.forEach((child) => {
+            // делаем проверку что выпадающий список будет закрыт
+            if (child.classList.contains("show-modal-checkbox")) {
+              child.checked = false;
+            }
+            // закрываем все вложенные вопросы и их рожительский блок
+            if (child.classList.contains('question__answers')) {
+              child.classList.add('visually-hidden')
+              child.classList.remove('question__answers--visible')
+              child.querySelectorAll('.question__reply')
+                   .forEach(children => children.classList.remove('question__reply--open'))
+            }
+
+            // не копируем кнопку закрытия модалки
+            if (child.classList.contains("question__close-modal")) {
+              return;
+            }
+            questionBlock.appendChild(child);
+          });
+          showModalFormButtons.forEach(button => button.removeEventListener("click", toggleShowReplyForm));
+          modalContainer.remove();
+        };
+        
+        const showModalFormButtons = modalContainer.querySelectorAll('.question__answer-reply')
+        const toggleShowReplyForm = () => {
+          const modalForm = modalContainer.querySelector('.question__answer-form')
+          modalForm.classList.toggle('answer-form--showed')
+        }
+
+        // запускаем функцию показа формы
+        showModalFormButtons.forEach(button => button.addEventListener("click", toggleShowReplyForm));
+        closeModalButton.addEventListener("click", closeModal);
+      }
+    });
+  }
+};
+
+document.addEventListener("DOMContentLoaded", showQuestionsModal);
+
 
 /***/ }),
 
@@ -4373,12 +4478,15 @@ document.addEventListener("DOMContentLoaded", startAdditionalSlider);
 
 ;// CONCATENATED MODULE: ./src/js/blocks/product-question-open.js
 const questionsList = document.querySelector(".questions__form-list");
+const modalBlock = document.getElementById("modalQuestion");
+
 
 const toggleQuestionsVisibility = (question) => {
   const replies = question.querySelectorAll(".question__reply");
-  const questionBlock = question.querySelector('.question__answers')
-  if(questionBlock) {
-  questionBlock.classList.toggle('question__answers--visible')
+  const questionBlock = question.querySelector(".question__answers");
+
+  if (questionBlock) {
+    questionBlock?.classList.toggle("question__answers--visible");
   }
   replies.forEach((reply) => reply.classList.toggle("question__reply--open"));
 };
@@ -4386,7 +4494,7 @@ const toggleQuestionsVisibility = (question) => {
 if (questionsList) {
   const questions = questionsList.querySelectorAll(".questions__question");
 
-  questions.forEach((question) => {
+  questions?.forEach((question) => {
     const showReplyButton = question.querySelector(".answer__modal-text");
 
     // Используем стрелочную функцию, чтобы сохранялся контекст
@@ -4394,133 +4502,12 @@ if (questionsList) {
       toggleQuestionsVisibility(question); // передаем сам элемент вопроса
     });
   });
-}
-
+} 
 
 // EXTERNAL MODULE: ./src/js/blocks/product-about-show-more.js
 var product_about_show_more = __webpack_require__(842);
-;// CONCATENATED MODULE: ./src/js/blocks/product-answer-form.js
-const questionList = document.querySelector(".questions__form-list");
-
-const replyForm = (evt) => {
-  if (evt.target.classList.contains("question__answer-reply")) {
-
-    const question = evt.target.closest(".questions__question");
-
-    
-    const form = question.querySelector(".question__answer-form");
-
-    form.classList.toggle("answer-form--showed");
-
-    const closeForm = () => {
-      form.classList.remove("answer-form--showed");
-      closeFormButton.removeEventListener("click", closeForm);
-    };
-
-    const closeFormButton = form.querySelector(".answer-form__cancel");
-    closeFormButton.addEventListener("click", closeForm);
-  }
-};
-
-if (questionList) {
-  questionList.addEventListener("click", replyForm);
-}
-
-;// CONCATENATED MODULE: ./src/js/blocks/product-questions-mob-view.js
-
-
-
-
-const showQuestionsModal = () => {
-  const questionsList = document.getElementById("questions-slider-list");
-
-  if (questionsList && window.innerWidth <= 521) {
-    questionsList.addEventListener("click", (evt) => {
-      
-      const showModalButton = evt.target.closest(".answers__menu");
-
-      if (showModalButton) {
-        const questionBlock = showModalButton.closest(".questions__question");
-        const questionChildren = Array.from(questionBlock.children);
-
-        // создаем контейнер для модалки
-        const modalContainer = document.createElement("div");
-        modalContainer.id = "modalQuestion";
-
-        questionChildren.forEach((child) => {
-          if (child.type === "checkbox") {
-            child.cheked = null;
-          }
-          modalContainer.appendChild(child);
-        });
-
-
-
-        // создаем кнопку для закрытия контейнера
-        modalContainer?.insertAdjacentHTML(
-          "afterbegin",
-          `
-                    <button class='question__close-modal'>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                        <line x1="17" y1="7" x2="7" y2="17" stroke="black" stroke-width="2" stroke-linecap="round" />
-                        <line x1="7" y1="7" x2="17" y2="17" stroke="black" stroke-width="2" stroke-linecap="round" />
-                        </svg>
-                    </button>
-                    `
-        );
-
-        document.body.appendChild(modalContainer);
-
-        // запускаем функцию показа формы
-        modalContainer?.addEventListener('click', replyForm)
-
-
-        const closeModalButton = modalContainer.querySelector(
-          ".question__close-modal"
-        );
-        const changedChildren = Array.from(modalContainer.children);
-        const closeModal = () => {
-
-          // ..закрываем форму ответа, если она открыта
-          const modalForm = modalContainer.querySelector('.question__answer-form')
-          modalForm.classList.remove('answer-form--showed')
-
-          changedChildren.forEach((child) => {
-            // делаем проверку что выпадающий список будет закрыт
-            if (child.classList.contains("show-modal-checkbox")) {
-              child.checked = false;
-            }
-            // не копируем кнопку закрытия модалки
-            if (child.classList.contains("question__close-modal")) {
-              return;
-            }
-            questionBlock.appendChild(child);
-
-
-            
-          });
-          showModalFormButton.removeEventListener("click", toggleShowReplyForm);
-          modalContainer.removeEventListener('click', replyForm)
-          modalContainer.remove();
-          
-        };
-        
-        const showModalFormButton = modalContainer.querySelector('.answer__modal-reply')
-        const toggleShowReplyForm = () => {
-          const modalForm = modalContainer.querySelector('.question__answer-form')
-          modalForm.classList.toggle('answer-form--showed')
-        }
-
-        showModalFormButton.addEventListener("click", toggleShowReplyForm);
-        closeModalButton.addEventListener("click", closeModal);
-      }
-    });
-
-  }
-};
-
-document.addEventListener("DOMContentLoaded", showQuestionsModal);
-
+// EXTERNAL MODULE: ./src/js/blocks/product-questions-mob-view.js
+var product_questions_mob_view = __webpack_require__(351);
 ;// CONCATENATED MODULE: ./src/js/blocks/product-photo-modal.js
 
 
@@ -4565,6 +4552,33 @@ if (sliderList && window.innerWidth > 520) {
 
 // EXTERNAL MODULE: ./src/js/blocks/product-question-form.js
 var product_question_form = __webpack_require__(605);
+;// CONCATENATED MODULE: ./src/js/blocks/product-answer-form.js
+const questionList = document.querySelector(".questions__form-list");
+
+const replyForm = (evt) => {
+  if (evt.target.classList.contains("question__answer-reply")) {
+
+    const question = evt.target.closest(".questions__question");
+
+    
+    const form = question.querySelector(".question__answer-form");
+
+    form.classList.toggle("answer-form--showed");
+
+    const closeForm = () => {
+      form.classList.remove("answer-form--showed");
+      closeFormButton.removeEventListener("click", closeForm);
+    };
+
+    const closeFormButton = form.querySelector(".answer-form__cancel");
+    closeFormButton.addEventListener("click", closeForm);
+  }
+};
+
+if (questionList) {
+  questionList.addEventListener("click", replyForm);
+}
+
 // EXTERNAL MODULE: ./src/js/blocks/product-share.js
 var product_share = __webpack_require__(794);
 // EXTERNAL MODULE: ./src/js/blocks/cart-counter.js

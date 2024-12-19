@@ -1,10 +1,13 @@
 const questionsList = document.querySelector(".questions__form-list");
+const modalBlock = document.getElementById("modalQuestion");
+
 
 export const toggleQuestionsVisibility = (question) => {
   const replies = question.querySelectorAll(".question__reply");
-  const questionBlock = question.querySelector('.question__answers')
-  if(questionBlock) {
-  questionBlock.classList.toggle('question__answers--visible')
+  const questionBlock = question.querySelector(".question__answers");
+
+  if (questionBlock) {
+    questionBlock?.classList.toggle("question__answers--visible");
   }
   replies.forEach((reply) => reply.classList.toggle("question__reply--open"));
 };
@@ -12,7 +15,7 @@ export const toggleQuestionsVisibility = (question) => {
 if (questionsList) {
   const questions = questionsList.querySelectorAll(".questions__question");
 
-  questions.forEach((question) => {
+  questions?.forEach((question) => {
     const showReplyButton = question.querySelector(".answer__modal-text");
 
     // Используем стрелочную функцию, чтобы сохранялся контекст
@@ -20,5 +23,4 @@ if (questionsList) {
       toggleQuestionsVisibility(question); // передаем сам элемент вопроса
     });
   });
-}
-
+} 

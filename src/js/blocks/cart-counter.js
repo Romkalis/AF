@@ -6,12 +6,13 @@ if (cartList) {
     const item = elem.closest(".cart__orders-item");
     const currentInput = item.querySelector(".cart__card-counter-field");
     const discountPrice = item.querySelector(".cart__discount-price");
+    const DISCOUNT_STARTS_FROM = 100
 
-    if (currentInput.value >= 100) {
-      discountPrice.classList.remove("visually-hidden");
-    } else {
-      discountPrice.classList.add("visually-hidden");
-    }
+    if (DISCOUNT_STARTS_FROM !== 0) {
+      currentInput.value >= DISCOUNT_STARTS_FROM 
+        ? discountPrice.classList.remove("visually-hidden")
+        : discountPrice.classList.add("visually-hidden")
+  }
   }
   // при загрузке данных проверяем товары кол-во которых больше условия, и показываем плашку со скидкой
   const cartItems = document.querySelectorAll(".cart__orders-item");
