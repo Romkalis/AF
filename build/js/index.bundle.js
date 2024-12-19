@@ -4377,6 +4377,13 @@ const startQuestionSlider = () => {
       questionsSlider = new Splide("#questions-slider", splideOptions);
 
       questionsSlider.mount();
+
+      //блок скрытия ответов на вопросы, чтобы он не перекрывал интерфейс
+
+      const questionAnswers = document.querySelectorAll('.question__answers')
+      if(window.innerWidth <= 520) {
+        questionAnswers?.forEach( question => question.classList.add('visually-hidden'))
+      }
     }
   
 };

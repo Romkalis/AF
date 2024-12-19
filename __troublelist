@@ -1,0 +1,20 @@
+2.  опять же проблема с большим количеством ответов, которые перекрывают кнопку сохраняется.. как вариант, вешать на класс question__answers ещё и класс visually-hidden в toggle, скрывает хорошо, проверил.
+
+
+7. вытягивать из какого-нибудь тега у товара из параметра "data-" а не просто константа, потому что я ж говорю, что у каждого товара может быть разное количество, ну либо мне это функцию нужно будет закомментить и писать свою.
+
+    const DISCOUNT_STARTS_FROM = 100
+    if (DISCOUNT_STARTS_FROM !== 0) {
+      currentInput.value >= DISCOUNT_STARTS_FROM
+
+...7. вот у этого тега, например,
+<p class="cart__discount-price visually-hidden">
+сделай
+<p class="cart__discount-price visually-hidden" data-discount-amount = "100" > и это значение проверяй
+или у этого <div class="cart__card-additions"> или ещё где-нибудь в товаре
+
+8. вот эту строчку тоже можно с "?" вместо: 
+modalForm.classList.toggle('answer-form--showed')
+modalForm?.classList.toggle('answer-form--showed')
+
+9. вот тоже, у кнопки большой хитбокс (где курсор становится как у ссылки), но разворачивается блок с ответами только если ткнуть по самому тексту
