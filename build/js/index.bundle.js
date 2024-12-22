@@ -4248,7 +4248,7 @@ const startForsunkiSlider = () => {
       if (!forsunkiSplide) { // Инициализируем слайдер, если он еще не был создан
 
           const splideOptions = {
-              type: "loop", // отключил зацикливание
+              type: "loop", // вкл зацикливание
               arrows: true,
               pagination: false,
               drag: true,
@@ -4299,6 +4299,7 @@ document.addEventListener('DOMContentLoaded', startForsunkiSlider);
 const startProductPhotoSlider = () => {
 
   const splideMainPhotoOptions = {
+    type: "loop", // вкл зацикливание
     arrows: true,
     pagination: true,
     drag: true,
@@ -4311,6 +4312,7 @@ const startProductPhotoSlider = () => {
     gap: '5px',
   };
   const splideCarouselPhotoOptions = {
+    type: "loop", // вкл зацикливание
     fixedWidth: '8vw', // Ширина каждой миниатюры
     fixedHeight: '8vw', // Высота каждой миниатюры
     isNavigation: true, // Включаем навигационную функцию
@@ -4331,9 +4333,23 @@ const startProductPhotoSlider = () => {
   );
 
   productPhotoSplide.sync(productCarouselSplide)// синхронизируем карусель со слайдером
+  
 
+  // добавляем обводку к активному слайду в карусели.
+
+  productCarouselSplide.on('active', (slide) => {
+    // Убираем класс у всех слайдов
+    document.querySelectorAll('#product-carousel-slider .splide__slide').forEach(slide => {
+      slide.classList.remove('is-active');
+    });
+    // Добавляем класс активному слайду
+    slide.slide.classList.add('is-active');
+  });
+
+  
   productPhotoSplide.mount();
   productCarouselSplide.mount();
+
 };
 
 if(document.getElementById('product-photo-slider')) {
