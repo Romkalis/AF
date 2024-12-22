@@ -41,6 +41,9 @@
         outline: 3px solid var(--c-main);
     }
 }
+.variations__item--active {
+    border: 2px solid var(--c-main);
+}
 
 .variations__link {
     font-size: 14px;
