@@ -3,7 +3,7 @@ const stickyBlock = document.querySelector('.sticky');
 if (stickyBlock && window.innerWidth > 1024) {
     window.addEventListener('scroll', () => {
         
-        const headerHeight = document.querySelector('.header').offsetHeight;
+        const headerHeight = document.querySelector('.header')?.offsetHeight;
         
         const scrollHeight = window.scrollY
 
