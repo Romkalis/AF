@@ -12,7 +12,7 @@
 .cart__form-section {
     display: grid;
     grid-template-columns: repeat(1fr);
-    row-gap: 10px;
+    row-gap: 20px;
     margin-bottom: clamp(20px, 5vw, 50px);
 }
 .cart__form-title {
@@ -24,6 +24,15 @@
     margin-bottom: 16px;
 }
 .cart__form-label {
+    position: relative;
+}
+.cart__form-description {
+    position: absolute;
+    top: -1em;
+    left: 1em;
+    background-color: var(--bg-field);
+    border-radius: 8px;
+    padding: 4px 8px;
 }
 .cart__form-input {
     padding: clamp(8px, 2vw, 1em);

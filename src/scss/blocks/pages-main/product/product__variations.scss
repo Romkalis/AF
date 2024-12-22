@@ -96,7 +96,7 @@
 .character__table-link::after {
     position: absolute;
     content: "";
-    top: 50%;
+    bottom: .2em;
     transform: translateY(-50%) rotate(45deg);
     right: -1em;
     width: 5px;
