@@ -1,7 +1,7 @@
 .navigation__grid {
     display: grid;
     gap: clamp(15px, 2.2vw, 30px);
-    grid-template-columns: auto auto;
+    grid-template-columns: 268px auto;
 }
 
 .navigation__bottom {
