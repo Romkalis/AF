@@ -37,6 +37,11 @@
     display: flex;
     flex-direction: column;
 }
+
+.footer__contacts-qr {
+    display: none;
+}
+
 .footer__phone {
     font-size: clamp(14px, 1.2vw, 16px);
     font-weight: 600;
@@ -60,8 +65,19 @@
 }
 
 .footer__copyright {
+
+    display: grid;
+    justify-items: center;
     align-self: end;
 }
+
+.footer__copyright-image {
+    border-radius: 10px; 
+    padding: 5px; 
+    background-color: var(--text-footer);
+    width: clamp(100px, 15vw, 150px);
+}
+
 .footer__oferta {
     display: flex;
     flex-direction: column;
@@ -121,6 +137,15 @@
 
     .footer__contacts {
         margin: 36px auto;
+    }
+    .footer__contacts-qr {
+        display: block;
+        margin: auto;
+        margin-top: 20px;
+        border-radius: 10px; 
+        padding: 5px; 
+        background-color: var(--text-footer);
+        width: 150px;
     }
 
     .footer__contacts-icon {
