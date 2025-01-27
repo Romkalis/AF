@@ -1,0 +1,14 @@
+table {
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid var(--border-light);
+    padding: .2em .4em;
+    text-align: left;
+  }
+  th {
+    background-color: var(--bg-field);
+  }
+  tr:nth-child(even) {
+    background-color: var(--text-footer);
+  }
