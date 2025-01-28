@@ -21,7 +21,6 @@
     margin-bottom: clamp(20px, 3vw, 30px);
 }
 .cart__form-description {
-    margin-bottom: 16px;
 }
 .cart__form-label {
     position: relative;
@@ -33,6 +32,11 @@
     background-color: var(--bg-field);
     border-radius: 8px;
     padding: 4px 8px;
+    margin-bottom: 16px;
+}
+
+.cart__form-text {
+    margin-bottom: 16px;
 }
 .cart__form-input {
     padding: clamp(8px, 2vw, 1em);

@@ -43,8 +43,10 @@
 //  таблица по пестецидам, занимает всвю ширину контейнера
 .product__pestecide-table { 
     grid-column: 1 / -1;
-    
     display: grid;
+
+    margin-left: 0;
+    list-style: none;
 }
 
 // заголовок блока

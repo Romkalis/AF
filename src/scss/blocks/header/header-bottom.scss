@@ -4,9 +4,11 @@
     text-align: center;
     flex-wrap: wrap;
     font-weight: 500;
+    margin-left: 0;
+    list-style : none;
 }
 .header__bottom-item {
-
+    padding: 0;
     &:hover,
     &:active {
         background-color: var(--bg-medium);

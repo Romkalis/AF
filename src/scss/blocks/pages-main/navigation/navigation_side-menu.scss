@@ -20,6 +20,8 @@
     background-color: var(--bg-medium);
     max-width: 267px;
     margin-bottom: 30px;
+    margin-left: 0;
+    list-style: none;
 }
 .navigation__side-additional-item {
     padding: 14px clamp(18px, 2.1vw, 40px) 14px 14px;

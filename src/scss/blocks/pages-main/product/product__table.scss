@@ -14,7 +14,7 @@
 .product__table-data {
     border: 1px solid var(--text-footer);
     padding: 8px;
-
+    text-align: center;
 }
 
 .product__table-row:not(:first-child):nth-child(odd) {
@@ -34,20 +34,12 @@
 }
 
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
     .product__table {
        .desktop-view {
             display: none;
         }
     }
-
-
-    // .product__table-row:not(:first-child) {
-    //     .product__table-heading:not(:first-child):nth-child(even),
-    //     .product__table-data:not(:first-child):nth-child(even) {
-    //         display: none;
-    //     }
-    // }
 }
 
 @media (max-width: 768px) {

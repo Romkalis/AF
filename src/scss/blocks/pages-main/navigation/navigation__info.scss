@@ -7,6 +7,8 @@
     align-items: center;
     gap: 10px;
     margin-bottom: clamp(20px, 2.5vw, 40px);
+    margin-left: 0;
+    list-style: none;
 }
 
 .navigation__navitem {
@@ -38,6 +40,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(212px, 1fr));
     gap: 12px;
+    margin-left: 0;
+    list-style: none;
 }
 
 .navigation__card {
@@ -90,14 +94,14 @@
 .navigation__card-title {
     font-size: 14px;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     height: 4.5em;
     // высота заголовка в карточке, если заголовки будут обрезаться под длинне - уменьшить.
 }
 
 .navigation__card-description {
-    margin-bottom: 20px;
-    height: 5.5em;
+    margin-bottom: 10px;
+    height: 7.5em;
 }
 
 .navigation__card-price {

@@ -13,6 +13,8 @@
 .header__navlist {
     display: flex;
     align-items: center;
+    list-style-type: none;
+    margin-left: 0;
 }
 
 .header__navitem {
@@ -68,6 +70,8 @@
     z-index: 2;
     color: var(--text-dark);
     text-align: start;
+    margin-left: 0;
+    list-style: none;
 }
 
 .header__navlink--additional:hover .header__sublist,
