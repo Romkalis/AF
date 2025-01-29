@@ -75,6 +75,9 @@
     border-top: 1px solid var(--border-light);
     border-bottom: 1px solid var(--border-light);
 }
+.character__table-row td {
+    border: none;
+}
 
 .character__table-column {
     padding: clamp(8px, 1.5vw, 13px) 8px;
