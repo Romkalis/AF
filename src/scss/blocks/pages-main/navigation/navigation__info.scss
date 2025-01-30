@@ -24,7 +24,10 @@
     text-decoration: underline !important;
     text-decoration-style: dotted !important;
     text-underline-offset: 4px;
+}
 
+.navigation__navlink--active {
+    text-decoration: underline dotted var(--c-main)!important;
 }
 
 .navigation__navitem:hover,
