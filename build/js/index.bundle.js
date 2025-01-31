@@ -4298,6 +4298,8 @@ document.addEventListener('DOMContentLoaded', startForsunkiSlider);
 
 const startProductPhotoSlider = () => {
 
+  const productSlidesCount = document.querySelector('.product__carousel-list').children.length
+
   const splideMainPhotoOptions = {
     type: "loop", // вкл зацикливание
     arrows: true,
@@ -4311,16 +4313,17 @@ const startProductPhotoSlider = () => {
     perPage: 1,
     gap: '5px',
   };
+
   const splideCarouselPhotoOptions = {
-    type: "loop", // вкл зацикливание
-    fixedWidth: '8vw', // Ширина каждой миниатюры
-    fixedHeight: '8vw', // Высота каждой миниатюры
-    isNavigation: true, // Включаем навигационную функцию
+    type: productSlidesCount >= 6 ? "loop" : "slide",    // вкл зацикливание
+    fixedWidth: '8vw',                              // Ширина каждой миниатюры
+    fixedHeight: '8vw',                             // Высота каждой миниатюры
+    isNavigation: true,                             // Включаем навигационную функцию
     rewind: false,
-    gap: '5px', // Пробелы между миниатюрами
-    pagination: true, // Отключаем стандартную пагинацию
-    cover: true, // Убедитесь, что изображения покрывают миниатюры
-    arrows: true, // Отключаем стрелки у карусели миниатюр
+    gap: '5px',                                     // Пробелы между миниатюрами
+    pagination: true,                               // Отключаем стандартную пагинацию
+    cover: true,                                    // Убедитесь, что изображения покрывают миниатюры
+    arrows: true,                                   // Отключаем стрелки у карусели миниатюр
   };
 
   let productPhotoSplide = new Splide(
